@@ -1,0 +1,27 @@
+.nav {
+  display: inline-flex;
+  width: 95vw;
+  justify-content: space-between;
+  padding: 0 34px;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+.nav li a {
+  text-decoration: none;
+}
+
+.nav ul li {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.nav button {
+  margin: 0 0.8rem;
+}
