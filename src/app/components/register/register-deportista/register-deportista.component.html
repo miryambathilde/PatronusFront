@@ -1,6 +1,6 @@
 <div class="container pt-5">
   <div class="row deportistas">
-    <div class="col-12 col-md-4 col-offset-md-2">
+    <div class="col-12 col-md-4 col-offset-md-2 pb-5 g-2">
       <h3>Instrucciones</h3>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
@@ -69,7 +69,17 @@
             formControlName="password"
           />
         </div>
-
+        <div class="form-group mb-3">
+          <input
+            type="checkbox"
+            name="condiciones"
+            id="condiciones"
+            formControlName="condiciones"
+          />
+          <label class="ms-2" for="condiciones"
+            >Acepto las condiciones de uso</label
+          >
+        </div>
         <input type="submit" class="btn btn-danger" value="Registrar" />
       </form>
     </div>

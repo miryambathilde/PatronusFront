@@ -14,23 +14,21 @@ export class RegisterDeportistaComponent implements OnInit {
     private usersServices: UsersServicesService,
     private router: Router
   ) {
-
     this.registerDeportistas = new FormGroup({
-      nombre: new FormControl('',[]),
-      apellidos: new FormControl('',[]),
-      edad: new FormControl('',[]),
-      email: new FormControl('',[]),
-      password: new FormControl('',[]),
+      nombre: new FormControl('', []),
+      apellidos: new FormControl('', []),
+      edad: new FormControl('', []),
+      email: new FormControl('', []),
+      password: new FormControl('', []),
+      condiciones: new FormControl('', [])
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onSubmit(){
+  onSubmit() {
     const mensaje = this.usersServices.register(this.registerDeportistas.value);
-    if(mensaje !== "")
-    {
+    if (mensaje !== '') {
       this.router.navigate(['/login']);
     }
   }
