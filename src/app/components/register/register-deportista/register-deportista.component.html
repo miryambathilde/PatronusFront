@@ -1,0 +1,77 @@
+<div class="container pt-5">
+  <div class="row deportistas">
+    <div class="col-12 col-md-4 col-offset-md-2">
+      <h3>Instrucciones</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+        aperiam quo praesentium porro. Animi officia ducimus explicabo maxime
+        reprehenderit. Distinctio quod ipsa amet, corporis dolore obcaecati
+        blanditiis quasi. Minima, aut!
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+        aperiam quo praesentium porro. Animi officia ducimus explicabo maxime
+        reprehenderit. Distinctio quod ipsa amet, corporis dolore obcaecati
+        blanditiis quasi. Minima, aut!
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+        aperiam quo praesentium porro. Animi officia ducimus explicabo maxime
+        reprehenderit. Distinctio quod ipsa amet, corporis dolore obcaecati
+        blanditiis quasi. Minima, aut!
+      </p>
+    </div>
+    <div class="col-12 col-md-4 col-offset-md-2">
+      <h4>Formulario de registro</h4>
+      <form [formGroup]="registerDeportistas" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3">
+          <label for="nombre"> Nombre </label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            formControlName="nombre"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="apellidos"> Apellidos </label>
+          <input
+            type="text"
+            class="form-control"
+            id="apellidos"
+            formControlName="apellidos"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="email"> Email </label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            formControlName="email"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="edad"> Edad </label>
+          <input
+            type="text"
+            class="form-control"
+            id="edad"
+            formControlName="edad"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="password"> Password </label>
+          <input
+            type="text"
+            class="form-control"
+            id="password"
+            formControlName="password"
+          />
+        </div>
+
+        <input type="submit" class="btn btn-danger" value="Registrar" />
+      </form>
+    </div>
+  </div>
+</div>

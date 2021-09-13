@@ -1,0 +1,10 @@
+.hero {
+  height: 100vh;
+  background-image: url("https://www.ecestaticos.com/image/clipping/d0515ac76922f6f7765aa3c2be066eed/el-brillante-truco-de-los-deportistas-de-elite-para-lograr-metas-imposibles.jpg");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
