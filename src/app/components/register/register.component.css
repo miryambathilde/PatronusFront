@@ -3,7 +3,6 @@
 }
 
 .register div {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +15,6 @@
   background-image: url("https://cdn.pixabay.com/photo/2017/05/25/15/08/jogging-2343558_960_720.jpg");
   background-size: cover;
   display: flex;
-  height: 100vh;
   position: center center;
 }
 
@@ -24,4 +22,8 @@
   background-image: url("https://cdn.pixabay.com/photo/2020/11/27/16/59/man-5782411_960_720.jpg");
   background-size: cover;
   position: center center;
+}
+
+button {
+  background-color: #e52026;
 }
