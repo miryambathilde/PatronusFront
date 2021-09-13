@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfileSponsorComponent } from "./components/profile-sponsor/profile-sponsor.component";
 import { RegisterDeportistaComponent } from './components/register/register-deportista/register-deportista.component';
 import { RegisterSponsorsComponent } from './components/register/register-sponsors/register-sponsors.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
   {path: "register/deportistas", component: RegisterDeportistaComponent},
-  {path: "register/sponsors", component: RegisterSponsorsComponent},
+  {path: "register/sponsors", component: RegisterSponsorsComponent },
+  {path: "sponsors", component: ProfileSponsorComponent},
   {path: "dashboard", component: DashboardComponent, canActivate: [LoginGuard]},
   {path: "**", redirectTo: "/home"},
 ];

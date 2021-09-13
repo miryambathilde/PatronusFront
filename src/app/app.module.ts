@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
@@ -14,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { RegisterDeportistaComponent } from './components/register/register-deportista/register-deportista.component';
 import { RegisterSponsorsComponent } from './components/register/register-sponsors/register-sponsors.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProfileSponsorComponent } from './components/profile-sponsor/profile-sponsor.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,13 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     RegisterComponent,
     RegisterDeportistaComponent,
     RegisterSponsorsComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProfileSponsorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule
   ],
