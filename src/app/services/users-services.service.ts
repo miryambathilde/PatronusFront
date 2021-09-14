@@ -21,7 +21,7 @@ export class UsersServicesService {
       {
         id: 2,
         nombre: "Miryam",
-        apellidos: 'bathilde',
+        apellidos: 'Bathilde',
         edad: 30,
         email: "miryam@gmail.com",
         password: "12345",
