@@ -17,4 +17,15 @@ export class CatalogoDeportistasComponent implements OnInit {
     this.deportistas = this.deportistasService.getAll();
   }
 
+  //EVENTO DEL OUTPUT //
+  onFiltroPais($event: any) {
+    console.log($event);
+  }
+  onFiltroDeporte($event: any) {
+    console.log($event);
+  }
+  onFiltroInvertible($event: any) {
+    console.log($event);
+  }
+
 }

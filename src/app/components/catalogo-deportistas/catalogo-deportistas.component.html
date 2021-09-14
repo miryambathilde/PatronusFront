@@ -1,1 +1,26 @@
-<p>catalogo-deportistas works!</p>
+<section class="container mt-5">
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <!-- OUTPUTS FILTROS-->
+      <app-filtro
+        (filtroPais)="onFiltroPais($event)"
+        (filtroDeporte)="onFiltroDeporte($event)"
+        (filtroInvertible)="onFiltroInvertible($event)"
+      ></app-filtro>
+    </div>
+    <div class="col-12 col-md-9">
+      <!--  ListaSeries -->
+      <div class="row g-4">
+        <article *ngFor="let deportista of deportistas" class="col-6 col-md-4">
+          <img [src]="deportista?.foto" class="card-img-top" [alt]="deportista?.nombre" />
+          <div class="card-body">
+            <h5 class="card-title">{{deportista?.nombre}} {{deportista?.apellidos}}</h5>
+            <p class="card-text">Email: {{ deportista?.email }}</p>
+            <p class="card-text">Deporte: {{ deportista?.deporte }}</p>
+            <p class="card-text">País: {{ deportista?.pais }}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
