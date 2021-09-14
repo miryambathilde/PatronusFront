@@ -35,7 +35,7 @@ export class DeportistasService {
         edad: 22,
         email: 'jesus@gmail.com',
         foto: 'fotodejesus',
-        deporte: 'gimnasio',
+        deporte: 'musculación',
         pais: 'España',
         contraseña: '1234'
       }
