@@ -1,0 +1,25 @@
+<div>
+	<aside class="my-3">
+    <label>Filtro por Pais:</label>
+    <select (change)="recogerPais($event)">
+      <option value="todos">Todos</option>
+      <option value="España">España</option>
+      <option value="Francia">Francia</option>
+    </select>
+  </aside>
+	<aside class="my-3">
+    <label>Filtro por Deporte:</label>
+    <select (change)="recogerDeporte($event)">
+      <option value="todos">Todos</option>
+      <option value="Musculacion">Musculación</option>
+      <option value="Sofing">Sofing</option>
+      <option value="Baloncesto">Baloncesto</option>
+    </select>
+  </aside>
+	<aside class="my-3">
+    <label>Filtro por Invertible:</label>
+    <select (change)="recogerInvertible($event)">
+      <option value="todos">Todos</option>
+    </select>
+  </aside>
+</div>

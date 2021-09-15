@@ -15,6 +15,8 @@ import { RegisterDeportistaComponent } from './components/register/register-depo
 import { RegisterSponsorsComponent } from './components/register/register-sponsors/register-sponsors.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileSponsorComponent } from './components/profile-sponsor/profile-sponsor.component';
+import { CatalogoDeportistasComponent } from './components/catalogo-deportistas/catalogo-deportistas.component';
+import { FiltrosComponent } from './components/filtros/filtros.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ProfileSponsorComponent } from './components/profile-sponsor/profile-sp
     RegisterDeportistaComponent,
     RegisterSponsorsComponent,
     DashboardComponent,
-    ProfileSponsorComponent
+    ProfileSponsorComponent,
+    CatalogoDeportistasComponent,
+    FiltrosComponent
   ],
   imports: [
     BrowserModule,
