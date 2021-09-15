@@ -1,6 +1,16 @@
+<section mt-10>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+    </div>
+  </nav>
+</div>
+</section>
 <div class="m-4">
 	<aside class="my-3">
-    <label>Filtro por Pais:</label>
+    <label class="mb-2">Filtro por Pais:</label>
+    <br>
     <select (change)="recogerPais($event)">
       <option value="todos">Todos</option>
       <option value="España">España</option>
@@ -8,7 +18,8 @@
     </select>
   </aside>
 	<aside class="my-3">
-    <label>Filtro por Deporte:</label>
+    <label class="mb-2">Filtro por Deporte:</label>
+    <br>
     <select (change)="recogerDeporte($event)">
       <option value="todos">Todos</option>
       <option value="Musculacion">Musculación</option>
@@ -17,9 +28,11 @@
     </select>
   </aside>
 	<aside class="my-3">
-    <label>Filtro por Invertible:</label>
+    <label class="mb-2">Filtro por Invertible:</label>
+    <br>
     <select (change)="recogerInvertible($event)">
       <option value="todos">Todos</option>
     </select>
   </aside>
 </div>
+
