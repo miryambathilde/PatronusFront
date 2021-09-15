@@ -17,6 +17,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileSponsorComponent } from './components/profile-sponsor/profile-sponsor.component';
 import { CatalogoDeportistasComponent } from './components/catalogo-deportistas/catalogo-deportistas.component';
 import { FiltrosComponent } from './components/filtros/filtros.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { PerfilSponsorComponent } from './components/perfil-sponsor/perfil-sponsor.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { FiltrosComponent } from './components/filtros/filtros.component';
     DashboardComponent,
     ProfileSponsorComponent,
     CatalogoDeportistasComponent,
-    FiltrosComponent
+    FiltrosComponent,
+    PortfolioComponent,
+    PerfilSponsorComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
