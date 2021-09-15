@@ -20,6 +20,7 @@ import { FiltrosComponent } from './components/filtros/filtros.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PerfilSponsorComponent } from './components/perfil-sponsor/perfil-sponsor.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CardDeportistaComponent } from './components/card-deportista/card-deportista.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FiltrosComponent,
     PortfolioComponent,
     PerfilSponsorComponent,
-    SidebarComponent
+    SidebarComponent,
+    CardDeportistaComponent
   ],
   imports: [
     BrowserModule,

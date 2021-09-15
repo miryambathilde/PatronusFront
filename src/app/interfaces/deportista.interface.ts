@@ -5,6 +5,9 @@ export interface Deportista {
   email: string;
   foto: string;
   deporte: string;
+  dinero: number;
+  porcentaje: number;
+  fecha: string;
   pais: string;
   contraseña: string;
 }
