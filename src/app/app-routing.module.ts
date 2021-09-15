@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CardDeportistaComponent } from "./components/card-deportista/card-deportista.component";
 import { CatalogoDeportistasComponent } from "./components/catalogo-deportistas/catalogo-deportistas.component";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FiltrosComponent } from "./components/filtros/filtros.component";
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: "register/deportistas", component: RegisterDeportistaComponent},
   {path: "register/sponsors", component: RegisterSponsorsComponent },
   {path: "sponsors", component: ProfileSponsorComponent },
-  {path: "catalogo-deportistas", component: CatalogoDeportistasComponent, children:[{path: "filtro", component: FiltrosComponent}]},
+  { path: "catalogo-deportistas", component: CatalogoDeportistasComponent, children: [{ path: "filtro", component: FiltrosComponent }] },
+  { path: "detalle-deportista", component: CardDeportistaComponent},
   {path: "dashboard", component: DashboardComponent, canActivate: [LoginGuard]},
   {path: "**", redirectTo: "/home"},
 ];
