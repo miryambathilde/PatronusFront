@@ -14,9 +14,13 @@ export class DeportistasService {
         apellidos: 'Estevan Hernaiz',
         edad: 30,
         email: 'rosa@gmail.com',
-        foto: 'fotoderosa',
-        deporte: 'baloncesto',
+        foto:
+          'https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2014/09/26/14117184454179.jpg',
+        deporte: 'Baloncesto',
         pais: 'España',
+        porcentaje: 95,
+        fecha: '2021-11-05',
+        dinero: 10000,
         contraseña: '1234'
       },
       {
@@ -24,8 +28,12 @@ export class DeportistasService {
         apellidos: 'Messod',
         edad: 23,
         email: 'stephane@gmail.com',
-        foto: 'fotodestephan',
-        deporte: 'sofing',
+        foto:
+          'https://st3.depositphotos.com/12985790/19034/i/600/depositphotos_190344190-stock-photo-side-view-of-handsome-young.jpg',
+        deporte: 'Sofing',
+        porcentaje: 65,
+        fecha: '2021-11-05',
+        dinero: 11500,
         pais: 'Francia',
         contraseña: '1234'
       },
@@ -34,8 +42,12 @@ export class DeportistasService {
         apellidos: 'Denis',
         edad: 22,
         email: 'jesus@gmail.com',
-        foto: 'fotodejesus',
-        deporte: 'musculación',
+        foto:
+          'https://2.bp.blogspot.com/-mtNMPNMEMBc/UmeJPlbjO_I/AAAAAAAAHNY/V9QBIYAUMNA/s1600/150688_331091047004832_258551495_n.jpg',
+        deporte: 'Musculación',
+        porcentaje: 75,
+        fecha: '2021-11-05',
+        dinero: 8500,
         pais: 'España',
         contraseña: '1234'
       }
