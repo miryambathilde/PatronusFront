@@ -11,7 +11,7 @@ export class DeportistasService {
     this.arrDeportistas = [
       {
         nombre: 'Rosa',
-        apellidos: 'Estevan Hernaiz',
+        apellidos: 'Estevan',
         edad: 30,
         email: 'rosa@gmail.com',
         foto:
