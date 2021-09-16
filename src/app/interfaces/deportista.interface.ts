@@ -1,4 +1,5 @@
 export interface Deportista {
+  id: number;
   nombre: string;
   apellidos: string;
   edad: number;
@@ -7,7 +8,9 @@ export interface Deportista {
   deporte: string;
   dinero: number;
   porcentaje: number;
+  patrocinadores: string;
   fecha: string;
   pais: string;
   contraseña: string;
+  rendimiento: string;
 }
