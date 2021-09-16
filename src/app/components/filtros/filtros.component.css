@@ -1,0 +1,4 @@
+.mb-2:first-child {
+	margin-bottom: 0.5rem !important;
+	margin-top: 1.5rem !important;
+}
