@@ -40,9 +40,14 @@
 }
 
 .blog-home2 h3 {
-  color: #e52026;
+  color: black;
+  font-size: 45px;
 }
 
+/* .blog-home2 h3 {
+  color: #e52026;
+}
+ */
 .blog-home2 .font-weight-medium {
   font-weight: 500;
 }
