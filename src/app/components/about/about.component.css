@@ -1,0 +1,49 @@
+.service {
+	color: #4d515a;
+  font-weight: 400;
+}
+
+.service h1, .service h2, .service h3, .service h4, .service h5, .service h6 {
+  color: #46474b;
+}
+
+.empresa {
+  color: #e41414;
+}
+
+.deportista {
+  color: #2e2ef5;
+}
+
+.container {
+  margin-top: 100px;
+  margin-bottom: 1rem;
+}
+
+.container h4 {
+  margin-bottom: 1.5em;
+}
+
+.service .font-weight-medium {
+	font-weight: 500;
+}
+
+.service .wrap-service .max-box {
+  max-width: 580px;
+}
+
+.service a {
+	text-decoration: none;
+}
+
+.service .linking {
+	color: #295bc7;
+}
+.service .linking:hover {
+	color: #175ef8;
+}
+
+.btn-primary {
+	margin-bottom: 1.5em;
+}
+

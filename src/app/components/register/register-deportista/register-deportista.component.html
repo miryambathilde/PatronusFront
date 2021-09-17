@@ -1,0 +1,136 @@
+<div class="container pt-5">
+  <div class="row deportistas">
+    <div class="col-12 col-md-4 col-offset-md-2 pb-5 g-2">
+      <h3>Instrucciones</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+        aperiam quo praesentium porro. Animi officia ducimus explicabo maxime
+        reprehenderit. Distinctio quod ipsa amet, corporis dolore obcaecati
+        blanditiis quasi. Minima, aut!
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+        aperiam quo praesentium porro. Animi officia ducimus explicabo maxime
+        reprehenderit. Distinctio quod ipsa amet, corporis dolore obcaecati
+        blanditiis quasi. Minima, aut!
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+        aperiam quo praesentium porro. Animi officia ducimus explicabo maxime
+        reprehenderit. Distinctio quod ipsa amet, corporis dolore obcaecati
+        blanditiis quasi. Minima, aut!
+      </p>
+    </div>
+    <div class="col-12 col-md-4 col-offset-md-2">
+      <h4>Formulario de registro</h4>
+      <form [formGroup]="registerDeportistas" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3">
+          <label for="nombre"> Nombre </label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            formControlName="nombre"
+          />
+          <p class="text-danger" *ngIf="checkControl('nombre', 'required')">
+            Campo obligatorio
+          </p>
+        </div>
+        <div class="form-group mb-3">
+          <label for="apellidos"> Apellidos </label>
+          <input
+            type="text"
+            class="form-control"
+            id="apellidos"
+            formControlName="apellidos"
+          />
+          <p class="text-danger" *ngIf="checkControl('apellidos', 'required')">
+            Campo obligatorio
+          </p>
+        </div>
+        <div class="form-group mb-3">
+          <label for="email"> Email </label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            formControlName="email"
+          />
+          <p class="text-danger" *ngIf="checkControl('email', 'required')">
+            Email obligatorio
+          </p>
+          <p class="text-danger" *ngIf="checkControl('email', 'pattern')">
+            El email debe ser válido
+          </p>
+        </div>
+        <div class="form-group mb-3">
+          <label for="edad"> Edad </label>
+          <input
+            type="number"
+            min="8"
+            max="60"
+            class="form-control"
+            id="edad"
+            formControlName="edad"
+          />
+          <p class="text-danger" *ngIf="checkControl('edad', 'required')">
+            Debes indicar tu edad
+          </p>
+        </div>
+        <div class="form-group mb-3">
+          <label for="password"> Password </label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+          />
+          <p class="text-danger" *ngIf="checkControl('password', 'required')">
+            La contraseña es obligatoria
+          </p>
+          <p class="text-danger" *ngIf="checkControl('password', 'minlength')">
+            La contraseña debe tener minimo 4 caracteres
+          </p>
+        </div>
+        <div class="form-group mb-3">
+          <label for="password"> Repite el password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="repite_password"
+          />
+          <p
+            class="text-danger"
+            *ngIf="registerDeportistas.hasError('validadorPassword')"
+          >
+            Las contraseñas no son iguales
+          </p>
+        </div>
+        <div class="form-group mb-3">
+          <input
+            type="checkbox"
+            name="condiciones"
+            id="condiciones"
+            formControlName="condiciones"
+          />
+          <label class="ms-2" for="condiciones"
+            >Acepto las condiciones de uso</label
+          >
+          <p
+            class="text-danger"
+            *ngIf="checkControl('condiciones', 'required')"
+          >
+            Debes aceptar las condiciones de uso para poder seguir
+          </p>
+        </div>
+        <input
+          type="submit"
+          class="btn btn-danger"
+          value="Registrar"
+          [disabled]="!registerDeportistas.valid"
+        />
+      </form>
+    </div>
+  </div>
+</div>

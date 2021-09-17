@@ -1,0 +1,29 @@
+.hero {
+  height: 100vh;
+  background-image: url("../../../assets/img/Bici.png");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-blend-mode: darken;
+  background-color: grey;
+}
+
+.hero h1 {
+  color: white;
+  font-weight: 600;
+  vertical-align: baseline;
+}
+.hero h4 {
+  color: white;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+.hero button {
+  margin-top: 30px;
+  background-color: #e52026;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,137 @@
+.mb-0 {
+	margin-bottom: 0 !important;
+	margin-left: 13px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 80%;
+  word-wrap: break-word;
+  background-color: #ebebeb70;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.card .img-top {
+  max-height: 100px;
+}
+
+.card-img,
+.card-img-bottom,
+.card-img-top {
+  width: 100%;
+  height: 180px;
+}
+
+.blog-home2 {
+  color: #84888f;
+  font-weight: 300;
+}
+
+.blog-home2 h1,
+.blog-home2 h2,
+.blog-home2 h4,
+.blog-home2 h5,
+.blog-home2 h6 {
+  color: #3e4555;
+}
+
+.blog-home2 h3 {
+  color: black;
+  font-size: 45px;
+}
+
+/* .blog-home2 h3 {
+  color: #e52026;
+}
+ */
+.blog-home2 .font-weight-medium {
+  font-weight: 500;
+}
+
+.blog-home2 .bg-light {
+  background-color: #f4f8fa !important;
+}
+
+.blog-home2 .subtitle {
+  color: #525050;
+  line-height: 22px;
+}
+
+.blog-home2 .text-themecolor {
+  color: #e52026;
+}
+
+.blog-home2 h5 {
+  line-height: 22px;
+  font-size: 18px;
+}
+
+.blog-home2 a.link {
+  color: #3e4555;
+}
+
+.blog-home2 a.link:hover {
+  color: #e52026;
+}
+
+.blog-home2 .on-hover {
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.blog-home2 .on-hover:hover {
+  -webkit-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.blog-home2 .date-pos {
+  right: 10px;
+  top: 10px;
+}
+
+.blog-home2 .date-pos span {
+  font-size: 30px;
+  line-height: 30px;
+}
+.blog-home2 .bg-info-gradiant {
+  background: #e52026;
+  background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    #e52026 0%,
+    #b3151b 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#e52026),
+    to(#b3151b)
+  );
+  background: -webkit-linear-gradient(left, #e52026 0%, #b3151b 100%);
+  background: -o-linear-gradient(left, #e52026 0%, #b3151b 100%);
+  background: linear-gradient(to right, #e52026 0%, #b3151b 100%);
+}
+
+.btn-danger {
+  background-color: red;
+  margin-bottom: 10px;
+  max-width: 100%;
+  border: 1.5px solid #c41a20;
+  position: center;
+}
+.btn-danger:hover {
+  background-color: #e52026;
+  border: 2px solid #8a1418;
+}
+
+.imagen-deportista {
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+}
