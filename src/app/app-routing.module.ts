@@ -27,7 +27,6 @@ const routes: Routes = [
   {path: "portfolio", component: PortfolioComponent },
   {path: "perfil/sponsors", component: PerfilSponsorComponent },
   {path: "catalogo-deportistas", component: CatalogoDeportistasComponent, children:[{path: "filtro", component: FiltrosComponent}]},
-  {path: "catalogo-deportistas", component: CatalogoDeportistasComponent, children: [{ path: "filtro", component: FiltrosComponent }] },
   {path: "deportista/:idDeportista", component: CardDeportistaComponent},
   {path: "dashboard", component: DashboardComponent, canActivate: [LoginGuard]},
   {path: "**", redirectTo: "/home"},

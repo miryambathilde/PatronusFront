@@ -50,12 +50,8 @@
           <!-- Column -->
           <div class="col-md-4 on-hover" *ngFor="let deportista of deportistas">
             <div class="card border-0 mb-4">
-              <a href="#"
-                ><img
-                  class="card-img-top"
-                  [src]="deportista?.foto"
-                  [alt]="deportista?.nombre"
-              /></a>
+
+              <div class="imagen-deportista" [ngStyle]="{'background-image': 'url('+ deportista?.foto +')'}" ></div>
               <!-- fecha limite -->
               <div
                 class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded text-white position-absolute"
