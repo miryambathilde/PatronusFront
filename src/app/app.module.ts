@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,6 +22,9 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PerfilSponsorComponent } from './components/perfil-sponsor/perfil-sponsor.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CardDeportistaComponent } from './components/card-deportista/card-deportista.component';
+import { ChartPieComponent } from './components/charts/chart-pie/chart-pie.component';
+
+
 
 @NgModule({
   declarations: [
@@ -38,14 +42,15 @@ import { CardDeportistaComponent } from './components/card-deportista/card-depor
     PortfolioComponent,
     PerfilSponsorComponent,
     SidebarComponent,
-    CardDeportistaComponent
+    CardDeportistaComponent,
+    ChartPieComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

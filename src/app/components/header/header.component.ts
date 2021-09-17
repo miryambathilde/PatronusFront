@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Event } from '@angular/router';
+import { NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,14 +10,32 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   islooged: boolean = false;
-  constructor() { }
+  ruta: boolean = false;
+  ruta2: boolean = false;
+
+  constructor(
+    private router: Router
+  ) {
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        console.log(event.url)
+        this.ruta = (event.url === '/home') ? true : false;
+      }
+    });
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        console.log(event.url)
+        this.ruta2 = (event.url === '/register') ? true : false;
+      }
+    });
+
+  }
 
   ngOnInit(): void {
   }
 
-  ngDoCheck(){
-    if(localStorage.getItem('token'))
-    {
+  ngDoCheck() {
+    if (localStorage.getItem('token')) {
       this.islooged = true;
 
     }

@@ -1,4 +1,7 @@
-<nav class="navbar navbar-light fixed-top">
+<nav
+  class="navbar navbar-light bg-transparent"
+  [ngClass]="{ 'fixed-top': ruta || ruta2, 'noruta': !ruta }"
+>
   <div class="container-fluid">
     <a class="navbar-brand" [routerLink]="['/home']"
       ><img src="assets/img/logo.png" alt="logo patronus"
