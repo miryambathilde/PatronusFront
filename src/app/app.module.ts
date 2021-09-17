@@ -43,14 +43,14 @@ import { AboutComponent } from './components/about/about.component';
     SidebarComponent,
     CardDeportistaComponent,
     ChartPieComponent,
-    AboutComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
