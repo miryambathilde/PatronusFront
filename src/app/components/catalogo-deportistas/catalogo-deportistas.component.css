@@ -129,3 +129,9 @@
   background-color: #e52026;
   border: 2px solid #8a1418;
 }
+
+.imagen-deportista {
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+}

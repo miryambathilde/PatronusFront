@@ -10,6 +10,7 @@ export class DeportistasService {
   constructor() {
     this.arrDeportistas = [
       {
+        id: 1,
         nombre: 'Rosa',
         apellidos: 'Estevan',
         edad: 30,
@@ -19,11 +20,15 @@ export class DeportistasService {
         deporte: 'Baloncesto',
         pais: 'España',
         porcentaje: 95,
+        patrocinadores: 'BBVA',
         fecha: '2021-11-05',
         dinero: 10000,
-        contraseña: '1234'
+        contraseña: '1234',
+        rendimiento:
+          'https://www.eduardbarcelo.com/wp-content/uploads/2019/04/grafico_gestion_rendimiento.jpg'
       },
       {
+        id: 2,
         nombre: 'Stephane',
         apellidos: 'Messod',
         edad: 23,
@@ -33,11 +38,15 @@ export class DeportistasService {
         deporte: 'Sofing',
         porcentaje: 65,
         fecha: '2021-11-05',
+        patrocinadores: 'CaixaBank',
         dinero: 11500,
         pais: 'Francia',
-        contraseña: '1234'
+        contraseña: '1234',
+        rendimiento:
+          'https://www.eduardbarcelo.com/wp-content/uploads/2019/04/grafico_gestion_rendimiento.jpg'
       },
       {
+        id: 3,
         nombre: 'Jesús',
         apellidos: 'Denis',
         edad: 22,
@@ -47,14 +56,21 @@ export class DeportistasService {
         deporte: 'Musculación',
         porcentaje: 75,
         fecha: '2021-11-05',
+        patrocinadores: 'Banco Santander',
         dinero: 8500,
         pais: 'España',
-        contraseña: '1234'
+        contraseña: '1234',
+        rendimiento:
+          'https://palomasala.com/wp-content/uploads/2017/03/Que-es-el-sobreentrenamiento-o-Sindrome-de-sobreentrenamiento-1.png'
       }
     ];
   }
 
   getAll(): Deportista[] {
     return this.arrDeportistas;
+  }
+
+  getById(pId: number): Deportista | undefined {
+    return this.arrDeportistas.find(deportista => deportista.id === pId);
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from "./components/about/about.component";
 import { CardDeportistaComponent } from "./components/card-deportista/card-deportista.component";
 import { CatalogoDeportistasComponent } from "./components/catalogo-deportistas/catalogo-deportistas.component";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: "", pathMatch: 'full', redirectTo: "/home"},
   {path: "home", component: HomeComponent},
   {path: "login", component: LoginComponent},
+  {path: "about", component: AboutComponent},
   {path: "register", component: RegisterComponent},
   {path: "register/deportistas", component: RegisterDeportistaComponent},
   {path: "register/sponsors", component: RegisterSponsorsComponent },
@@ -25,8 +27,7 @@ const routes: Routes = [
   {path: "portfolio", component: PortfolioComponent },
   {path: "perfil/sponsors", component: PerfilSponsorComponent },
   {path: "catalogo-deportistas", component: CatalogoDeportistasComponent, children:[{path: "filtro", component: FiltrosComponent}]},
-  { path: "catalogo-deportistas", component: CatalogoDeportistasComponent, children: [{ path: "filtro", component: FiltrosComponent }] },
-  { path: "detalle/:idDeportista", component: CardDeportistaComponent},
+  {path: "deportista/:idDeportista", component: CardDeportistaComponent},
   {path: "dashboard", component: DashboardComponent, canActivate: [LoginGuard]},
   {path: "**", redirectTo: "/home"},
 ];

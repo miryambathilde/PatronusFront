@@ -22,28 +22,27 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PerfilSponsorComponent } from './components/perfil-sponsor/perfil-sponsor.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CardDeportistaComponent } from './components/card-deportista/card-deportista.component';
-import { ChartPieComponent } from './components/charts/chart-pie/chart-pie.component';
 
 
-
+import { AboutComponent } from './components/about/about.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    HeaderComponent,
-    LoginComponent,
-    RegisterComponent,
-    RegisterDeportistaComponent,
-    RegisterSponsorsComponent,
-    DashboardComponent,
-    ProfileSponsorComponent,
-    CatalogoDeportistasComponent,
-    FiltrosComponent,
-    PortfolioComponent,
-    PerfilSponsorComponent,
-    SidebarComponent,
-    CardDeportistaComponent,
-    ChartPieComponent
+  AppComponent,
+  HomeComponent,
+  HeaderComponent,
+  LoginComponent,
+  RegisterComponent,
+  RegisterDeportistaComponent,
+  RegisterSponsorsComponent,
+  DashboardComponent,
+  ProfileSponsorComponent,
+  CatalogoDeportistasComponent,
+  FiltrosComponent,
+  PortfolioComponent,
+  PerfilSponsorComponent,
+  SidebarComponent,
+  CardDeportistaComponent,
+  ChartPieComponent,
+  AboutComponent
   ],
   imports: [
     BrowserModule,
