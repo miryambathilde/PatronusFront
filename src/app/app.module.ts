@@ -23,9 +23,8 @@ import { PerfilSponsorComponent } from './components/perfil-sponsor/perfil-spons
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CardDeportistaComponent } from './components/card-deportista/card-deportista.component';
 import { ChartPieComponent } from './components/charts/chart-pie/chart-pie.component';
-
-
 import { AboutComponent } from './components/about/about.component';
+
 @NgModule({
   declarations: [
     AppComponent,
