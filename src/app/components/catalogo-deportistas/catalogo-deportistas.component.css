@@ -3,6 +3,14 @@
 	margin-left: 13px;
 }
 
+@media(min-width: 768px) {
+  .filtros {
+    border-bottom: 0px;
+    /* border-right: 1px solid #ccc; */
+  }
+}
+
+
 .card {
   position: relative;
   display: flex;
