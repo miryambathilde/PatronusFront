@@ -1,0 +1,42 @@
+<section class="container mt-5">
+    <h2 class="mb-5">Ofertas</h2>
+    <div class="row g-4">
+
+
+          <div *ngFor="let offer of offers" class="list-group-item list-group-item-action mb-3 rounded-1 border-1">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-2">{{offer?.company}}</h5>
+              <small class="text-muted">3 days ago</small>
+            </div>
+            <p class="mb-1">Tokens: {{offer?.participations}}</p>
+            <p class="mb-4">Status: {{offer?.status}}</p>
+            <div class="container mt-1 d-flex justify-content-between">
+              <button class="btn btn-sm btn-danger justify-content-start">SPONSOR</button>
+              <div class="container d-flex justify-content-end">
+                <button class="btn btn-sm btn-danger me-3">ACCEPT</button>
+                <button class="btn btn-sm btn-danger">REJECT</button>
+              </div>
+            </div>
+          </div>
+            <!-- <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small class="text-muted">3 days ago</small>
+              </div>
+              <p class="mb-1">Some placeholder content in a paragraph.</p>
+              <small class="text-muted">And some muted small print.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small class="text-muted">3 days ago</small>
+              </div>
+              <p class="mb-1">Some placeholder content in a paragraph.</p>
+              <small class="text-muted">And some muted small print.</small>
+            </a> -->
+        </div>
+  </section>
+  <hr>
+
+
+  

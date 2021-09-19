@@ -17,19 +17,28 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(pForm:any){
-    const user = this.usersServices.login(pForm.value);
-    console.log(user);
-    if(user !== undefined)
-    {
-      //token en el localstorage
-      localStorage.setItem('token', user!.email);
-      alert('usuario existe tienes acceso')
+  async onSubmit(pForm:any) {
+    const result = await this.usersServices.login(pForm.value);
+    if(result.token) {
+      localStorage.setItem('token', result.token);
+      localStorage.setItem('role', result.role);
+      localStorage.setItem('id', result.userId);
       this.router.navigate(['/dashboard']);
+    } else {
+      alert('Usuario o contraseña incorrectos. Por favor, revise los datos');
     }
-    else{
-      alert('usuario no existe')
-    }
+    // const user = this.usersServices.login(pForm.value);
+    // console.log(user);
+    // if(user !== undefined)
+    // {
+    //   //token en el localstorage
+    //   localStorage.setItem('token', user!.email);
+    //   alert('usuario existe tienes acceso')
+    //   this.router.navigate(['/dashboard']);
+    // }
+    // else{
+    //   alert('usuario no existe')
+    // }
   }
 
 }

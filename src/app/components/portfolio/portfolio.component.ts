@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { myAthlete } from 'src/app/interfaces/myAthlete.interface';
+import { SponsorsService } from 'src/app/services/sponsors.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  myAthletes: myAthlete[] = [];
 
-  ngOnInit(): void {
+  constructor(private sponsorsService: SponsorsService) { }
+
+  async ngOnInit(){
+    this.myAthletes = await this.sponsorsService.getMyAthletes();
+    console.log(this.myAthletes);
   }
 
 }

@@ -45,38 +45,39 @@
           <h5 class="card-title">Editar Perfil</h5>
         </div>
         <div class="card-body">
-          <form>
+          <form #perfilForm="ngForm" (ngSubmit)="onSubmit(perfilForm)">
             <div class="row">
               <div class="col-md-5 pr-1">
                 <div class="form-group">
-                  <label>Compañia (disabled)</label>
+                  <label>Name</label>
                   <input
                     type="text"
                     class="form-control"
-                    disabled=""
-                    placeholder="Company"
-                    value="Golden Investiments .SA"
-                  />
+                    ngModel name="name"
+                    placeholder="Name"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-3 px-1">
-                <div class="form-group">
-                  <label>Usuario</label>
-                  <input
+                <div class="col-md-3 px-1">
+                  <div class="form-group">
+                    <label>Surname</label>
+                    <input
                     type="text"
                     class="form-control"
-                    placeholder="Username"
-                    value="williams97"
+                    ngModel name="surname"
+                    placeholder="Bascón"
+                    value="Bascón"
                   />
                 </div>
               </div>
               <div class="col-md-4 pl-1">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Correo Electrónico</label>
+                  <label for="exampleInputEmail1">Edad</label>
                   <input
                     type="email"
                     class="form-control"
-                    placeholder="Email"
+                    ngModel name="age"
+                    placeholder="Age"
                   />
                 </div>
               </div>
@@ -84,23 +85,23 @@
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  <label>Nombre</label>
+                  <label>Country</label>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Company"
-                    value="Jesus Ignacio"
+                    ngModel name="country"
+                    placeholder="Country"
                   />
                 </div>
               </div>
               <div class="col-md-6 pl-1">
                 <div class="form-group">
-                  <label>Apellidos</label>
+                  <label>Email</label>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Last Name"
-                    value="Denis Ulbeira"
+                    ngModel name="email"
+                    placeholder="Email"
                   />
                 </div>
               </div>
@@ -108,12 +109,25 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>Dirección</label>
+                  <label>Rendimiento</label>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Home Address"
-                    value="Marques de Quintanar, 9 , 2ºB"
+                    ngModel name="rendimiento"
+                    placeholder="Rendimiento"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>RRSS</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    ngModel name="rss"
+                    placeholder="RRSS"
                   />
                 </div>
               </div>
@@ -121,33 +135,12 @@
             <div class="row">
               <div class="col-md-4 pr-1">
                 <div class="form-group">
-                  <label>Ciudad</label>
+                  <label>Sport</label>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="City"
-                    value="Baiona"
-                  />
-                </div>
-              </div>
-              <div class="col-md-4 px-1">
-                <div class="form-group">
-                  <label>Pais</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Country"
-                    value="España"
-                  />
-                </div>
-              </div>
-              <div class="col-md-4 pl-1">
-                <div class="form-group">
-                  <label>Postal Code</label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="ZIP Code"
+                    ngModel name="sport"
+                    placeholder="Sport"
                   />
                 </div>
               </div>
@@ -155,10 +148,6 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>About Me</label>
-                  <textarea class="form-control textarea">
-    Joven inversor centrado en deportes de contacto.</textarea
-                  >
                 </div>
               </div>
             </div>
@@ -175,3 +164,5 @@
     </div>
   </div>
 </div>
+
+

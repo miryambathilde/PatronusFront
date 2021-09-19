@@ -1,0 +1,12 @@
+.waiting{
+    color: rgb(231, 231, 24);
+}
+
+.accepted{
+    color: green;
+}
+
+.rejected{
+    color: grey;
+}
+
