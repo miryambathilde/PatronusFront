@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Deportista } from "src/app/interfaces/deportista.interface";
-import { DeportistasService } from "src/app/services/deportistas.service";
+import { AthletesService } from 'src/app/services/athletes.service';
+import { SponsorsService } from 'src/app/services/sponsors.service';
 
 @Component({
   selector: 'app-catalogo-deportistas',
@@ -11,10 +12,13 @@ export class CatalogoDeportistasComponent implements OnInit {
 
   deportistas: Deportista[] | undefined;
 
-  constructor(private deportistasService: DeportistasService) {}
+  constructor(
+    private athletesService: AthletesService,
+    private sponsorsService: SponsorsService) {}
 
-  ngOnInit(): void {
-    this.deportistas = this.deportistasService.getAll();
+  async ngOnInit() {
+    this.deportistas = await this.sponsorsService.getAllAthletes();
+    console.log(this.deportistas);
   }
 
   //EVENTO DEL OUTPUT //

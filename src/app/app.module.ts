@@ -19,11 +19,17 @@ import { ProfileSponsorComponent } from './components/profile-sponsor/profile-sp
 import { CatalogoDeportistasComponent } from './components/catalogo-deportistas/catalogo-deportistas.component';
 import { FiltrosComponent } from './components/filtros/filtros.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { PerfilSponsorComponent } from './components/perfil-sponsor/perfil-sponsor.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CardDeportistaComponent } from './components/card-deportista/card-deportista.component';
 import { ChartPieComponent } from './components/charts/chart-pie/chart-pie.component';
 import { AboutComponent } from './components/about/about.component';
+import { ListadoOfertasComponent } from './components/listado-ofertas/listado-ofertas.component';
+import { EnvioPropuestaComponent } from './components/envio-propuesta/envio-propuesta.component';
+import { EditProfileSponsorComponent } from './components/edit-profile-sponsor/edit-profile-sponsor.component';
+import { EditProfileAthleteComponent } from './components/edit-profile-athlete/edit-profile-athlete.component';
+import { OffersMadeComponent } from './components/offers-made/offers-made.component';
+import { NewsComponent } from './components/news/news.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -39,11 +45,17 @@ import { AboutComponent } from './components/about/about.component';
     CatalogoDeportistasComponent,
     FiltrosComponent,
     PortfolioComponent,
-    PerfilSponsorComponent,
     SidebarComponent,
     CardDeportistaComponent,
     ChartPieComponent,
-    AboutComponent
+    AboutComponent,
+    ListadoOfertasComponent,
+    EnvioPropuestaComponent,
+    EditProfileSponsorComponent,
+    EditProfileAthleteComponent,
+    OffersMadeComponent,
+    NewsComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

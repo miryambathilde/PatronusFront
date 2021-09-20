@@ -5,3 +5,7 @@
 .noruta {
   z-index: 9000;
 }
+
+.logout {
+  cursor: pointer;
+}

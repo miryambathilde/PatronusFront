@@ -59,9 +59,10 @@ export class RegisterDeportistaComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    const mensaje = this.usersServices.register(this.registerDeportistas.value);
-    if (mensaje !== '') {
+  async onSubmit() {
+    const mensaje = await this.usersServices.registerAthlete(this.registerDeportistas.value);
+    console.log(mensaje);
+    if(mensaje.affectedRows) {
       this.router.navigate(['/login']);
     }
   }

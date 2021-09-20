@@ -54,10 +54,17 @@ export class RegisterSponsorsComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    const mensaje = this.usersServices.register(this.registerSponsor.value);
-    if (mensaje !== '') {
+  async onSubmit() {
+    const mensaje = await this.usersServices.registerSponsor(this.registerSponsor.value);
+    if(mensaje.affectedRows) {
       this.router.navigate(['/login']);
     }
   }
+
+  // onSubmit() {
+  //   const mensaje = this.usersServices.register(this.registerSponsor.value);
+  //   if (mensaje !== '') {
+  //     this.router.navigate(['/login']);
+  //   }
+  // }
 }

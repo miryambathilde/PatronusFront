@@ -16,17 +16,17 @@
               Dashboard
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!isAthlete">
             <a
               class="nav-link"
-              [routerLink]="['/perfil/sponsors']"
+              [routerLink]="['/editprofile/sponsor']"
               routerLinkActive="active"
             >
               <span data-feather="file"></span>
-              Mi Perfil
+              Perfil sponsor
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!isAthlete">
             <a
               class="nav-link"
               [routerLink]="['/portfolio']"
@@ -36,10 +36,34 @@
               Portfolio
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!isAthlete">
             <a [routerLink]="['/catalogo-deportistas']" class="nav-link" href="#">
               <span data-feather="users"></span>
               Catálogo
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="!isAthlete">
+            <a [routerLink]="['/offers-made']" class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Mis ofertas
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="!isAthlete">
+            <a [routerLink]="['/favorites']" class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Mis favoritos
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="!isSponsor">
+            <a [routerLink]="['/editprofile/athlete']" class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Perfil deportista
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="!isSponsor">
+            <a [routerLink]="['/offers']" class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Offers
             </a>
           </li>
           <!-- <li class="nav-item">

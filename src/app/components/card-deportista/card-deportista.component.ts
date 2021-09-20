@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Deportista } from "src/app/interfaces/deportista.interface";
-import { DeportistasService } from "src/app/services/deportistas.service";
+import { AthletesService } from "src/app/services/athletes.service";
+import { SponsorsService } from 'src/app/services/sponsors.service';
 
 @Component({
   selector: 'app-card-deportista',
@@ -12,14 +13,17 @@ export class CardDeportistaComponent implements OnInit {
 
   miDeportista: Deportista | undefined;
 
-  constructor(private deportistasService: DeportistasService, private activatedRoute: ActivatedRoute) { }
+  constructor(
+     private AthletesService: AthletesService,
+     private SponsorsService: SponsorsService,
+     private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(async params => {
       const id = parseInt(params.idDeportista);
-      this.miDeportista = this.deportistasService.getById(id);
-      //console.log(params.idDeportista);
+      this.miDeportista = await this.SponsorsService.getAthleteById(id);
+      console.log(this.miDeportista);
     })
-  }
+  };
 
 }

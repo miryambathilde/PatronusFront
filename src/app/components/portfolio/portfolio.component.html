@@ -31,22 +31,28 @@
         <table class="table tabla">
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Deporte</th>
-              <th>Edad</th>
-              <th>Pais</th>
-              <th class="text-right">Tokens adquiridos</th>
+              <th class="text-center">Nombre</th>
+              <th class="text-center">Deporte</th>
+              <th class="text-center">Edad</th>
+              <th class="text-center">Pais</th>
+              <th class="text-center">Tokens adquiridos</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Michael Phelps</td>
-              <td>Natación</td>
-              <td>36</td>
-              <td>Estados Unidos</td>
-              <td class="text-right">35</td>
+            <tr *ngFor="let myAthlete of myAthletes">
+              <td class="text-center">{{myAthlete?.name}} {{myAthlete?.surname}}</td>
+              <td class="text-center">{{myAthlete?.sport}}</td>
+              <td class="text-center">{{myAthlete?.age}}</td>
+              <td class="text-center">{{myAthlete?.country}}</td>
+              <td class="text-center">{{myAthlete?.participations}}</td>
+              <td class="text-right">
+                <button routerLinkActive="active" [routerLink]="['/deportista', myAthlete?.fk_athletes]" type="submit" class="btn btn-danger btn-round">
+                Ver Ficha
+                </button>
+            </td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td>Rafael Nadal</td>
               <td>Tenis</td>
               <td>35</td>
@@ -66,7 +72,7 @@
               <td>35</td>
               <td>Portugal</td>
               <td class="text-right">30</td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>

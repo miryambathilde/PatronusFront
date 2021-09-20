@@ -1,5 +1,5 @@
 export interface Sponsor {
-  empresa: string;
+  company: string;
   logo: string;
-  deportes: any[];
+  sports: any[];
 }
