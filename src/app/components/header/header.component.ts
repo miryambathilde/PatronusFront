@@ -35,9 +35,13 @@ export class HeaderComponent implements OnInit {
   }
 
   ngDoCheck() {
-    if (localStorage.getItem('token')) {
-      this.islooged = true;
-    }
+    const token = localStorage.getItem('token');
+    this.islooged = (token !== null) ? true : false;
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
 

@@ -39,7 +39,7 @@
               >Home</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!islooged" >
             <a
               class="nav-link active"
               aria-current="page"
@@ -63,8 +63,7 @@
               >Register</a
             >
           </li>
-
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="islooged">
             <a
               class="nav-link active"
               aria-current="page"
@@ -78,6 +77,14 @@
               aria-current="page"
               [routerLink]="['/news']"
               >Noticias</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="islooged">
+            <a
+            (click)="logout()"
+              class="nav-link active logout"
+              aria-current="page"
+              >Logout</a
             >
           </li>
         </ul>
