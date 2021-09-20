@@ -45,7 +45,7 @@
           <h5 class="card-title">Editar Perfil</h5>
         </div>
         <div class="card-body">
-          <form #perfilForm="ngForm" (ngSubmit)="onSubmit(perfilForm)">
+          <form #perfilForm="ngForm" (ngSubmit)="onSubmit(perfilForm)" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-5 pr-1">
                 <div class="form-group">
@@ -160,6 +160,7 @@
                   <label>Logo</label>
                   <input
                     type="file"
+                    (change)="recogerImagen($event)"
                     class="form-control"
                     placeholder="Home Address"
                     value="Marques de Quintanar, 9 , 2ºB"

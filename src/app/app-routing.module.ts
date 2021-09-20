@@ -7,10 +7,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EditProfileAthleteComponent } from './components/edit-profile-athlete/edit-profile-athlete.component';
 import { EditProfileSponsorComponent } from './components/edit-profile-sponsor/edit-profile-sponsor.component';
 import { EnvioPropuestaComponent } from './components/envio-propuesta/envio-propuesta.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 import { FiltrosComponent } from "./components/filtros/filtros.component";
 import { HomeComponent } from './components/home/home.component';
 import { ListadoOfertasComponent } from './components/listado-ofertas/listado-ofertas.component';
 import { LoginComponent } from './components/login/login.component';
+import { NewsComponent } from './components/news/news.component';
 import { OffersMadeComponent } from './components/offers-made/offers-made.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ProfileSponsorComponent } from "./components/profile-sponsor/profile-sponsor.component";
@@ -36,6 +38,8 @@ const routes: Routes = [
   {path: "offers-made", component: OffersMadeComponent},
   {path: "envio-propuesta/:idDeportista", component: EnvioPropuestaComponent},
   {path: "deportista/:idDeportista", component: CardDeportistaComponent},
+  {path: "favorites", component: FavoritesComponent},
+  {path: "news", component: NewsComponent},
   {path: "dashboard", component: DashboardComponent, canActivate: [LoginGuard]},
   {path: "**", redirectTo: "/home"},
 ];

@@ -10,6 +10,7 @@ import { SponsorsService } from 'src/app/services/sponsors.service';
 export class EditProfileSponsorComponent implements OnInit {
 
   sponsor: Sponsor | undefined;
+  files: any;
 
   constructor( private sponsorsService: SponsorsService ) { }
 
@@ -17,8 +18,16 @@ export class EditProfileSponsorComponent implements OnInit {
     this.sponsor = await this.sponsorsService.getSponsor();
   }
 
+  recogerImagen($event: any) {
+    this.files = $event.target.files
+  }
+
   async onSubmit(pForm: any) {
-    const result = await this.sponsorsService.editSponsor(pForm.value);
+    let formulario = new FormData();
+    formulario.append('logo', this.files[0]);
+    formulario.append('company', pForm.value.company);
+    formulario.append('email', pForm.value.email);
+    const result = await this.sponsorsService.editSponsor(formulario);
     console.log(result);
   }
 

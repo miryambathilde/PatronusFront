@@ -28,6 +28,8 @@ import { EnvioPropuestaComponent } from './components/envio-propuesta/envio-prop
 import { EditProfileSponsorComponent } from './components/edit-profile-sponsor/edit-profile-sponsor.component';
 import { EditProfileAthleteComponent } from './components/edit-profile-athlete/edit-profile-athlete.component';
 import { OffersMadeComponent } from './components/offers-made/offers-made.component';
+import { NewsComponent } from './components/news/news.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { OffersMadeComponent } from './components/offers-made/offers-made.compon
     EnvioPropuestaComponent,
     EditProfileSponsorComponent,
     EditProfileAthleteComponent,
-    OffersMadeComponent
+    OffersMadeComponent,
+    NewsComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

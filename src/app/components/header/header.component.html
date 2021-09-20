@@ -63,46 +63,8 @@
               >Register</a
             >
           </li>
+
           <li class="nav-item">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              [routerLink]="['/about']"
-              >Noticiario</a
-            >
-          </li>
-          <li class="nav-item" *ngIf="islooged">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              [routerLink]="['/dashboard']"
-              >Deportistas</a
-            >
-          </li>
-          <li class="nav-item" *ngIf="islooged">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              [routerLink]="['/dashboard']"
-              >Portfolio</a
-            >
-          </li>
-          <li class="nav-item" *ngIf="islooged">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              [routerLink]="['/dashboard']"
-              >Perfil</a
-            >
-            <li class="nav-item" *ngIf="islooged">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                [routerLink]="['/dashboard']"
-                >Mis favoritos</a
-              >
-          </li>
-          <li class="nav-item" *ngIf="islooged">
             <a
               class="nav-link active"
               aria-current="page"
@@ -110,20 +72,12 @@
               >Dashboard</a
             >
           </li>
-          <li class="nav-item" *ngIf="islooged">
+          <li class="nav-item">
             <a
               class="nav-link active"
               aria-current="page"
-              [routerLink]="['/dashboard']"
-              >Ofertas</a
-            >
-          </li>
-          <li class="nav-item" *ngIf="islooged">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              [routerLink]="['/dashboard']"
-              >Logout</a
+              [routerLink]="['/news']"
+              >Noticias</a
             >
           </li>
         </ul>

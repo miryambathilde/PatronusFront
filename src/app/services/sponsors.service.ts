@@ -78,10 +78,9 @@ export class SponsorsService {
     return this.httpClient.post<any>(this.baseUrl + 'newOffer/' + idSponsor, pFormItems, httpOptions).toPromise();
   }
 
-  editSponsor(pForm: {company: string, email: string, logo: string}): Promise<any> {
+  editSponsor(pForm: FormData): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-type': 'application/json',
         'Authorization': localStorage.getItem('token')!
       })
     };

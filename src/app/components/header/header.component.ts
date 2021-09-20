@@ -10,7 +10,6 @@ import { NavigationEnd } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   islooged: boolean = false;
-  isSponsor: boolean = false;
   ruta: boolean = false;
   ruta2: boolean = false;
 
@@ -38,9 +37,6 @@ export class HeaderComponent implements OnInit {
   ngDoCheck() {
     if (localStorage.getItem('token')) {
       this.islooged = true;
-    }
-    if(localStorage.getItem('role') === 'S'){
-      this.isSponsor = true;
     }
   }
 
