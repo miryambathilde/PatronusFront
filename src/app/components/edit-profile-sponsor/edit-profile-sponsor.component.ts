@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Sponsor } from 'src/app/interfaces/sponsor.interface';
 import { SponsorsService } from 'src/app/services/sponsors.service';
 
 @Component({
@@ -8,9 +9,12 @@ import { SponsorsService } from 'src/app/services/sponsors.service';
 })
 export class EditProfileSponsorComponent implements OnInit {
 
+  sponsor: Sponsor | undefined;
+
   constructor( private sponsorsService: SponsorsService ) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.sponsor = await this.sponsorsService.getSponsor();
   }
 
   async onSubmit(pForm: any) {

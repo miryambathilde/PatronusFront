@@ -49,14 +49,13 @@
             <div class="row">
               <div class="col-md-5 pr-1">
                 <div class="form-group">
-                  <label>Company (disabled)</label>
+                  <label>Company</label>
                   <input
                     type="text"
                     class="form-control"
-                    disabled=""
                     placeholder="Company"
                     ngModel name="company"
-                    value="Golden Investiments .SA"
+                    value={{sponsor?.company}}
                   />
                 </div>
               </div>
@@ -150,6 +149,32 @@
                     type="number"
                     class="form-control"
                     placeholder="ZIP Code"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Logo</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    placeholder="Home Address"
+                    value="Marques de Quintanar, 9 , 2ºB"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Sports: {{sponsor?.sports}}</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Home Address"
+                    value="Marques de Quintanar, 9 , 2ºB"
                   />
                 </div>
               </div>
