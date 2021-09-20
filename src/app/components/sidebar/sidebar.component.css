@@ -42,7 +42,8 @@
 }
 
 .sidebar .nav-link.active {
-  color: #2470dc;
+  color: black;
+  text-shadow: black 0.5px 0.25px;
 }
 
 .sidebar .nav-link:hover .feather,
@@ -58,3 +59,5 @@
 .encima {
   cursor: pointer;
 }
+
+

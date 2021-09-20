@@ -12,18 +12,30 @@
 }
 
 .deportistas {
-  background-image: url("https://cdn.pixabay.com/photo/2017/05/25/15/08/jogging-2343558_960_720.jpg");
+  background-image: url("../../../assets/img/corriendo-blanco.jpg");
   background-size: cover;
   display: flex;
   position: center center;
 }
 
 .sponsors {
-  background-image: url("https://cdn.pixabay.com/photo/2020/11/27/16/59/man-5782411_960_720.jpg");
+  background-image: url("../../../assets/img/ordena-blanc.jpg");
   background-size: cover;
   position: center center;
 }
 
 button {
+  background-color: transparent;
+  border: none;
+  transform: skewX(173deg);
+  font-weight:500;
+  font-size: 50px;
+  color:#e52026;
+  background-color:transparent
+}
+
+button:hover {
   background-color: #e52026;
+  color:whitesmoke;
+
 }
