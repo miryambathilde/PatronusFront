@@ -133,6 +133,20 @@
               </div>
             </div>
             <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Foto</label>
+                  <input
+                    type="file"
+                    (change)="recogerImagen($event)"
+                    class="form-control"
+                    placeholder="Home Address"
+                    value="Marques de Quintanar, 9 , 2ºB"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md-4 pr-1">
                 <div class="form-group">
                   <label>Sport</label>
@@ -159,6 +173,9 @@
               </div>
             </div>
           </form>
+          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" (click)="onDelete()">
+            Delete Account
+          </button>
         </div>
       </div>
     </div>

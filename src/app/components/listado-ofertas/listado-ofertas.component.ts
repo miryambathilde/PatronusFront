@@ -18,4 +18,14 @@ export class ListadoOfertasComponent implements OnInit {
     console.log(this.offers);
   }
 
+  async onAccept(idOffer: any) {
+    const result = await this.athletesService.acceptOffer(idOffer);
+    console.log(result);
+  }
+
+  async onReject(idOffer: any) {
+    const result = await this.athletesService.rejectOffer(idOffer);
+    console.log(result);
+  }
+
 }
