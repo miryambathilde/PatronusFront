@@ -8,16 +8,16 @@ import { SponsorsService } from 'src/app/services/sponsors.service';
   styleUrls: ['./filtros.component.css']
 })
 export class FiltrosComponent implements OnInit {
-  // @Output() filtroPais: EventEmitter<string> = new EventEmitter();
-  // @Output() filtroDeporte: EventEmitter<string> = new EventEmitter();
-  // @Output() filtroInvertible: EventEmitter<string> = new EventEmitter();
+  @Output() filtroPais: EventEmitter<string> = new EventEmitter();
+  @Output() filtroDeporte: EventEmitter<string> = new EventEmitter();
+  @Output() filtroInvertible: EventEmitter<string> = new EventEmitter();
 
   countries: any[] = [];
   sports: any[] = [];
   athletesByCountry: myAthlete[] | undefined;
   athletesBySports: myAthlete[] | undefined;
 
-  constructor( private sponsorsService: SponsorsService ) {}
+  constructor(private sponsorsService: SponsorsService) { }
 
   async ngOnInit() {
     this.countries = await this.sponsorsService.getCountries();
@@ -37,7 +37,7 @@ export class FiltrosComponent implements OnInit {
     console.log(this.athletesBySports);
   }
 
-  
+
 
   // //EMITIMOS LOS EVENTOS DE LOS OUTPUTS //
   // recogerPais($event: any) {

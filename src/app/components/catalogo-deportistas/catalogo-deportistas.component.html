@@ -1,52 +1,32 @@
 <section class="container mt-5">
   <div class="row">
     <app-sidebar></app-sidebar>
-    <div class="col-xs-12 col-md-12 col-xl-12 p-3 filtros">
+    <div class="col-9 offset-3 col-lg-11 offset-lg-1 p-3 filtros">
       <!-- OUTPUTS FILTROS-->
-      <section class="container mt-5">
-        <div class="row me-5">
-          <div class="col-12 col-sm-12 col-md-12 my-3 me-5">
-            <label class="mb-2 me-2">Filtro por Pais:</label>
-            <select class="me-2" (change)="recogerPais($event)">
-              <option value="todos">Todos</option>
-              <option *ngFor="let country of countries" [value]="country?.country">{{country?.country}}</option>
-            </select>
-            <label class="mb-2 me-2">Filtro por Deporte:</label>
-            <select class="me-2" (change)="recogerDeporte($event)">
-              <option value="todos">Todos</option>
-              <option *ngFor="let sport of sports" [value]="sport?.sport">{{sport?.sport}}</option>
-            </select>
-            <label class="mb-2 me-2">Filtro por Invertible:</label>
-            <select (change)="recogerInvertible($event)" class="me-2">
-              <option value="invertibles">Invertibles</option>
-              <option value="noinvertibles">Ya no disponibles</option>
-            </select>
+              <app-filtros
+              (filtroPais)="onFiltroPais($event)"
+              (filtroDeporte)="onFiltroDeporte($event)"
+              (filtroInvertible)="onFiltroInvertible($event)"
+              ></app-filtros>
+              <form class="form-inline d-flex">
+                  <label class="me-2 aling">Ordenar por :</label>
+                  <div class="short-by">
+                    <select
+                    class="form-select basic-select select2-hidden-accessible"
+                    data-select2-id="1"
+                    tabindex="-1"
+                    aria-hidden="true"
+                    >
+                    <option data-select2-id="3">% invertido</option>
+                    <option>Fecha límite</option>
+                  </select>
+                </div>
+            </form>
           </div>
-        </div>
-      </section>
-    </div>
   </div>
   <div class="container">
     <div class="col-lg-9">
       <div class="shortby ml-sm-auto d-flex align-items-left">
-        <form class="form-inline">
-          <div class="form-group mb-0">
-            <label class="justify-content-start me-5">Ordenar por :</label>
-            <div class="short-by">
-              <select
-                class="form-control basic-select select2-hidden-accessible"
-                data-select2-id="1"
-                tabindex="-1"
-                aria-hidden="true"
-                (change)="ordenar($event)"
-              >
-                <option data-select2-id="3" value="todos">Todos</option>
-                <option data-select2-id="3" value="percentage">% Invertido</option>
-                <option value="limitdate">Fecha límite</option>
-              </select>
-            </div>
-          </div>
-        </form>
       </div>
     </div>
 

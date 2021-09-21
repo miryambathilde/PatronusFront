@@ -18,7 +18,7 @@ export class CatalogoDeportistasComponent implements OnInit {
 
   constructor(
     private athletesService: AthletesService,
-    private sponsorsService: SponsorsService) {}
+    private sponsorsService: SponsorsService) { }
 
   async ngOnInit() {
     this.countries = await this.sponsorsService.getCountries();
@@ -29,17 +29,17 @@ export class CatalogoDeportistasComponent implements OnInit {
 
 
   async recogerPais($event: any) {
-    if($event.target.value === 'todos') {
+    if ($event.target.value === 'todos') {
       this.deportistas = await this.sponsorsService.getAllAthletes();
 
-    } else  {
+    } else {
       this.deportistas = await this.sponsorsService.getAthleteByCountry($event.target.value);
       console.log(this.deportistas);
     }
   }
 
   async recogerDeporte($event: any) {
-    if($event.target.value === 'todos') {
+    if ($event.target.value === 'todos') {
       this.deportistas = await this.sponsorsService.getAllAthletes();
       console.log(this.deportistas);
     } else {
@@ -51,7 +51,7 @@ export class CatalogoDeportistasComponent implements OnInit {
 
 
   async recogerInvertible($event: any) {
-    if($event.target.value === 'invertibles') {
+    if ($event.target.value === 'invertibles') {
       this.deportistas = await this.sponsorsService.getAthletesInvertibles();
       console.log(this.deportistas);
     } else if ($event.target.value === 'noinvertibles') {
@@ -64,7 +64,7 @@ export class CatalogoDeportistasComponent implements OnInit {
     if ($event.target.value === 'todos') {
       this.deportistas = await this.sponsorsService.getAllAthletes();
       console.log(this.deportistas);
-    } else if($event.target.value === 'percentage') {
+    } else if ($event.target.value === 'percentage') {
       this.deportistas = await this.sponsorsService.getAthletesByPercentage();
       console.log(this.deportistas);
     } else if ($event.target.value === 'limitdate') {
@@ -75,15 +75,15 @@ export class CatalogoDeportistasComponent implements OnInit {
 
 
   // //EVENTO DEL OUTPUT //
-  // onFiltroPais($event: any) {
-  //   console.log($event);
-  // }
-  // onFiltroDeporte($event: any) {
-  //   console.log($event);
-  // }
-  // onFiltroInvertible($event: any) {
-  //   console.log($event);
-  // }
+  onFiltroPais($event: any) {
+    console.log($event);
+  }
+  onFiltroDeporte($event: any) {
+    console.log($event);
+  }
+  onFiltroInvertible($event: any) {
+    console.log($event);
+  }
 
 }
 

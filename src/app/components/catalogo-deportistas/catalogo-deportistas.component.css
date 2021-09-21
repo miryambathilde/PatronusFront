@@ -15,6 +15,17 @@
   }
 }
 
+.filtros {
+  display: flex;
+}
+
+.filtros form {
+  margin-left: auto;
+}
+
+.aling {
+  vertical-align: middle;
+}
 
 .card {
   position: relative;
