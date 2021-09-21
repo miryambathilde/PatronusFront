@@ -3,6 +3,11 @@
 	margin-left: 13px;
 }
 
+.mb-2:first-child {
+	margin-bottom: 0.5rem !important;
+/* 	margin-top: 1.5rem !important; */
+}
+
 @media(min-width: 768px) {
   .filtros {
     border-bottom: 0px;

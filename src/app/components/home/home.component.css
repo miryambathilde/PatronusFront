@@ -35,6 +35,16 @@
   transform: skewX(173deg);
 }
 
+a {
+  color: #fff;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+a:hover{
+  color: #d6d6d6;
+  font-size: 1.1rem;
+}
 
 
 
