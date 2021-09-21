@@ -195,7 +195,7 @@ export class SponsorsService {
       })
     };
     const idSponsor = localStorage.getItem('id');
-    return this.httpClient.put<any>(this.baseUrl + 'deleteAccount/' + idSponsor, httpOptions).toPromise();
+    return this.httpClient.put<any>(this.baseUrl + 'deleteAccount/' + idSponsor, null, httpOptions).toPromise();
   }
 
 
