@@ -1,6 +1,6 @@
 .hero {
   height: 100vh;
-  background-image: url("../../../assets/img/Bici.png");
+  background-image: url("../../../assets/img/Bici3.jpg");
   background-size: cover;
   background-position: center center;
   display: flex;
@@ -8,13 +8,17 @@
   justify-content: center;
   align-items: center;
   background-blend-mode: darken;
-  background-color: grey;
+  background-color: rgb(136, 136, 136);
 }
 
 .hero h1 {
   color: white;
   font-weight: 600;
   vertical-align: baseline;
+  display: flex;
+  justify-content: center;
+  font-size:430%
+
 }
 .hero h4 {
   color: white;
@@ -26,4 +30,9 @@
   margin-top: 30px;
   background-color: #e52026;
   font-size: 1.2rem;
+  border-radius: 10px;
+  width: 15%;
+  transform: skewX(173deg);
 }
+
+

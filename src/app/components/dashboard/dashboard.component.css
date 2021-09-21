@@ -118,3 +118,8 @@ td {
   margin-bottom: 0;
   align-items: center;
 }
+
+td button {
+  transform: skewX(173deg);
+  padding: 5px 20px 5px 20px;
+}
