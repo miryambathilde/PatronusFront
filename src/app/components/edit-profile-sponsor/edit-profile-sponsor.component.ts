@@ -31,4 +31,9 @@ export class EditProfileSponsorComponent implements OnInit {
     console.log(result);
   }
 
+  async onDelete() {
+    const result = await this.sponsorsService.deleteAccount();
+    console.log(result);
+  }
+
 }

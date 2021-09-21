@@ -179,6 +179,11 @@
             <br />
             <div class="row">
               <div class="d-grid gap-2">
+                <button (click)="addFavorite()"
+                class="btn btn-danger btn-fluid"
+              >
+                Añadir favorito
+              </button>
                 <button
                   class="btn btn-danger btn-fluid"
                   [routerLink]="['/envio-propuesta', miDeportista?.id]"
