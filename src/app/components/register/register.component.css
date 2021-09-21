@@ -39,3 +39,38 @@ button:hover {
   color:whitesmoke;
 
 }
+
+
+@media (max-width: 575.98px) { 
+
+  button {
+    color: whitesmoke;
+    text-shadow:whitesmoke 1px 1px;
+  }
+
+  .sponsors {
+    background-blend-mode:multiply;
+    background-color: grey;
+  }
+  .deportistas {
+    background-blend-mode:multiply;
+    background-color: grey;
+  }
+}
+
+@media (min-width: 768px) {
+   button {
+    color: whitesmoke;
+    text-shadow:whitesmoke 1px 1px;
+  }
+
+  .sponsors {
+    background-blend-mode:multiply;
+    background-color: grey;
+  }
+  .deportistas {
+    background-blend-mode:multiply;
+    background-color: grey;
+  }
+}
+

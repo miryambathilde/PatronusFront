@@ -211,3 +211,15 @@ a {
  text-decoration: none;
  font-weight: 700;
 }
+
+.izq {
+ max-height: 522px;
+}
+
+
+@media (max-width: 575.98px) { 
+  .izquierda {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+ }

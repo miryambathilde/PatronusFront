@@ -8,3 +8,6 @@
 .deportistas div:first-child {
   border-right: 1px solid #eee;
 }
+.btn  {
+  transform: skewX(173deg);
+}

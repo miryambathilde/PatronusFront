@@ -4,8 +4,38 @@
 .rueda {
   padding-right: 30px;
   padding-left: 30px;
+  width: 400px;
+  height: 400px
 }
 h1 {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 575.98px) { 
+  .rueda {
+	width: 155px;
+	height: 155px;
+
+}
+  .graficas {display: flex;}
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+@media (min-width: 576.98px) and (max-width:790px) { 
+  .rueda {
+	width: 175px;
+	height: 175px;
+
+}
+  .graficas {display: flex;
+  align-content: center;}
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
 }

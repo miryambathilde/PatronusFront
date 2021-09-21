@@ -123,3 +123,66 @@ td button {
   transform: skewX(173deg);
   padding: 5px 20px 5px 20px;
 }
+
+
+
+
+@media (max-width: 576px) { 
+
+ .arriba {
+   margin-bottom: 0;
+
+ }
+
+ .ocultar-contenido {
+  display:none;
+
+}
+
+  td button {
+  transform: skewX(173deg);
+  display: flex;
+  align-content: center;
+  width: 13vh;
+}
+
+}
+@media (min-width: 760px) and (max-width: 900px) { 
+
+ .arriba {
+   margin-bottom: 0;
+
+ }
+
+ .ocultar-tablet {
+   display: none;
+ }
+
+ th:last-child {
+   width: 100vh;
+   height: 45px;
+   display: flex;
+ }
+
+  td button {
+  transform: skewX(173deg);
+  display: flex;
+  align-content: center;
+  width: 10vh;
+
+}
+}
+
+
+@media (min-width: 1199.98px) {
+  .arriba {
+    margin-bottom: 1rem;
+  }
+
+
+}
+ @media (min-width: 1399.98px) { 
+    .arriba {
+    margin-bottom: 1rem;
+  }
+  }

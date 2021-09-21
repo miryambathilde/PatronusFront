@@ -1,7 +1,6 @@
 <div class="container-fluid pt-2">
   <div class="row">
     <app-sidebar></app-sidebar>
-
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div
         class="
@@ -11,8 +10,8 @@
           align-items-center
           pt-3
           pb-2
-          mb-3
           border-bottom
+          arriba
         "
       >
         <h1 class="h2">My Watchlist</h1>
@@ -34,18 +33,18 @@
           </button>
         </div>
       </div>
-      <div class="col-12 d-flex watchlist">
+      <div class="col-12 d-flex watchlist table-responsive">
         <table class="table">
           <thead>
             <tr>
               <th>Foto</th>
-              <th>Nombre</th>
-              <th>Rendimiento</th>
+              <th class="exp">Nombre</th>
+              <th class="ocultar-contenido ocultar-tablet">Rendimiento</th>
               <th>Deporte</th>
-              <th>Edad</th>
-              <th>Pais</th>
-              <th class="text-right">Precio por token</th>
-              <th class="text-right">Tokens en venta</th>
+              <th class="ocultar-contenido">Edad</th>
+              <th class="ocultar-contenido">Pais</th>
+              <th class="text-right ocultar-contenido ocultar-tablet">Precio por token</th>
+              <th class="text-right ocultar-contenido ocultar-tablet">Tokens en venta</th>
               <th class="text-right"></th>
             </tr>
           </thead>
@@ -58,16 +57,16 @@
                   alt=""
                 />
               </td>
-              <td class="nom-perfil"><p>Michael Phelps</p></td>
+              <td class="nom-perfil exp"><p>Michael Phelps</p></td>
 
-              <td>
+              <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica1.png" alt="" />
               </td>
               <td>Natación</td>
-              <td>36</td>
-              <td>Estados Unidos</td>
-              <td class="text-right">1.250€</td>
-              <td class="text-right">600</td>
+              <td class="ocultar-contenido">36</td>
+              <td class="ocultar-contenido">Estados Unidos</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">1.250€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">600</td>
               <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
               Ver Ficha
                 </button></td>
@@ -82,14 +81,14 @@
                 />
               </td>
               <td>Rafael Nadal</td>
-              <td>
+              <td class="ocultar-contenido ocultar-tablet ">
                 <img src="../../../assets/img/graficas/grafica3.png" alt="" />
               </td>
-              <td>Tenis</td>
-              <td>35</td>
-              <td>España</td>
-              <td class="text-right">1.400€</td>
-              <td class="text-right">400</td>
+              <td >Tenis</td>
+              <td class="ocultar-contenido">35</td>
+              <td class="ocultar-contenido">España</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">1.400€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">400</td>
               <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
               Ver Ficha
                 </button></td>
@@ -104,14 +103,14 @@
                 />
               </td>
               <td>Usain Bolt</td>
-              <td>
+              <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica2.png" alt="" />
               </td>
-              <td>Atletismo</td>
-              <td>33</td>
-              <td>Jamaica</td>
-              <td class="text-right">750€</td>
-              <td class="text-right">250</td>
+              <td >Atletismo</td>
+              <td class="ocultar-contenido">33</td>
+              <td class="ocultar-contenido">Jamaica</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">750€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">250</td>
               <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
               Ver Ficha
                 </button></td>
@@ -126,14 +125,14 @@
                 />
               </td>
               <td>Roger Federer</td>
-              <td>
+              <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica5.png" alt="" />
               </td>
               <td>Tenis</td>
-              <td>38</td>
-              <td>Suiza</td>
-              <td class="text-right">1.700€</td>
-              <td class="text-right">120</td>
+              <td class="ocultar-contenido">38</td>
+              <td class="ocultar-contenido">Suiza</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">1.700€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">120</td>
               <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
               Ver Ficha
                 </button></td>
@@ -148,14 +147,14 @@
                 />
               </td>
               <td>Tiger Woods</td>
-              <td>
+              <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica4.png" alt="" />
               </td>
-              <td>Golf</td>
-              <td>44</td>
-              <td>Estados Unidos</td>
-              <td class="text-right">1.750€</td>
-              <td class="text-right">50</td>
+              <td >Golf</td>
+              <td class="ocultar-contenido">44</td>
+              <td class="ocultar-contenido">Estados Unidos</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">1.750€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">50</td>
               <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
               Ver Ficha
                 </button></td>
@@ -170,14 +169,14 @@
                 />
               </td>
               <td>Lionel Messi</td>
-              <td>
+              <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica3.png" alt="" />
               </td>
-              <td>Fútbol</td>
-              <td>32</td>
-              <td>Argentina</td>
-              <td class="text-right">2.250€</td>
-              <td class="text-right">10</td>
+              <td >Fútbol</td>
+              <td class="ocultar-contenido">32</td>
+              <td class="ocultar-contenido">Argentina</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">2.250€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">10</td>
               <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
               Ver Ficha
                 </button></td>
@@ -192,14 +191,14 @@
                 />
               </td>
               <td>Cristiano Ronaldo</td>
-              <td>
+              <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica6.png" alt="" />
               </td>
               <td>Fútbol</td>
-              <td>35</td>
-              <td>Portugal</td>
-              <td class="text-right">3.000€</td>
-              <td class="text-right">15</td>
+              <td class="ocultar-contenido">35</td>
+              <td class="ocultar-contenido">Portugal</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">3.000€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">15</td>
               <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
               Ver Ficha
                 </button></td>
@@ -214,14 +213,14 @@
                 />
               </td>
               <td>Marc Márquez</td>
-              <td>
+              <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica5.png" alt="" />
               </td>
-              <td>Motociclismo</td>
-              <td>27</td>
-              <td>España</td>
-              <td class="text-right">750€</td>
-              <td class="text-right">300</td>
+              <td >Motociclismo</td>
+              <td class="ocultar-contenido">27</td>
+              <td class="ocultar-contenido">España</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">750€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">300</td>
               <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
               Ver Ficha
                 </button></td>
@@ -236,14 +235,14 @@
                 />
               </td>
               <td>Lebron James</td>
-              <td>
+              <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica4.png" alt="" />
               </td>
               <td>Baloncesto</td>
-              <td>35</td>
-              <td>Estados Unidos</td>
-              <td class="text-right">1.750€</td>
-              <td class="text-right">65</td>
+              <td class="ocultar-contenido">35</td>
+              <td class="ocultar-contenido">Estados Unidos</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">1.750€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">65</td>
               <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
               Ver Ficha
                 </button></td>
