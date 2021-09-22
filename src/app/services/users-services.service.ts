@@ -8,11 +8,11 @@ export class UsersServicesService {
 
 
   baseUrl: string;
-  
+
   // arrUsers: User[];
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = "http://localhost:3000/api/users/"
+    this.baseUrl = 'http://2828-85-62-2-98.ngrok.io/api/users/';
   //   this.arrUsers = [
   //     {
   //       id: 1,
@@ -42,7 +42,7 @@ export class UsersServicesService {
       })
     }
     return this.httpClient.post<any>(this.baseUrl + 'register/sponsor', pForm, httpOptions).toPromise();
-  } 
+  }
 
 
   registerAthlete(pForm: any): Promise<any> {
