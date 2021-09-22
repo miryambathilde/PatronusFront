@@ -9,7 +9,7 @@ export class SponsorsService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:3000/api/sponsors/";
+    this.baseUrl = "http://2828-85-62-2-98.ngrok.io/api/sponsors/";
    }
 
    getSponsor(): Promise<any> {
@@ -22,7 +22,7 @@ export class SponsorsService {
      const idSponsor = localStorage.getItem('id');
      return this.httpClient.get<any>(this.baseUrl + idSponsor, httpOptions).toPromise();
    }
-  
+
    getAllAthletes(): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -148,7 +148,7 @@ export class SponsorsService {
         'Content-type': 'application/json',
         'Authorization': localStorage.getItem('token')!
       })
-    }; 
+    };
     const idSponsor = localStorage.getItem('id');
     return this.httpClient.post<any>(this.baseUrl + 'newOffer/' + idSponsor, pFormItems, httpOptions).toPromise();
   }
@@ -160,7 +160,7 @@ export class SponsorsService {
         'Content-type': 'application/json',
         'Authorization': localStorage.getItem('token')!
       })
-    }; 
+    };
     const fk_sponsors = localStorage.getItem('id');
     return this.httpClient.post<any>(this.baseUrl + 'addAthleteFavorite/' + pId, fk_sponsors, httpOptions).toPromise();
   }
@@ -171,7 +171,7 @@ export class SponsorsService {
         'Content-type': 'application/json',
         'Authorization': localStorage.getItem('token')!
       })
-    }; 
+    };
     const fk_sponsor = localStorage.getItem('id');
     return this.httpClient.put<any>(this.baseUrl + 'removeAthleteFavorite/' + pId, fk_sponsor, httpOptions).toPromise();
   }
