@@ -105,6 +105,15 @@ export class AthletesService {
     return this.httpClient.put<any>(this.baseUrl + 'rejectOffer/' + pIdOffer, null, httpOptions).toPromise();
   }
 
+  createNew(pForm: FormData): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    const id = localStorage.getItem('id');
+    return this.httpClient.post<any>(this.baseUrl + 'createNew/' + id, pForm, httpOptions).toPromise();
+  }
 
 
   editAthlete(pForm: FormData): Promise<any> {
@@ -116,4 +125,17 @@ export class AthletesService {
     const id = localStorage.getItem('id');
     return this.httpClient.put<any>(this.baseUrl + 'profile/' + id, pForm, httpOptions).toPromise();
   }
+
+
+  deleteAccount(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    const id = localStorage.getItem('id');
+    return this.httpClient.put<any>(this.baseUrl + 'deleteAccount/' + id, null, httpOptions).toPromise();
+  }
+
+
 }

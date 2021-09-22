@@ -36,10 +36,11 @@ export class EditProfileAthleteComponent implements OnInit {
   }
 
   async onDelete() {
-    // const result = await this.athletesService.deleteAccount();
-    // if(result.affectedRows) {
-    //   this.router.navigate(['/home']);
-    // }
+    const result = await this.athletesService.deleteAccount();
+    localStorage.removeItem('token');
+    if(result.affectedRows) {
+      this.router.navigate(['/home']);
+    }
   }
 
 }

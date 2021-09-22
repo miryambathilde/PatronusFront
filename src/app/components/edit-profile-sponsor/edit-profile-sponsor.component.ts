@@ -75,6 +75,7 @@ export class EditProfileSponsorComponent implements OnInit {
 
   async onDelete() {
     const result = await this.sponsorsService.deleteAccount();
+    localStorage.removeItem('token');
     if(result.affectedRows) {
       this.router.navigate(['/home']);
     }

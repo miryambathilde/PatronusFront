@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from "./components/about/about.component";
 import { CardDeportistaComponent } from "./components/card-deportista/card-deportista.component";
 import { CatalogoDeportistasComponent } from "./components/catalogo-deportistas/catalogo-deportistas.component";
+import { CreateNewComponent } from './components/create-new/create-new.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EditProfileAthleteComponent } from './components/edit-profile-athlete/edit-profile-athlete.component';
 import { EditProfileSponsorComponent } from './components/edit-profile-sponsor/edit-profile-sponsor.component';
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path: "deportista/:idDeportista", component: CardDeportistaComponent},
   {path: "favorites", component: FavoritesComponent},
   {path: "news", component: NewsComponent},
+  {path: "create-new", component: CreateNewComponent},
   {path: "dashboard", component: DashboardComponent, canActivate: [LoginGuard]},
   {path: "**", redirectTo: "/home"},
 ];

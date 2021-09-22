@@ -196,6 +196,17 @@ export class SponsorsService {
     return this.httpClient.get<any>(this.baseUrl + 'sportsBySponsor/' + idSponsor, httpOptions).toPromise();
   }
 
+
+  getMyAthletesFavorites(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    const idSponsor = localStorage.getItem('id');
+    return this.httpClient.get<any>(this.baseUrl + 'myFavorites/' + idSponsor, httpOptions).toPromise();
+  }
+
   // addFavoriteSport(pSport: any): Promise<any> {
   //   const httpOptions = {
   //     headers: new HttpHeaders({
