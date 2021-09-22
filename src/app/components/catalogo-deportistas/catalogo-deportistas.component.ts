@@ -13,6 +13,8 @@ export class CatalogoDeportistasComponent implements OnInit {
 
   deportistas: Deportista[] | undefined;
 
+  urlBack: string = "http://localhost:3000/"
+
   countries: any[] = [];
   sports: any[] = [];
 
@@ -26,15 +28,6 @@ export class CatalogoDeportistasComponent implements OnInit {
     this.deportistas = await this.sponsorsService.getAllAthletes();
     console.log(this.deportistas);
   }
-
-  // linkPhoto(urlPhoto: any) {
-  //   let str = urlPhoto.replace(/public/, '');
-  //   str = str.replace('\\', '');
-  //   str = str.replace('\\', '/');
-  //   const URL = 'http://localhost:2000/';
-  //   const link = URL + str;
-  //   return link;
-  // }
 
 
   async recogerPais($event: any) {

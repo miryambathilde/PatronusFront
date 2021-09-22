@@ -12,7 +12,7 @@ import {​​​​​​ IDropdownSettings }​​​​​​ from 'ng-multis
 })
 export class EditProfileSponsorComponent implements OnInit {
 
-  sponsor: Sponsor | undefined;
+  sponsor: any = {};
   files: any;
 
   dropdownList = [] as any;
@@ -30,12 +30,18 @@ export class EditProfileSponsorComponent implements OnInit {
   async ngOnInit() {
     this.sponsor = await this.sponsorsService.getSponsor();
 
-    this.dropdownList = await this.sponsorsService.getSportsSponsors();
-    console.log(this.dropdownList);
-  
-    this.selectedItems = await this.sponsorsService.getFavoritesSponsor();
-    console.log(this.selectedItems);
 
+    this.selectedItems = await this.sponsorsService.getFavoritesSponsor();
+
+ 
+     setTimeout(async () => {
+      this.dropdownList = await this.sponsorsService.getSportsSponsors();
+      console.log(this.dropdownList);
+    }, 10);
+    
+  
+
+console.log(this.selectedItems);
     // this.selectedItems = [
     //   { item_id: 3, item_text: 'Pune' },
     //   { item_id: 4, item_text: 'Navsari' }
@@ -66,11 +72,18 @@ export class EditProfileSponsorComponent implements OnInit {
 
   async onSubmit(pForm: any) {
     let formulario = new FormData();
-    formulario.append('logo', this.files[0]);
+    if (this.files !== undefined) {
+      formulario.append('logo', this.files[0]);
+    }
     formulario.append('company', pForm.value.company);
     formulario.append('email', pForm.value.email);
+    formulario.append('city', pForm.value.city);
+    formulario.append('country', pForm.value.country);
+    formulario.append('address', pForm.value.address);
+    formulario.append('postalcode', pForm.value.postalcode);
+    formulario.append('aboutme', pForm.value.aboutme);
     const result = await this.sponsorsService.editSponsor(formulario);
-    console.log(result);
+    console.log('Hola');
   }
 
   async onDelete() {

@@ -48,29 +48,18 @@
           <form #perfilForm="ngForm" (ngSubmit)="onSubmit(perfilForm)" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-5 pr-1">
-                <div class="form-group">
-                  <label>Company</label>
+                <div class="formGroup">
+                  <label for="company">Company</label>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Company"
-                    ngModel name="company"
-                    value={{sponsor?.company}}
+                    name="company"
+                    id="company"
+                    [(ngModel)]="sponsor.company"
                   />
                 </div>
               </div>
-              <div class="col-md-3 px-1">
-                <div class="form-group">
-                  <label>Usuario</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Username"
-                    value="williams97"
-                  />
-                </div>
-              </div>
-              <div class="col-md-4 pl-1">
+              <!-- <div class="col-md-4 pl-1">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email</label>
                   <input
@@ -81,75 +70,56 @@
                     ngModel name="email"
                   />
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 pr-1">
-                <div class="form-group">
-                  <label>Nombre</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Company"
-                    value="Jesus Ignacio"
-                  />
-                </div>
-              </div>
-              <div class="col-md-6 pl-1">
-                <div class="form-group">
-                  <label>Apellidos</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Last Name"
-                    value="Denis Ulbeira"
-                  />
-                </div>
-              </div>
+              </div> -->
             </div>
             <div class="row">
               <div class="col-md-12">
-                <div class="form-group">
-                  <label>Dirección</label>
+                <div class="formGroup">
+                  <label for="address">Dirección</label>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Home Address"
-                    value="Marques de Quintanar, 9 , 2ºB"
+                    name="address"
+                    id="address"
+                    [(ngModel)]="sponsor.address"
                   />
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4 pr-1">
-                <div class="form-group">
-                  <label>Ciudad</label>
+                <div class="formGroup">
+                  <label for="city">Ciudad</label>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="City"
-                    value="Baiona"
+                    name="city"
+                    id="city"
+                    [(ngModel)]="sponsor.city"
                   />
                 </div>
               </div>
               <div class="col-md-4 px-1">
-                <div class="form-group">
-                  <label>Pais</label>
+                <div class="formGroup">
+                  <label for="country">Pais</label>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Country"
-                    value="España"
+                    name="country"
+                    id="country"
+                    [(ngModel)]="sponsor.country"
                   />
                 </div>
               </div>
               <div class="col-md-4 pl-1">
-                <div class="form-group">
-                  <label>Postal Code</label>
+                <div class="formGroup">
+                  <label for="postalcode">Postal Code</label>
                   <input
                     type="number"
                     class="form-control"
-                    placeholder="ZIP Code"
+                    name="postalcode"
+                    id="postalcode"
+                    [(ngModel)]="sponsor.postalcode"
                   />
                 </div>
               </div>
@@ -162,31 +132,15 @@
                     type="file"
                     (change)="recogerImagen($event)"
                     class="form-control"
-                    placeholder="Home Address"
-                    value="Marques de Quintanar, 9 , 2ºB"
                   />
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
-                <div class="form-group">
-                  <label>Sports: </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Home Address"
-                    value="Marques de Quintanar, 9 , 2ºB"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label>About Me</label>
-                  <textarea class="form-control textarea">
-    Joven inversor centrado en deportes de contacto.</textarea
+                <div class="formGroup">
+                  <label for="aboutme">About Me</label>
+                  <textarea class="form-control textarea" name="aboutme" id="aboutme" [(ngModel)]="sponsor.aboutme"></textarea
                   >
                 </div>
               </div>
