@@ -27,6 +27,15 @@ export class CatalogoDeportistasComponent implements OnInit {
     console.log(this.deportistas);
   }
 
+  // linkPhoto(urlPhoto: any) {
+  //   let str = urlPhoto.replace(/public/, '');
+  //   str = str.replace('\\', '');
+  //   str = str.replace('\\', '/');
+  //   const URL = 'http://localhost:2000/';
+  //   const link = URL + str;
+  //   return link;
+  // }
+
 
   async recogerPais($event: any) {
     if ($event.target.value === 'todos') {

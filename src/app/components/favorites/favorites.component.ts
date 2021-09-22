@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { myAthlete } from 'src/app/interfaces/myAthlete.interface';
+import { SponsorsService } from 'src/app/services/sponsors.service';
 
 @Component({
   selector: 'app-favorites',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritesComponent implements OnInit {
 
-  constructor() { }
+  favorites: myAthlete[] | undefined;
 
-  ngOnInit(): void {
+  constructor(private sponsorsService: SponsorsService) { }
+
+  async ngOnInit() {
+    this.favorites = await this.sponsorsService.getMyAthletesFavorites();
+    console.log(this.favorites);
   }
 
 }

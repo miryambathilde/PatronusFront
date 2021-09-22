@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { New } from 'src/app/interfaces/new.interface';
+import { UsersServicesService } from 'src/app/services/users-services.service';
 
 @Component({
   selector: 'app-news',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  news: New[] = [];
 
-  ngOnInit(): void {
+  constructor(private usersService: UsersServicesService) { }
+
+  async ngOnInit() {
+    this.news = await this.usersService.getNews();
+    console.log(this.news);
   }
 
 }

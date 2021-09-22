@@ -204,6 +204,16 @@
           </button>
         </div>
       </div>
+
+      <ng-multiselect-dropdown
+        [placeholder]="'Selecciona tus deportes preferidos'"
+        [settings]="dropdownSettings"
+        [data]="dropdownList"
+        [(ngModel)]="selectedItems"
+        (onSelect)="onItemSelect($event)"
+      >
+      </ng-multiselect-dropdown>
+
     </div>
   </div>
 </div>

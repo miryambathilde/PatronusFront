@@ -66,6 +66,12 @@
               Offers
             </a>
           </li>
+          <li class="nav-item" *ngIf="!isSponsor">
+            <a [routerLink]="['/create-new']" class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Publicar noticia
+            </a>
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="bar-chart-2"></span>

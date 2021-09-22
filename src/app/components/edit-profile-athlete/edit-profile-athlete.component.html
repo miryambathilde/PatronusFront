@@ -7,7 +7,7 @@
 <app-sidebar></app-sidebar>
 <div class="container todo">
   <div class="row pt-4">
-    <div class="col-md-4 izquierda">
+    <div class="col-md-9 col-lg-4 offset-md-3 offset-lg-2 offset-xl-0 col-xl-4 izquierda">
       <div class="card card-user">
         <div class="image">
           <img src="assets/img/damir-bosnjak.jpg" alt="..." />
@@ -21,8 +21,8 @@
                 alt="..."
               />
             </a>
-            <h5 class="title">Jesus Ignacio Denis Ulbeira</h5>
-            <p class="description">@williams97</p>
+            <h5 class="title pb-1">Jesus Ignacio Denis Ulbeira</h5>
+            <p class="description pb-2">@williams97</p>
             <h6 class="description text-center">"Analista Deportivo"</h6>
 
             <br>
@@ -39,13 +39,13 @@
       </div>
       <div class="card"></div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-9 col-lg-6 offset-xl-0 col-xl-8 offset-md-3 offset-lg-0">
       <div class="card card-user">
         <div class="card-header">
           <h5 class="card-title">Editar Perfil</h5>
         </div>
         <div class="card-body">
-          <form #perfilForm="ngForm" (ngSubmit)="onSubmit(perfilForm)">
+          <form #perfilForm="ngForm" (ngSubmit)="onSubmit(perfilForm)" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-5 pr-1">
                 <div class="form-group">
@@ -133,6 +133,20 @@
               </div>
             </div>
             <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Foto</label>
+                  <input
+                    type="file"
+                    (change)="recogerImagen($event)"
+                    class="form-control"
+                    placeholder="Home Address"
+                    value="Marques de Quintanar, 9 , 2ºB"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md-4 pr-1">
                 <div class="form-group">
                   <label>Sport</label>
@@ -159,6 +173,9 @@
               </div>
             </div>
           </form>
+          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" (click)="onDelete()">
+            Delete Account
+          </button>
         </div>
       </div>
     </div>

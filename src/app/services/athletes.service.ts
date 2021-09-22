@@ -80,20 +80,62 @@ export class AthletesService {
         'Content-type': 'application/json',
         'Authorization': localStorage.getItem('token')!
       })
-    }
+    };
     return this.httpClient.get<any>(this.baseUrl + 'allOffers/' + idAthlete, httpOptions).toPromise();
   }
 
 
-
-  editAthlete(pForm: {name: string, surname: string, age: number, country: string, email: string, sport:string}): Promise<any> {
+  acceptOffer(pIdOffer: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'Authorization': localStorage.getItem('token')!
       })
     };
+    return this.httpClient.put<any>(this.baseUrl + 'acceptOffer/' + pIdOffer, null, httpOptions).toPromise();
+  }
+
+  rejectOffer(pIdOffer: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    return this.httpClient.put<any>(this.baseUrl + 'rejectOffer/' + pIdOffer, null, httpOptions).toPromise();
+  }
+
+  createNew(pForm: FormData): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    const id = localStorage.getItem('id');
+    return this.httpClient.post<any>(this.baseUrl + 'createNew/' + id, pForm, httpOptions).toPromise();
+  }
+
+
+  editAthlete(pForm: FormData): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
     const id = localStorage.getItem('id');
     return this.httpClient.put<any>(this.baseUrl + 'profile/' + id, pForm, httpOptions).toPromise();
   }
+
+
+  deleteAccount(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    const id = localStorage.getItem('id');
+    return this.httpClient.put<any>(this.baseUrl + 'deleteAccount/' + id, null, httpOptions).toPromise();
+  }
+
+
 }

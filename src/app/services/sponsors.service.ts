@@ -177,6 +177,57 @@ export class SponsorsService {
   }
 
 
+  getSportsSponsors(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }; 
+    return this.httpClient.get<any>(this.baseUrl + 'sportsSponsors', httpOptions).toPromise();
+  }
+
+  getFavoritesSponsor(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    const idSponsor = localStorage.getItem('id');
+    return this.httpClient.get<any>(this.baseUrl + 'sportsBySponsor/' + idSponsor, httpOptions).toPromise();
+  }
+
+
+  getMyAthletesFavorites(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    const idSponsor = localStorage.getItem('id');
+    return this.httpClient.get<any>(this.baseUrl + 'myFavorites/' + idSponsor, httpOptions).toPromise();
+  }
+
+  // addFavoriteSport(pSport: any): Promise<any> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Authorization': localStorage.getItem('token')!
+  //     })
+  //   };
+  //   const idSponsor = localStorage.getItem('id');
+  //   return this.httpClient.post<any>(this.baseUrl + 'eew/' + idSponsor, pSport, httpOptions).toPromise();
+  // }
+
+  // addMultipleFavoriteSport(pSports: any): Promise<any> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Authorization': localStorage.getItem('token')!
+  //     })
+  //   };
+  //   const idSponsor = localStorage.getItem('id');
+  //   return this.httpClient.post<any>(this.baseUrl + '/' + idSponsor, pSports, httpOptions).toPromise();
+  // }
+
+
   editSponsor(pForm: FormData): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({

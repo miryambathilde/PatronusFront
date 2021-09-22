@@ -1,0 +1,51 @@
+
+<div class="container mt-5">
+  <div class="row pt-5">
+    <div class="col-md-9 col-lg-6 offset-xl-0 col-xl-8 offset-md-3 offset-lg-0">
+      <div class="card card-user">
+        <div class="card-header pb-2 pt-3">
+          <h5 class="card-title">¡Enhorabuena!</h5>
+          <h5>¡Todos queremos saber tu logro!</h5>
+        </div>
+        <div class="card-body">
+          <form #newsForm="ngForm" (ngSubmit)="onSubmit(newsForm)" enctype="multipart/form-data">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"
+                ngModel name="username"
+                >
+            </div>
+            <div class="col-md-12 mb-3">
+                <div class="form-group">
+                  <label class="h6">¡Una imagen vale más que mil palabras!</label>
+                  <input
+                    type="file"
+                    (change)="recogerImagen($event)"
+                    class="form-control"
+                  />
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">Resume tu triunfo:</span>
+                <!-- <textarea class="form-control" aria-label="With textarea"
+                ngModel name="summary"
+                >
+                </textarea> -->
+                <input
+                type="text"
+                class="form-control"
+                ngModel name="summary"
+              />
+            </div>
+            <div class="update ml-auto mr-auto mt-2">
+                <button type="submit" class="btn btn-danger btn-round">
+                    Publicar noticia
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -65,6 +65,14 @@ export class UsersServicesService {
   }
 
 
+  getNews(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      })
+    }
+    return this.httpClient.get<any>(this.baseUrl + 'news', httpOptions).toPromise();
+  }
 
   // register(pFormValue: any): string {
   //   pFormValue.rol = "deportistas";

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { EditProfileAthleteComponent } from './components/edit-profile-athlete/e
 import { OffersMadeComponent } from './components/offers-made/offers-made.component';
 import { NewsComponent } from './components/news/news.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { CreateNewComponent } from './components/create-new/create-new.component';
 
 @NgModule({
   declarations: [
@@ -55,14 +57,16 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
     EditProfileAthleteComponent,
     OffersMadeComponent,
     NewsComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    CreateNewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
