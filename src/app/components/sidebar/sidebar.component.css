@@ -60,6 +60,9 @@
   cursor: pointer;
 }
 
+span {
+  font-size: 13px;
+}
 
-@media (min-width: 760.98px) and (max-width: 780px) { 
+@media (min-width: 760.98px) and (max-width: 780px) {
 }
