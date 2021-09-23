@@ -9,7 +9,7 @@ export class SponsorsService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:3000/api/sponsors/";
+    this.baseUrl = 'http://localhost:3000/api/sponsors/';
    }
 
    getSponsor(): Promise<any> {

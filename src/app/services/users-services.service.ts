@@ -12,7 +12,7 @@ export class UsersServicesService {
   // arrUsers: User[];
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://2828-85-62-2-98.ngrok.io/api/users/';
+    this.baseUrl = 'http://localhost:3000/api/users/';
   //   this.arrUsers = [
   //     {
   //       id: 1,

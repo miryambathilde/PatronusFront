@@ -42,7 +42,6 @@ const routes: Routes = [
   {path: "offers-made", component: OffersMadeComponent, canActivate: [LoginGuard, RoleSponsorGuard]},
   {path: "envio-propuesta/:idDeportista", component: EnvioPropuestaComponent, canActivate: [LoginGuard, RoleSponsorGuard]},
   {path: "deportista/:idDeportista", component: CardDeportistaComponent, canActivate: [LoginGuard]},
-  {path: "favorites", component: FavoritesComponent, canActivate: [LoginGuard, RoleSponsorGuard]},
   {path: "news", component: NewsComponent},
   {path: "create-new", component: CreateNewComponent, canActivate: [LoginGuard]},
   {path: "email-pass", component: EmailPassComponent},
