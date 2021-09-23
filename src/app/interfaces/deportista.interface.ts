@@ -12,5 +12,4 @@ export interface Deportista {
   graphic: string;
   followers: string;
   status: number;
-
 }

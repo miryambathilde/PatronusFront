@@ -23,7 +23,7 @@
               routerLinkActive="active"
             >
               <span data-feather="file"></span>
-              Perfil sponsor
+              Editar perfil
             </a>
           </li>
           <li class="nav-item" *ngIf="!isAthlete">
@@ -37,15 +37,15 @@
             </a>
           </li>
           <li class="nav-item" *ngIf="!isAthlete">
-            <a [routerLink]="['/catalogo-deportistas']" class="nav-link" href="#">
+            <a [routerLink]="['/catalogo-deportistas']" routerLinkActive="active" class="nav-link" href="#">
               <span data-feather="users"></span>
               Catálogo
             </a>
           </li>
           <li class="nav-item" *ngIf="!isAthlete">
-            <a [routerLink]="['/offers-made']" class="nav-link" href="#">
+            <a [routerLink]="['/offers-made']" class="nav-link" routerLinkActive="active" href="#">
               <span data-feather="users"></span>
-              Mis ofertas
+              Ofertas realizadas
             </a>
           </li>
           <!-- <li class="nav-item" *ngIf="!isAthlete">
@@ -55,19 +55,19 @@
             </a>
           </li> -->
           <li class="nav-item" *ngIf="!isSponsor">
-            <a [routerLink]="['/editprofile/athlete']" class="nav-link" href="#">
+            <a [routerLink]="['/editprofile/athlete']" routerLinkActive="active" class="nav-link" href="#">
               <span data-feather="users"></span>
-              Perfil deportista
+              Editar perfil
             </a>
           </li>
           <li class="nav-item" *ngIf="!isSponsor">
-            <a [routerLink]="['/offers']" class="nav-link" href="#">
+            <a [routerLink]="['/offers']" routerLinkActive="active" class="nav-link" href="#">
               <span data-feather="users"></span>
               Mis ofertas
             </a>
           </li>
           <li class="nav-item" *ngIf="!isSponsor">
-            <a [routerLink]="['/create-new']" class="nav-link" href="#">
+            <a [routerLink]="['/create-new']" routerLinkActive="active" class="nav-link" href="#">
               <span data-feather="users"></span>
               Publicar noticia
             </a>

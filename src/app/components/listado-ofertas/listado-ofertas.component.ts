@@ -42,10 +42,11 @@ export class ListadoOfertasComponent implements OnInit {
     Swal.fire({
       title: '¿Estás seguro de aceptar la oferta?',
       showDenyButton: true,
-      confirmButtonText: 'Borrar'
+      confirmButtonText: 'Aceptar',
+      denyButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('¡Aceptada!', '', 'success')
+        Swal.fire('¡Oferta aceptada con éxito!', '', 'success')
         // aquí borrar
       } else if (result.isDenied) {
         Swal.fire('Oferta no enviada', '', 'info')
@@ -57,7 +58,8 @@ export class ListadoOfertasComponent implements OnInit {
     Swal.fire({
       title: '¿Estás seguro de rechazar la oferta?',
       showDenyButton: true,
-      confirmButtonText: 'Borrar'
+      confirmButtonText: 'Rechazar',
+      denyButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire('Rechazada', '', 'success')
