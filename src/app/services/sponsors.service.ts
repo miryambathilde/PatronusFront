@@ -9,7 +9,7 @@ export class SponsorsService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://2828-85-62-2-98.ngrok.io/api/sponsors/";
+    this.baseUrl = "http://3c1d-85-62-2-98.ngrok.io/api/sponsors/";
    }
 
    getSponsor(): Promise<any> {
@@ -182,7 +182,7 @@ export class SponsorsService {
       headers: new HttpHeaders({
         'Authorization': localStorage.getItem('token')!
       })
-    }; 
+    };
     return this.httpClient.get<any>(this.baseUrl + 'sportsSponsors', httpOptions).toPromise();
   }
 

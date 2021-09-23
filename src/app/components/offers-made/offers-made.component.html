@@ -1,17 +1,8 @@
-    
- 
-
-
-
-
-
-
-
 <div class="container-fluid pt-2">
     <div class="row">
       <app-sidebar></app-sidebar>
-  
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">      
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
         <div
           class="
             d-flex
@@ -49,12 +40,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let myOffer of myOffersMade" [ngClass]="{'waiting': myOffer?.status === 0, 'accepted': myOffer?.status === 1, 'rejected': myOffer?.status === 2}"> 
+              <tr *ngFor="let myOffer of myOffersMade" [ngClass]="{'waiting': myOffer?.status === 0, 'accepted': myOffer?.status === 1, 'rejected': myOffer?.status === 2}">
                 <td class="text-center">{{myOffer?.name}}</td>
                 <td class="text-center">{{myOffer?.sport}}</td>
                 <td class="text-center">{{myOffer?.age}}</td>
                 <td class="text-center">{{myOffer?.country}}</td>
-                <td class="text-center">{{myOffer?.participations}}</td> 
+                <td class="text-center">{{myOffer?.participations}}</td>
                 <td class="text-right">
                     <button routerLinkActive="active" [routerLink]="['/deportista', myOffer?.fk_athletes]" type="submit" class="btn btn-danger btn-round">
                     Ver Ficha
@@ -89,4 +80,3 @@
       </main>
     </div>
   </div>
-  
