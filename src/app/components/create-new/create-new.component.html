@@ -35,10 +35,10 @@
             </div>
             <span>Fecha de creación:</span><br>
             <div class="input-group">
-              <input class="form-control mt-2" type="date" name="date" id="date">
+              <input class="form-control mt-2" type="date" ngModel name="date" id="date">
             </div>
             <div class="update ml-auto mr-auto mt-2">
-                <button type="submit" class="btn btn-danger btn-round">
+                <button type="submit" class="btn btn-danger btn-round" (click)="alertConfirm()">
                     Publicar noticia
                 </button>
             </div>

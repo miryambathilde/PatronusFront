@@ -14,8 +14,8 @@
             <div class="container mt-1 d-flex justify-content-between">
               <button class="btn btn-sm btn-danger justify-content-start">SPONSOR</button>
               <div class="container d-flex justify-content-end">
-                <button class="btn btn-sm btn-danger me-3" (click)="onAccept(offer?.id)">ACEPTAR</button>
-                <button class="btn btn-sm btn-danger" (click)="onReject(offer?.id)">RECHAZAR</button>
+                <button class="btn btn-sm btn-danger me-3" (click)="onAccept(offer?.id)" (click)="confirmAccept()">ACEPTAR</button>
+                <button class="btn btn-sm btn-danger" (click)="onReject(offer?.id)" (click)="confirmReject()">RECHAZAR</button>
               </div>
             </div>
           </div>

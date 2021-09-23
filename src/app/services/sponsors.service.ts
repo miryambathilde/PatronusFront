@@ -154,7 +154,7 @@ export class SponsorsService {
   }
 
 
-  addAthleteFavorite(pId: number): Promise<any> {
+  addAthleteFavorite(pfk_athletes: number): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -162,7 +162,7 @@ export class SponsorsService {
       })
     };
     const fk_sponsors = localStorage.getItem('id');
-    return this.httpClient.post<any>(this.baseUrl + 'addAthleteFavorite/' + pId, fk_sponsors, httpOptions).toPromise();
+    return this.httpClient.post<any>(this.baseUrl + 'addAthleteFavorite/' + pfk_athletes + fk_sponsors, httpOptions).toPromise();
   }
 
   removeAthleteFavorite(pId: number): Promise<any> {
@@ -237,6 +237,28 @@ export class SponsorsService {
   //   const idSponsor = localStorage.getItem('id');
   //   return this.httpClient.post<any>(this.baseUrl + '/' + idSponsor, pSports, httpOptions).toPromise();
   // }
+
+  sendEmailPass(pForm: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    const idSponsor = localStorage.getItem('id');
+    return this.httpClient.post<any>(this.baseUrl + 'send-email/' + idSponsor, pForm, httpOptions).toPromise();
+  }
+
+
+  resetPass(pForm: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    return this.httpClient.post<any>(this.baseUrl + 'resetPassword', httpOptions).toPromise();
+  }
 
 
   editSponsor(pForm: FormData): Promise<any> {

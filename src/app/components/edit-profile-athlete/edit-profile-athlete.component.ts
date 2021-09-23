@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Deportista } from 'src/app/interfaces/deportista.interface';
 import { AthletesService } from 'src/app/services/athletes.service';
 import { SponsorsService } from 'src/app/services/sponsors.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-profile-athlete',
@@ -55,6 +56,31 @@ export class EditProfileAthleteComponent implements OnInit {
     if(result.affectedRows) {
       this.router.navigate(['/home']);
     }
+  }
+
+  deleteConfirm() {
+    Swal.fire({
+      title: '¿Estás seguro de borrar tu cuenta?',
+      showDenyButton: true,
+      confirmButtonText: 'Borrar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('Borrada correctamente', '', 'success')
+        // aquí borrar
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info')
+      }
+    });
+  }
+
+  confirmUpdate() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'El perfil se ha actualizado',
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 
 }

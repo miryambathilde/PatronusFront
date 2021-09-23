@@ -23,7 +23,11 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', result.token);
       localStorage.setItem('role', result.role);
       localStorage.setItem('id', result.userId);
-      this.router.navigate(['/dashboard']);
+      if(result.role === 'S') {
+        this.router.navigate(['/dashboard']);
+      } else if (result.role === 'A') {
+        this.router.navigate(['/offers']);
+      }
     } else {
       alert('Usuario o contraseña incorrectos. Por favor, revise los datos');
     }

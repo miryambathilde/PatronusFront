@@ -74,14 +74,7 @@ export class UsersServicesService {
     return this.httpClient.get<any>(this.baseUrl + 'news', httpOptions).toPromise();
   }
 
-  resetPass(pForm: any): Promise<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-type': 'application/json'
-      })
-    };
-    return this.httpClient.get<any>(this.baseUrl + 'resetPassword', httpOptions).toPromise();
-  }
+
   // register(pFormValue: any): string {
   //   pFormValue.rol = "deportistas";
   //   this.arrUsers.push(pFormValue);

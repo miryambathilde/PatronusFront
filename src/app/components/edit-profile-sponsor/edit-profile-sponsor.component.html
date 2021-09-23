@@ -148,13 +148,13 @@
             </div>
             <div class="row">
               <div class="update ml-auto mr-auto mt-2">
-                <button type="submit" class="btn btn-danger btn-round">
+                <button type="submit" class="btn btn-danger btn-round" (click)="confirmUpdate()">
                   Actualizar perfil
                 </button>
               </div>
             </div>
           </form>
-          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" (click)="onDelete()">
+          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" (click)="onDelete()" (click)="deleteConfirm()">
             Eliminar cuenta
           </button>
         </div>
