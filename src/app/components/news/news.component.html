@@ -5,11 +5,11 @@
                 <div class="row g-0">
                 <div class="col-md-4">
                 <!-- PONER IMAGEN: recordar la ruta: urlBack + new?.photo   -->
-                    <img class="img-fluid rounded-start" [alt]="new?.username">
+                  <img class="img-fluid rounded-start" [src]="urlBack + new?.photo" [alt]="new?.username">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <p class="card-text mb-3"><small class="text-muted">Fecha de creación: </small></p>
+                        <p class="card-text mb-3"><small class="text-muted">Fecha de creación: {{new?.date | date: 'dd/MM/yy'}} </small></p>
                         <h5 class="card-title">{{new?.username}}</h5>
                         <p class="card-text">{{new?.summary}}</p>
                         <div class="d-grid gap-2 col-6 mx-auto">
@@ -19,5 +19,5 @@
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
 </div>
