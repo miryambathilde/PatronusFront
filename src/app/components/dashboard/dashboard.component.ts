@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { myAthlete } from "src/app/interfaces/myAthlete.interface";
+import { SponsorsService } from "src/app/services/sponsors.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  favorites: myAthlete[] | undefined;
 
-  constructor() { }
+  constructor(private sponsorsService: SponsorsService) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.favorites = await this.sponsorsService.getMyAthletesFavorites();
+    console.log(this.favorites);
   }
-
 }

@@ -1,12 +1,12 @@
 .waiting{
-    color: rgb(231, 231, 24);
+    color: #e9b200;
 }
 
 .accepted{
-    color: green;
+    color: rgb(2, 114, 2);
 }
 
 .rejected{
-    color: grey;
+    color: #666565;
 }
 
