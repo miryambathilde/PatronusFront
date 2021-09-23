@@ -1,10 +1,10 @@
 <div class="container-fluid pt-2">
-    <div class="row">
-      <app-sidebar></app-sidebar>
+  <div class="row">
+    <app-sidebar></app-sidebar>
 
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
-        <div
-          class="
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
+      <div
+        class="
             d-flex
             justify-content-between
             flex-wrap flex-md-nowrap
@@ -14,50 +14,57 @@
             mb-3
             border-bottom
           "
-        >
-<<<<<<< HEAD
-          <h1 class="h2">Ofertas realizadas</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
-=======
-          <h1 class="h2">Portfolio</h1>
-          <!-- <div class="btn-toolbar mb-2 mb-md-0">
->>>>>>> fc7d5c11d0d76145b4538335d003871707e2e7d4
-            <div class="btn-group me-2">
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Compartir
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Exportar
-              </button>
-            </div>
+      >
+        <h1 class="h2">Ofertas realizadas</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <!-- <div class="btn-group me-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">
+              Compartir
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">
+              Exportar
+            </button>
           </div> -->
         </div>
-        <div class="table-responsive">
-          <table class="table tabla">
-            <thead>
-              <tr>
-                <th class="text-center">Nombre</th>
-                <th class="text-center">Deporte</th>
-                <th class="text-center">Edad</th>
-                <th class="text-center">Pais</th>
-                <th class="text-center">Tokens adquiridos</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let myOffer of myOffersMade" [ngClass]="{'waiting': myOffer?.status === 0, 'accepted': myOffer?.status === 1, 'rejected': myOffer?.status === 2}">
-                <td class="text-center">{{myOffer?.name}}</td>
-                <td class="text-center">{{myOffer?.sport}}</td>
-                <td class="text-center">{{myOffer?.age}}</td>
-                <td class="text-center">{{myOffer?.country}}</td>
-                <td class="text-center">{{myOffer?.participations}}</td>
-                <td class="text-right">
-                    <button routerLinkActive="active" [routerLink]="['/deportista', myOffer?.fk_athletes]" type="submit" class="btn btn-danger btn-round">
-                    Ver Ficha
-                    </button>
-                </td>
-              </tr>
-              <!-- <tr>
+      </div>
+      <div class="table-responsive">
+        <table class="table tabla">
+          <thead>
+            <tr>
+              <th class="text-center">Nombre</th>
+              <th class="text-center">Deporte</th>
+              <th class="text-center">Edad</th>
+              <th class="text-center">Pais</th>
+              <th class="text-center">Tokens adquiridos</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let myOffer of myOffersMade"
+              [ngClass]="{
+                waiting: myOffer?.status === 0,
+                accepted: myOffer?.status === 1,
+                rejected: myOffer?.status === 2
+              }"
+            >
+              <td class="text-center">{{ myOffer?.name }}</td>
+              <td class="text-center">{{ myOffer?.sport }}</td>
+              <td class="text-center">{{ myOffer?.age }}</td>
+              <td class="text-center">{{ myOffer?.country }}</td>
+              <td class="text-center">{{ myOffer?.participations }}</td>
+              <td class="text-right">
+                <button
+                  routerLinkActive="active"
+                  [routerLink]="['/deportista', myOffer?.fk_athletes]"
+                  type="submit"
+                  class="btn btn-danger btn-round"
+                >
+                  Ver Ficha
+                </button>
+              </td>
+            </tr>
+            <!-- <tr>
                 <td>Rafael Nadal</td>
                 <td>Tenis</td>
                 <td>35</td>
@@ -78,10 +85,10 @@
                 <td>Portugal</td>
                 <td class="text-right">30</td>
               </tr> -->
-            </tbody>
-          </table>
-        </div>
-        <app-chart-pie></app-chart-pie>
-      </main>
-    </div>
+          </tbody>
+        </table>
+      </div>
+      <app-chart-pie></app-chart-pie>
+    </main>
   </div>
+</div>
