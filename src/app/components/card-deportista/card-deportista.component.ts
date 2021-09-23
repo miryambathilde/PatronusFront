@@ -11,32 +11,32 @@ import Swal from 'sweetalert2';
   styleUrls: ['./card-deportista.component.css']
 })
 export class CardDeportistaComponent implements OnInit {
-
   miDeportista: Deportista | undefined;
+  urlBack: string = 'http://localhost:3000/';
 
   constructor(
-     private AthletesService: AthletesService,
-     private sponsorsService: SponsorsService,
-     private activatedRoute: ActivatedRoute,
-     private router: Router) { }
+    private AthletesService: AthletesService,
+    private sponsorsService: SponsorsService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
       const id = parseInt(params.idDeportista);
       this.miDeportista = await this.sponsorsService.getAthleteById(id);
       console.log(this.miDeportista);
-    })
-  };
+    });
+  }
 
   addFavorite() {
-    this.activatedRoute.params.subscribe(async params => { 
+    this.activatedRoute.params.subscribe(async params => {
       const id = parseInt(params.idDeportista);
       const result = await this.sponsorsService.addAthleteFavorite(id);
       console.log(result);
-      this.router.navigate(['/favorites']);
-    })
-  };
-
+      this.router.navigate(['/dashboard']);
+    });
+  }
 
   confirmFavorite() {
     Swal.fire({
@@ -47,7 +47,4 @@ export class CardDeportistaComponent implements OnInit {
       timer: 1500
     });
   }
-
-
-
 }

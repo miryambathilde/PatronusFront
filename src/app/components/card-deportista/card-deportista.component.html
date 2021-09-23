@@ -8,6 +8,7 @@
             <!-- PONER IMAGEN: recordar la ruta: urlBack + miDeportista?.photo   -->
             <div class="d-flex flex-column align-items-center text-center">
               <img
+                [src]="urlBack + miDeportista?.photo"
                 [alt]="miDeportista?.name"
                 class="rounded-circle"
                 width="150"
@@ -169,22 +170,19 @@
             <div class="row">
               <div class="col-sm-3">
                 <h6 class="mb-0">Rendimiento deportivo</h6>
-                <br />
-                <img
-                  class="grafica-rendimiento"
-                  [src]="miDeportista?.graphic"
-                  alt="grafica rendimiento"
-                />
+                <app-chart-rendimiento></app-chart-rendimiento>
               </div>
             </div>
             <br />
             <div class="row">
               <div class="d-grid gap-2">
-                <button (click)="confirmFavorite()" (click)="addFavorite()"
-                class="btn btn-danger btn-fluid"
-              >
-                Añadir favorito
-              </button>
+                <button
+                  (click)="confirmFavorite()"
+                  (click)="addFavorite()"
+                  class="btn btn-primary btn-fluid"
+                >
+                  Añadir a mis favoritos
+                </button>
                 <button
                   class="btn btn-danger btn-fluid"
                   [routerLink]="['/envio-propuesta', miDeportista?.id]"
@@ -195,36 +193,10 @@
             </div>
           </div>
         </div>
+        <div *ngIf="!miDeportista">
+          <h1>El deportista seleccionado ya no está disponible</h1>
+        </div>
       </div>
-
-      <!-- <section class="container mt-3">
-  <div *ngIf="miDeportista">
-    <h1>{{miDeportista?.nombre}} {{miDeportista?.apellidos}}</h1>
-    <hr>
-    <div class="row">
-      <figure class="col-12 col-md-4">
-        <img class="img-fluid" [src]="miDeportista?.foto" [alt]="miDeportista?.nombre">
-      </figure>
-      <div class="col-12 col-md-8">
-        <ul>
-          <li>Edad: {{miDeportista?.edad}} años</li>
-          <li>Deporte: {{miDeportista?.deporte}} </li>
-          <li>País: {{miDeportista?.pais}} </li>
-          <li>Seguidores en RRSS: 10k + </li>
-          <li>Cantidad solicitada: {{miDeportista?.dinero}} €</li>
-          <li>Objetivo conseguido: {{miDeportista?.porcentaje}} %</li>
-          <li>Patrocinadores: {{miDeportista?.patrocinadores}}</li>
-        </ul>
-				<h3>GRÁFICA DE RENDIMIENTO</h3>
-        <hr>
-        <img [src]="miDeportista?.rendimiento" [alt]="miDeportista?.rendimiento">
-      </div>
-    </div>
-  </div>
-  <div *ngIf="!miDeportista">
-    <h1>El deportista seleccionado no existe</h1>
-  </div>
-</section> -->
     </div>
   </div>
 </div>
