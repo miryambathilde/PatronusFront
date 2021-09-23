@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Sponsor } from 'src/app/interfaces/sponsor.interface';
 import { SponsorsService } from 'src/app/services/sponsors.service';
 import {​​​​​​ IDropdownSettings }​​​​​​ from 'ng-multiselect-dropdown';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -55,7 +56,10 @@ export class EditProfileSponsorComponent implements OnInit {
   }
 
   onItemSelect(item: any) {​​​​​​
-    const result = this.sponsorsService.addFavoriteSport();
+    console.log(item);
+    // array + push
+    // on submit
+    // const result = this.sponsorsService.addFavoriteSport();
   }​​​​​​
   onSelectAll(items: any) {​​​​​​
     const result = this.sponsorsService.addFavoriteSport();
@@ -84,12 +88,40 @@ export class EditProfileSponsorComponent implements OnInit {
     console.log(result);
   }
 
+  confirmUpdate() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'El perfil se ha actualizado',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+
+
   async onDelete() {
     const result = await this.sponsorsService.deleteAccount();
     localStorage.removeItem('token');
-    if(result.affectedRows) {
-      this.router.navigate(['/home']);
-    }
+    setTimeout(() => {
+      if(result.affectedRows) {
+        this.router.navigate(['/home']);
+      }
+    }, 500);
+  }
+
+  deleteConfirm() {
+    Swal.fire({
+      title: '¿Estás seguro de borrar tu cuenta?',
+      showDenyButton: true,
+      confirmButtonText: 'Borrar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('Borrada correctamente', '', 'success')
+        // aquí borrar
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info')
+      }
+    });
   }
 
 }

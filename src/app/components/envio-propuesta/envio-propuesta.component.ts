@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SponsorsService } from 'src/app/services/sponsors.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-envio-propuesta',
@@ -27,4 +28,17 @@ export class EnvioPropuestaComponent implements OnInit {
       console.log(result);
     });
   }
+
+
+  confirmOffer() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: '¡Oferta enviada!',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+
+
 };

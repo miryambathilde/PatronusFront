@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Deportista } from "src/app/interfaces/deportista.interface";
 import { AthletesService } from "src/app/services/athletes.service";
 import { SponsorsService } from 'src/app/services/sponsors.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-card-deportista',
@@ -35,4 +36,18 @@ export class CardDeportistaComponent implements OnInit {
       this.router.navigate(['/favorites']);
     })
   };
+
+
+  confirmFavorite() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: '¡Añadido a tus favoritos!',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+
+
+
 }

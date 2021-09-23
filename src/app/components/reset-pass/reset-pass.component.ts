@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SponsorsService } from 'src/app/services/sponsors.service';
 import { UsersServicesService } from 'src/app/services/users-services.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class ResetPassComponent implements OnInit {
   resetPassword: FormGroup;
 
   constructor(
-    private usersService: UsersServicesService,
+    private sponsorsService: SponsorsService,
     private router: Router
   ) { 
     this.resetPassword = new FormGroup(
@@ -55,7 +56,7 @@ export class ResetPassComponent implements OnInit {
   }
 
   async onSubmit() {
-    const mensaje = await this.usersService.resetPass(this.resetPassword.value);
+    const mensaje = await this.sponsorsService.resetPass(this.resetPassword.value);
     if(mensaje.affectedRows) {
       this.router.navigate(['/login']);
     }

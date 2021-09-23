@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Offer } from 'src/app/interfaces/offer.interface';
 import { AthletesService } from 'src/app/services/athletes.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listado-ofertas',
@@ -35,6 +36,36 @@ export class ListadoOfertasComponent implements OnInit {
     if(result.affectedRows) {
       this.router.navigate(['/offers']);
     }
+  }
+
+  confirmAccept() {
+    Swal.fire({
+      title: '¿Estás seguro de aceptar la oferta?',
+      showDenyButton: true,
+      confirmButtonText: 'Borrar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('¡Aceptada!', '', 'success')
+        // aquí borrar
+      } else if (result.isDenied) {
+        Swal.fire('Oferta no enviada', '', 'info')
+      }
+    });
+  }
+
+  confirmReject() {
+    Swal.fire({
+      title: '¿Estás seguro de rechazar la oferta?',
+      showDenyButton: true,
+      confirmButtonText: 'Borrar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('Rechazada', '', 'success')
+        // aquí borrar
+      } else if (result.isDenied) {
+        Swal.fire('Cancelado', '', 'info')
+      }
+    });
   }
 
 }

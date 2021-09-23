@@ -5,7 +5,7 @@
       <form #offerForm="ngForm" (ngSubmit)="onSubmit(offerForm)">
         <input type="text" id="company" ngModel name="company" placeholder="Name of company">
         <input type="text" id="participations" ngModel name="participations" placeholder="Number of tokens">
-        <input type="submit"value="Send Offer">
+        <input (click)="confirmOffer()" type="submit"value="Send Offer">
       </form>
 
     </div>
