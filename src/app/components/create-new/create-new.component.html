@@ -1,12 +1,13 @@
 
-<div class="container mt-5">
+<div class="container mt-5 me-5">
   <div class="row pt-5">
     <app-sidebar></app-sidebar>
     <div class="col-md-9 col-lg-6 offset-xl-0 col-xl-8 offset-md-3 offset-lg-0">
+      <h1 class="mb-4">Publica tus logros y progresos</h1>
       <div class="card card-user">
         <div class="card-header pb-2 pt-3">
-          <h5 class="card-title">¡Enhorabuena!</h5>
-          <h5>¡Todos queremos saber tu logro!</h5>
+          <!-- <h5 class="card-title">¡Enhorabuena!</h5> -->
+          <h4>¡Anímate a compartir tus logros!</h4>
         </div>
         <div class="card-body">
           <form #newsForm="ngForm" (ngSubmit)="onSubmit(newsForm)" enctype="multipart/form-data">
