@@ -32,7 +32,7 @@ export class CardDeportistaComponent implements OnInit {
       const id = parseInt(params.idDeportista);
       const result = await this.sponsorsService.addAthleteFavorite(id);
       console.log(result);
-      // this.router.navigate(ir a mis favoritos)
+      this.router.navigate(['/favorites']);
     })
-  }
+  };
 }

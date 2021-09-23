@@ -10,6 +10,7 @@ import { UsersServicesService } from 'src/app/services/users-services.service';
 export class NewsComponent implements OnInit {
 
   news: New[] = [];
+  urlBack: string = "http://localhost:3000/";
 
   constructor(private usersService: UsersServicesService) { }
 

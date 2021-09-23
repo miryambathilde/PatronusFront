@@ -7,6 +7,7 @@ import { CreateNewComponent } from './components/create-new/create-new.component
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EditProfileAthleteComponent } from './components/edit-profile-athlete/edit-profile-athlete.component';
 import { EditProfileSponsorComponent } from './components/edit-profile-sponsor/edit-profile-sponsor.component';
+import { EmailPassComponent } from './components/email-pass/email-pass.component';
 import { EnvioPropuestaComponent } from './components/envio-propuesta/envio-propuesta.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { FiltrosComponent } from "./components/filtros/filtros.component";
@@ -20,7 +21,10 @@ import { ProfileSponsorComponent } from "./components/profile-sponsor/profile-sp
 import { RegisterDeportistaComponent } from './components/register/register-deportista/register-deportista.component';
 import { RegisterSponsorsComponent } from './components/register/register-sponsors/register-sponsors.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
 import { LoginGuard } from './guards/login.guard';
+import { RoleAthleteGuard } from './guards/role-athlete.guard';
+import { RoleSponsorGuard } from './guards/role-sponsor.guard';
 
 const routes: Routes = [
   {path: "", pathMatch: 'full', redirectTo: "/home"},
@@ -30,21 +34,24 @@ const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "register/deportistas", component: RegisterDeportistaComponent},
   {path: "register/sponsors", component: RegisterSponsorsComponent },
-  {path: "sponsors", component: ProfileSponsorComponent },
-  {path: "portfolio", component: PortfolioComponent },
-  {path: "editprofile/sponsor", component: EditProfileSponsorComponent },
-  {path: "editprofile/athlete", component: EditProfileAthleteComponent },
-  {path: "catalogo-deportistas", component: CatalogoDeportistasComponent, children:[{path: "filtro", component: FiltrosComponent}]},
-  {path: "offers", component: ListadoOfertasComponent},
-  {path: "offers-made", component: OffersMadeComponent},
-  {path: "envio-propuesta/:idDeportista", component: EnvioPropuestaComponent},
-  {path: "deportista/:idDeportista", component: CardDeportistaComponent},
-  {path: "favorites", component: FavoritesComponent},
+  {path: "portfolio", component: PortfolioComponent, canActivate: [LoginGuard, RoleSponsorGuard] },
+  {path: "editprofile/sponsor", component: EditProfileSponsorComponent, canActivate: [LoginGuard, RoleSponsorGuard] },
+  {path: "editprofile/athlete", component: EditProfileAthleteComponent, canActivate: [LoginGuard, RoleAthleteGuard] },
+  {path: "catalogo-deportistas", component: CatalogoDeportistasComponent, canActivate: [LoginGuard, RoleSponsorGuard], children:[{path: "filtro", component: FiltrosComponent}]},
+  {path: "offers", component: ListadoOfertasComponent, canActivate: [LoginGuard, RoleAthleteGuard]},
+  {path: "offers-made", component: OffersMadeComponent, canActivate: [LoginGuard, RoleSponsorGuard]},
+  {path: "envio-propuesta/:idDeportista", component: EnvioPropuestaComponent, canActivate: [LoginGuard, RoleSponsorGuard]},
+  {path: "deportista/:idDeportista", component: CardDeportistaComponent, canActivate: [LoginGuard]},
+  {path: "favorites", component: FavoritesComponent, canActivate: [LoginGuard, RoleSponsorGuard]},
   {path: "news", component: NewsComponent},
-  {path: "create-new", component: CreateNewComponent},
+  {path: "create-new", component: CreateNewComponent, canActivate: [LoginGuard]},
+  {path: "email-pass", component: EmailPassComponent},
+  {path: "reset-pass", component: ResetPassComponent},
   {path: "dashboard", component: DashboardComponent, canActivate: [LoginGuard]},
   {path: "**", redirectTo: "/home"},
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

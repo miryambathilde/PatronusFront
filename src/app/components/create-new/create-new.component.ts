@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AthletesService } from 'src/app/services/athletes.service';
 
 @Component({
@@ -9,8 +10,11 @@ import { AthletesService } from 'src/app/services/athletes.service';
 export class CreateNewComponent implements OnInit {
 
   files: any;
+  
 
-  constructor(private athletesService: AthletesService) { }
+  constructor(
+    private athletesService: AthletesService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -25,8 +29,13 @@ export class CreateNewComponent implements OnInit {
     formulario.append('photo', this.files[0]);
     formulario.append('summary', pForm.value.summary);
     formulario.append('username', pForm.value.username);
+    // formulario.append('date', pForm.value.date);
     const result = await this.athletesService.createNew(formulario);
     console.log(result);
+    if(result.affectedRows) {
+      this.router.navigate(['/news']);
+    }
+    
   }
 
 }

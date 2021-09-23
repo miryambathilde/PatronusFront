@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async onSubmit(pForm:any) {
+  async onSubmit(pForm: any) {
     const result = await this.usersServices.login(pForm.value);
     if(result.token) {
       localStorage.setItem('token', result.token);

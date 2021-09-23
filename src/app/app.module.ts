@@ -32,6 +32,8 @@ import { OffersMadeComponent } from './components/offers-made/offers-made.compon
 import { NewsComponent } from './components/news/news.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { CreateNewComponent } from './components/create-new/create-new.component';
+import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
+import { EmailPassComponent } from './components/email-pass/email-pass.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { CreateNewComponent } from './components/create-new/create-new.component
     OffersMadeComponent,
     NewsComponent,
     FavoritesComponent,
-    CreateNewComponent
+    CreateNewComponent,
+    ResetPassComponent,
+    EmailPassComponent
   ],
   imports: [
     BrowserModule,

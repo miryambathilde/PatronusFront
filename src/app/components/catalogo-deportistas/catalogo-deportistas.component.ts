@@ -13,7 +13,7 @@ export class CatalogoDeportistasComponent implements OnInit {
 
   deportistas: Deportista[] | undefined;
 
-  urlBack: string = "http://localhost:3000/"
+  urlBack: string = "http://localhost:3000/";
 
   countries: any[] = [];
   sports: any[] = [];
