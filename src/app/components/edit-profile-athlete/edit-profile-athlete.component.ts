@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Deportista } from 'src/app/interfaces/deportista.interface';
 import { AthletesService } from 'src/app/services/athletes.service';
+import { SponsorsService } from 'src/app/services/sponsors.service';
 
 @Component({
   selector: 'app-edit-profile-athlete',
@@ -10,11 +12,19 @@ import { AthletesService } from 'src/app/services/athletes.service';
 export class EditProfileAthleteComponent implements OnInit {
 
   files: any;
+  deportista: any = {};;
+  urlBack: string = "http://localhost:3000/";
 
-  constructor(private athletesService: AthletesService,
-    private router: Router) { }
 
-  ngOnInit(): void {
+  constructor(
+    private athletesService: AthletesService,
+    private router: Router,
+  ) { }
+
+  async ngOnInit() {
+    this.deportista = await this.athletesService.getAthleteById();
+    console.log(this.deportista);
+   
   }
 
   recogerImagen($event: any) {
@@ -24,7 +34,11 @@ export class EditProfileAthleteComponent implements OnInit {
 
   async onSubmit(pForm: any) {
     let formulario = new FormData();
-    formulario.append('photo', this.files[0]);
+    if (this.files !== undefined) {
+      formulario.append('photo', this.files[0]);
+    } else {
+      formulario.append('photo', this.deportista.photo);
+    }
     formulario.append('name', pForm.value.name);
     formulario.append('surname', pForm.value.surname);
     formulario.append('age', pForm.value.age);

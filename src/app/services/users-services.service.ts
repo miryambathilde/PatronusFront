@@ -12,7 +12,7 @@ export class UsersServicesService {
   // arrUsers: User[];
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://2828-85-62-2-98.ngrok.io/api/users/';
+    this.baseUrl = 'http://localhost:3000/api/users/';
   //   this.arrUsers = [
   //     {
   //       id: 1,
@@ -74,6 +74,14 @@ export class UsersServicesService {
     return this.httpClient.get<any>(this.baseUrl + 'news', httpOptions).toPromise();
   }
 
+  resetPass(pForm: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      })
+    };
+    return this.httpClient.get<any>(this.baseUrl + 'resetPassword', httpOptions).toPromise();
+  }
   // register(pFormValue: any): string {
   //   pFormValue.rol = "deportistas";
   //   this.arrUsers.push(pFormValue);

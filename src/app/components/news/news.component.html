@@ -4,13 +4,17 @@
             <div *ngFor="let new of news" class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                 <div class="col-md-4">
-                    <img [src]="new?.photo" class="img-fluid rounded-start" alt="...">
+                <!-- PONER IMAGEN: recordar la ruta: urlBack + new?.photo   -->
+                    <img class="img-fluid rounded-start" [alt]="new?.username">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                    <h5 class="card-title">{{new?.username}}</h5>
-                    <p class="card-text">{{new?.summary}}</p>
-                    <p class="card-text"><small class="text-muted">Fecha de creación: </small></p>
+                        <p class="card-text mb-3"><small class="text-muted">Fecha de creación: </small></p>
+                        <h5 class="card-title">{{new?.username}}</h5>
+                        <p class="card-text">{{new?.summary}}</p>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button [routerLink]="['/deportista/', new.fk_athletes]" routerLinkActive="router-link-active"  class="btn btn-danger" type="button">Ver deportista</button>
+                          </div>
                     </div>
                 </div>
             </div>

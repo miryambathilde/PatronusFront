@@ -14,6 +14,8 @@ export class EditProfileSponsorComponent implements OnInit {
 
   sponsor: any = {};
   files: any;
+  urlBack: string = "http://localhost:3000/";
+
 
   dropdownList = [] as any;
   selectedItems = [] as any;
@@ -41,12 +43,6 @@ export class EditProfileSponsorComponent implements OnInit {
     
   
 
-console.log(this.selectedItems);
-    // this.selectedItems = [
-    //   { item_id: 3, item_text: 'Pune' },
-    //   { item_id: 4, item_text: 'Navsari' }
-    // ];
-
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'item_id',
@@ -59,10 +55,10 @@ console.log(this.selectedItems);
   }
 
   onItemSelect(item: any) {​​​​​​
-    // const result = this.sponsorsService.addFavoriteSport(valor seleccionados);
+    const result = this.sponsorsService.addFavoriteSport();
   }​​​​​​
   onSelectAll(items: any) {​​​​​​
-    // const result = this.sponsorsService.addMultipleFavoriteSport(valor seleccionados);
+    const result = this.sponsorsService.addFavoriteSport();
   }​​​​​​
 
 
@@ -74,6 +70,8 @@ console.log(this.selectedItems);
     let formulario = new FormData();
     if (this.files !== undefined) {
       formulario.append('logo', this.files[0]);
+    } else {
+      formulario.append('logo', this.sponsor.logo);
     }
     formulario.append('company', pForm.value.company);
     formulario.append('email', pForm.value.email);
@@ -83,7 +81,7 @@ console.log(this.selectedItems);
     formulario.append('postalcode', pForm.value.postalcode);
     formulario.append('aboutme', pForm.value.aboutme);
     const result = await this.sponsorsService.editSponsor(formulario);
-    console.log('Hola');
+    console.log(result);
   }
 
   async onDelete() {

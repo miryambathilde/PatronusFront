@@ -12,7 +12,7 @@ export class AthletesService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://2828-85-62-2-98.ngrok.io/api/athletes/';
+    this.baseUrl = 'http://localhost:3000/api/athletes/';
 
     // this.arrDeportistas = [
     //   {
@@ -73,14 +73,24 @@ export class AthletesService {
   }
 
 
-  offers(): Promise<any> {
+  getAthleteById(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
     const idAthlete = localStorage.getItem('id');
+    return this.httpClient.get<any>(this.baseUrl + idAthlete, httpOptions).toPromise();
+  }
+
+  offers(): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'Authorization': localStorage.getItem('token')!
       })
     };
+    const idAthlete = localStorage.getItem('id');
     return this.httpClient.get<any>(this.baseUrl + 'allOffers/' + idAthlete, httpOptions).toPromise();
   }
 

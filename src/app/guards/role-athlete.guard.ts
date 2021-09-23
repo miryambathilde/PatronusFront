@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { truncate } from 'fs';
 import { Observable } from 'rxjs';
 
 @Injectable({
