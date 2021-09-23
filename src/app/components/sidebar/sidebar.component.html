@@ -13,7 +13,7 @@
               routerLinkActive="active"
             >
               <span data-feather="home"></span>
-              Dashboard
+              Mis favoritos
             </a>
           </li>
           <li class="nav-item" *ngIf="!isAthlete">
@@ -48,12 +48,12 @@
               Mis ofertas
             </a>
           </li>
-          <li class="nav-item" *ngIf="!isAthlete">
+          <!-- <li class="nav-item" *ngIf="!isAthlete">
             <a [routerLink]="['/favorites']" class="nav-link" href="#">
               <span data-feather="users"></span>
               Mis favoritos
             </a>
-          </li>
+          </li> -->
           <li class="nav-item" *ngIf="!isSponsor">
             <a [routerLink]="['/editprofile/athlete']" class="nav-link" href="#">
               <span data-feather="users"></span>
@@ -63,7 +63,7 @@
           <li class="nav-item" *ngIf="!isSponsor">
             <a [routerLink]="['/offers']" class="nav-link" href="#">
               <span data-feather="users"></span>
-              Offers
+              Ofertas
             </a>
           </li>
           <li class="nav-item" *ngIf="!isSponsor">
@@ -92,7 +92,7 @@
             text-muted
           "
         >
-          <span>Estadisticas</span>
+          <span>Estadísticas</span>
           <a class="link-secondary" href="#" aria-label="Add a new report">
             <span data-feather="plus-circle"></span>
           </a>
@@ -101,7 +101,7 @@
           <li class="nav-item">
             <a class="nav-link encima">
               <span data-feather="file-text"></span>
-              Ultima Quincena
+              Última Quincena
             </a>
           </li>
           <li class="nav-item">

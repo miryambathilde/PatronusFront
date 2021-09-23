@@ -4,7 +4,7 @@
 >
   <div class="container-fluid">
     <a class="navbar-brand" [routerLink]="['/home']"
-      ><img class="logo" src="assets/img/logo.png" alt="logo patronus" 
+      ><img class="logo" src="assets/img/logo.png" alt="logo patronus"
     /></a>
     <button
       class="navbar-toggler"
@@ -36,7 +36,7 @@
               class="nav-link active"
               aria-current="page"
               [routerLink]="['/home']"
-              >Home</a
+              >Inicio</a
             >
           </li>
           <li class="nav-item" *ngIf="!islooged" >
@@ -44,7 +44,7 @@
               class="nav-link active"
               aria-current="page"
               [routerLink]="['/about']"
-              >About</a
+              >Quiénes somos</a
             >
           </li>
           <li class="nav-item" *ngIf="!islooged">
@@ -52,7 +52,7 @@
               class="nav-link active"
               aria-current="page"
               [routerLink]="['/login']"
-              >Login</a
+              >Iniciar sesión</a
             >
           </li>
           <li class="nav-item" *ngIf="!islooged">
@@ -60,7 +60,7 @@
               class="nav-link active"
               aria-current="page"
               [routerLink]="['/register']"
-              >Register</a
+              >Crear cuenta</a
             >
           </li>
           <li class="nav-item" *ngIf="islooged">
@@ -68,7 +68,7 @@
               class="nav-link active"
               aria-current="page"
               [routerLink]="['/dashboard']"
-              >Dashboard</a
+              >Mi perfil</a
             >
           </li>
           <li class="nav-item">
@@ -84,7 +84,7 @@
             (click)="logout()"
               class="nav-link active logout"
               aria-current="page"
-              >Logout</a
+              >Cerrar sesión</a
             >
           </li>
         </ul>

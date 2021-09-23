@@ -9,7 +9,7 @@ export class SponsorsService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:3000/api/sponsors/";
+    this.baseUrl = 'http://localhost:3000/api/sponsors/';
    }
 
    getSponsor(): Promise<any> {
@@ -182,7 +182,7 @@ export class SponsorsService {
       headers: new HttpHeaders({
         'Authorization': localStorage.getItem('token')!
       })
-    }; 
+    };
     return this.httpClient.get<any>(this.baseUrl + 'sportsSponsors', httpOptions).toPromise();
   }
 
@@ -191,7 +191,7 @@ export class SponsorsService {
       headers: new HttpHeaders({
         'Authorization': localStorage.getItem('token')!
       })
-    }; 
+    };
     const idSponsor = localStorage.getItem('id');
     return this.httpClient.post<any>(this.baseUrl + idSponsor, httpOptions).toPromise();
   }
