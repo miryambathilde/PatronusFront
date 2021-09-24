@@ -11,18 +11,18 @@
       <div class="card card-user">
         <!-- PONER IMAGEN: recordar la ruta: urlBack + deportista?.photo   -->
         <div class="image">
-          <img src="assets/img/damir-bosnjak.jpg" alt="..." />
-          <!-- <img [src]= urlBack + deportista?.photo [alt]="deportista?.name" /> -->
+          <!-- <img src="assets/img/damir-bosnjak.jpg" alt="..." /> -->
+          <img [src]= "urlBack + deportista?.photo" [alt]="deportista?.name" />
         </div>
         <div class="card-body">
           <div class="author">
-            <a href="#">
+            <!-- <a href="#">
               <img
                 class="avatar border-gray"
-                src="assets/img/willy.jpg"
-                alt="..."
+                [src]="urlBack + deportista?.photo"
+                [alt]="deportista?.name"
               />
-            </a>
+            </a> -->
             <h5 class="title pb-1">Jesus Ignacio Denis Ulbeira</h5>
             <p class="description pb-2">@williams97</p>
             <h6 class="description text-center">"Analista Deportivo"</h6>

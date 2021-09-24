@@ -11,29 +11,26 @@ import Swal from 'sweetalert2';
   styleUrls: ['./edit-profile-athlete.component.css']
 })
 export class EditProfileAthleteComponent implements OnInit {
-
   files: any;
-  deportista: any = {};;
-  urlBack: string = "http://localhost:3000/";
-
+  deportista: any = {};
+  urlBack: string = 'http://localhost:3000/';
 
   constructor(
     private athletesService: AthletesService,
-    private router: Router,
-  ) { }
+    private router: Router
+  ) {}
 
   async ngOnInit() {
     this.deportista = await this.athletesService.getAthleteById();
     console.log(this.deportista);
-   
   }
 
   recogerImagen($event: any) {
-    this.files = $event.target.files
+    this.files = $event.target.files;
     console.log(this.files);
   }
 
-  async onSubmit(pForm: any) {
+  async onSubmit(pForm: any) {
     let formulario = new FormData();
     if (this.files !== undefined) {
       formulario.append('photo', this.files[0]);
@@ -50,25 +47,24 @@ export class EditProfileAthleteComponent implements OnInit {
     console.log(result);
   }
 
-
-
- deleteConfirm() {
+  deleteConfirm() {
     Swal.fire({
       title: '¿Estás seguro de borrar tu cuenta?',
       showDenyButton: true,
-      confirmButtonText: 'Borrar'
-    }).then(async (result) => {
+      confirmButtonText: 'Eliminar',
+      denyButtonText: 'Cancelar'
+    }).then(async result => {
       if (result.isConfirmed) {
-        Swal.fire('Borrada correctamente', '', 'success')
+        Swal.fire('Cuenta eliminada', '', 'success');
         const result = await this.athletesService.deleteAccount();
         localStorage.removeItem('token');
         setTimeout(() => {
-          if(result.affectedRows) {
+          if (result.affectedRows) {
             this.router.navigate(['/home']);
           }
         }, 500);
       } else if (result.isDenied) {
-        Swal.fire('Changes are not saved', '', 'info')
+        Swal.fire('No se ha podido eliminar la cuenta', '', 'info');
       }
     });
   }
@@ -82,5 +78,4 @@ export class EditProfileAthleteComponent implements OnInit {
       timer: 1500
     });
   }
-
 }
