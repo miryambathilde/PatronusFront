@@ -4,9 +4,9 @@
     <div class="col-9 offset-3 col-lg-11 offset-lg-1 p-3 filtros">
       <!-- OUTPUTS FILTROS-->
               <app-filtros
-              (filtroPais)="onFiltroPais($event)"
-              (filtroDeporte)="onFiltroDeporte($event)"
-              (filtroInvertible)="onFiltroInvertible($event)"
+              (filtroPais)="recogerPais($event)"
+              (filtroDeporte)="recogerDeporte($event)"
+              (filtroInvertible)="recogerInvertible($event)"
               ></app-filtros>
               <form class="form-inline d-flex">
                   <label class="me-2 aling">Ordenar por :</label>
