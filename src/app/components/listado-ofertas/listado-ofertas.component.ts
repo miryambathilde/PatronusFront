@@ -10,12 +10,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./listado-ofertas.component.css']
 })
 export class ListadoOfertasComponent implements OnInit {
-
   offers: Offer[] | undefined;
+  urlBack: string = 'http://localhost:3000/';
 
   constructor(
     private athletesService: AthletesService,
-    private router: Router) { }
+    private router: Router
+  ) {}
 
   async ngOnInit() {
     this.offers = await this.athletesService.offers();
@@ -25,16 +26,16 @@ export class ListadoOfertasComponent implements OnInit {
   async onAccept(idOffer: any) {
     const result = await this.athletesService.acceptOffer(idOffer);
     console.log(result);
-    if(result.affectedRows) {
-      window.location.reload()
+    if (result.affectedRows) {
+      window.location.reload();
     }
   }
 
   async onReject(idOffer: any) {
     const result = await this.athletesService.rejectOffer(idOffer);
     console.log(result);
-    if(result.affectedRows) {
-      window.location.reload()
+    if (result.affectedRows) {
+      window.location.reload();
     }
   }
 
@@ -44,12 +45,12 @@ export class ListadoOfertasComponent implements OnInit {
       showDenyButton: true,
       confirmButtonText: 'Aceptar',
       denyButtonText: 'Cancelar'
-    }).then((result) => {
+    }).then(result => {
       if (result.isConfirmed) {
-        Swal.fire('¡Oferta aceptada!', '', 'success')
+        Swal.fire('¡Oferta aceptada!', '', 'success');
         // aquí borrar
       } else if (result.isDenied) {
-        Swal.fire('Oferta no enviada', '', 'info')
+        Swal.fire('Oferta no enviada', '', 'info');
       }
     });
   }
@@ -60,14 +61,13 @@ export class ListadoOfertasComponent implements OnInit {
       showDenyButton: true,
       confirmButtonText: 'Rechazar',
       denyButtonText: 'Cancelar'
-    }).then((result) => {
+    }).then(result => {
       if (result.isConfirmed) {
-        Swal.fire('Rechazada', '', 'success')
+        Swal.fire('Rechazada', '', 'success');
         // aquí borrar
       } else if (result.isDenied) {
-        Swal.fire('Cancelado', '', 'info')
+        Swal.fire('Cancelado', '', 'info');
       }
     });
   }
-
 }

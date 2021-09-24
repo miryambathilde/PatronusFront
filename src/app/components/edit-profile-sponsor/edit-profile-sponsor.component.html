@@ -11,6 +11,7 @@
       <div class="card card-user izq">
           <!-- PONER IMAGEN: recordar la ruta: urlBack + sponsor?.logo   -->
         <div class="image">
+          <!-- <img [src]="urlBack + sponsor?.logo" [alt]="sponsor?.company" /> -->
           <img src="assets/img/damir-bosnjak.jpg" alt="billabong" />
         </div>
         <div class="card-body">
@@ -18,13 +19,13 @@
             <a href="#">
               <img
                 class="avatar border-gray"
-                src="assets/img/willy.jpg"
-                alt="..."
+                [src]="urlBack + sponsor?.logo"
+                [alt]="sponsor?.company"
               />
-              <h5 class="title pb-1">Empresa</h5>
             </a>
-            <p class="description pb-2">@willi97 (Red Social principal)</p>
-            <h6 class="description text-center pb pb-5">"Empresa dedicada a ayudar a jóvenes promesas del deporte en sus inicios"</h6>
+            <h5 class="title pb-1">{{sponsor?.company}}</h5>
+            <p class="description pb-2">Red Social de la empresa</p>
+            <h6 class="description text-center pb pb-5">{{sponsor?.aboutme}}</h6>
 
             <p></p>
             <ul class="redes">
