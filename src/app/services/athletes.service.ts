@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Deportista } from "../interfaces/deportista.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -135,6 +134,19 @@ export class AthletesService {
     const id = localStorage.getItem('id');
     return this.httpClient.put<any>(this.baseUrl + 'profile/' + id, pForm, httpOptions).toPromise();
   }
+
+
+  sendEmailPass(pForm: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    const idAthlete = localStorage.getItem('id');
+    return this.httpClient.post<any>(this.baseUrl + 'send-email/' + idAthlete, pForm, httpOptions).toPromise();
+  }
+
 
 
   deleteAccount(): Promise<any> {

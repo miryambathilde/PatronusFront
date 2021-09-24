@@ -21,8 +21,20 @@ export class SponsorsService {
      };
      const idSponsor = localStorage.getItem('id');
      return this.httpClient.get<any>(this.baseUrl + idSponsor, httpOptions).toPromise();
+   };
+
+   getEmailSponsor(): Promise<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    const idSponsor = localStorage.getItem('id');
+    return this.httpClient.get<any>(this.baseUrl + 'email/' + idSponsor, httpOptions).toPromise();
    }
 
+   
    getAllAthletes(): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({

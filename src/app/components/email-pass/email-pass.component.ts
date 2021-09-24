@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AthletesService } from 'src/app/services/athletes.service';
 import { SponsorsService } from 'src/app/services/sponsors.service';
-import { UsersServicesService } from 'src/app/services/users-services.service';
+
 
 @Component({
   selector: 'app-email-pass',
@@ -9,14 +10,24 @@ import { UsersServicesService } from 'src/app/services/users-services.service';
 })
 export class EmailPassComponent implements OnInit {
 
-  constructor(private sponsorsService: SponsorsService) { }
+  constructor(
+    private sponsorsService: SponsorsService,
+    private athletesService: AthletesService) { }
 
   ngOnInit(): void {
   }
 
   async onSubmit(pForm: any) {
-    const result = await this.sponsorsService.sendEmailPass(pForm.value);
-    console.log(result);
+    const role = localStorage.getItem('role');
+    console.log(role);
+    if (role === 'S') {
+      const result = await this.sponsorsService.sendEmailPass(pForm.value);
+      console.log(result);
+    } else if (role === 'A') {
+      const result = await this.athletesService.sendEmailPass(pForm.value);
+      console.log(result);
+    }
   }
+
 
 }

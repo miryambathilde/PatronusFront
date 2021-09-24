@@ -177,7 +177,10 @@
               </div>
             </div>
           </form>
-          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" (click)="onDelete()" (click)="deleteConfirm()">
+          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" [routerLink]="['/email-pass']">
+            Editar contraseña
+          </button>
+          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" (click)="deleteConfirm()">
             Eliminar cuenta
           </button>
         </div>
