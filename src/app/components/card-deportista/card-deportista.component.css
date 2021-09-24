@@ -86,7 +86,10 @@ box-shadow: 3px 12px 31px 1px rgba(30,6,2,0.69);
 .btn-danger:hover {
   background-color: #e52026;
   border: 2px solid #8a1418;
+  font-weight: 600;
 }
 .btn-primary:hover {
-  border: 2px solid #14308a;
+  background-color: #0051ff;
+  border: 2px solid #1a3fb8;
+  font-weight: 600;
 }

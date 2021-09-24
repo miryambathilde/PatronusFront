@@ -46,7 +46,7 @@ export class ListadoOfertasComponent implements OnInit {
       denyButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('¡Oferta aceptada con éxito!', '', 'success')
+        Swal.fire('¡Oferta aceptada!', '', 'success')
         // aquí borrar
       } else if (result.isDenied) {
         Swal.fire('Oferta no enviada', '', 'info')

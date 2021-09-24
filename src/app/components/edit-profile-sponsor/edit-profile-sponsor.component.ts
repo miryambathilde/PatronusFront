@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Sponsor } from 'src/app/interfaces/sponsor.interface';
 import { SponsorsService } from 'src/app/services/sponsors.service';
-import {​​​​​​ IDropdownSettings }​​​​​​ from 'ng-multiselect-dropdown';
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import Swal from 'sweetalert2';
-
 
 @Component({
   selector: 'app-edit-profile-sponsor',
@@ -12,24 +11,20 @@ import Swal from 'sweetalert2';
   styleUrls: ['./edit-profile-sponsor.component.css']
 })
 export class EditProfileSponsorComponent implements OnInit {
-
   sponsor: any = {};
   files: any;
-  urlBack: string = "http://localhost:3000/";
-  emailSponsor: any = []; 
+  urlBack: string = 'http://localhost:3000/';
+  emailSponsor: any = [];
   email: any = {};
 
   dropdownList = [] as any;
   selectedItems = [] as any;
   dropdownSettings: IDropdownSettings = {};
 
-  constructor( 
+  constructor(
     private sponsorsService: SponsorsService,
-    private router: Router ) {
-
-      
-
-     }
+    private router: Router
+  ) {}
 
   async ngOnInit() {
     this.sponsor = await this.sponsorsService.getSponsor();
@@ -37,16 +32,12 @@ export class EditProfileSponsorComponent implements OnInit {
     this.email = this.emailSponsor[0];
     console.log(this.email);
 
-
     this.selectedItems = await this.sponsorsService.getFavoritesSponsor();
 
- 
-     setTimeout(async () => {
+    setTimeout(async () => {
       this.dropdownList = await this.sponsorsService.getSportsSponsors();
       console.log(this.dropdownList);
     }, 10);
-    
-  
 
     this.dropdownSettings = {
       singleSelection: false,
@@ -54,28 +45,25 @@ export class EditProfileSponsorComponent implements OnInit {
       textField: 'item_text',
       selectAllText: 'Seleccionar todos',
       unSelectAllText: 'Deseleccionar todos',
-      itemsShowLimit: 5,
+      itemsShowLimit: 5
     };
-
   }
 
-  onItemSelect(item: any) {​​​​​​
+  onItemSelect(item: any) {
     const arrSelected = [];
-    for(let i = 0;i <= 6 ; i++) {
+    for (let i = 0; i <= 6; i++) {
       arrSelected.push(item);
     }
     console.log(arrSelected);
     // array + push
     // on submit
     // const result = this.sponsorsService.addFavoriteSport();
-  }​​​​​​
-  onSelectAll(items: any) {​​​​​​
+  }
+  onSelectAll(items: any) {
     const result = this.sponsorsService.addFavoriteSport();
-  }​​​​​​
-
-
+  }
   recogerImagen($event: any) {
-    this.files = $event.target.files
+    this.files = $event.target.files;
   }
 
   async onSubmit(pForm: any) {
@@ -107,27 +95,25 @@ export class EditProfileSponsorComponent implements OnInit {
     });
   }
 
-
-
   deleteConfirm() {
     Swal.fire({
-      title: '¿Estás seguro de borrar tu cuenta?',
+      title: '¿Estás seguro de que deseas eliminar tu cuenta?',
       showDenyButton: true,
-      confirmButtonText: 'Borrar'
-    }).then(async (result) => {
+      confirmButtonText: 'Eliminar',
+      denyButtonText: 'Cancelar'
+    }).then(async result => {
       if (result.isConfirmed) {
-        Swal.fire('Borrada correctamente', '', 'success')
+        Swal.fire('Cuenta eliminada', '', 'success');
         const result = await this.sponsorsService.deleteAccount();
         localStorage.removeItem('token');
         setTimeout(() => {
-          if(result.affectedRows) {
+          if (result.affectedRows) {
             this.router.navigate(['/home']);
           }
         }, 500);
       } else if (result.isDenied) {
-        Swal.fire('Changes are not saved', '', 'info')
+        Swal.fire('No se ha podido eliminar la cuenta', '', 'info');
       }
     });
   }
-
 }
