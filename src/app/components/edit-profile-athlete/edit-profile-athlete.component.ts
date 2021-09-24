@@ -50,23 +50,23 @@ export class EditProfileAthleteComponent implements OnInit {
     console.log(result);
   }
 
-  async onDelete() {
-    const result = await this.athletesService.deleteAccount();
-    localStorage.removeItem('token');
-    if(result.affectedRows) {
-      this.router.navigate(['/home']);
-    }
-  }
 
-  deleteConfirm() {
+
+ deleteConfirm() {
     Swal.fire({
       title: '¿Estás seguro de borrar tu cuenta?',
       showDenyButton: true,
       confirmButtonText: 'Borrar'
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         Swal.fire('Borrada correctamente', '', 'success')
-        // aquí borrar
+        const result = await this.athletesService.deleteAccount();
+        localStorage.removeItem('token');
+        setTimeout(() => {
+          if(result.affectedRows) {
+            this.router.navigate(['/home']);
+          }
+        }, 500);
       } else if (result.isDenied) {
         Swal.fire('Changes are not saved', '', 'info')
       }

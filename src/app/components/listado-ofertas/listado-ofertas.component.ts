@@ -26,7 +26,7 @@ export class ListadoOfertasComponent implements OnInit {
     const result = await this.athletesService.acceptOffer(idOffer);
     console.log(result);
     if(result.affectedRows) {
-      this.router.navigate(['/offers']);
+      window.location.reload()
     }
   }
 
@@ -34,7 +34,7 @@ export class ListadoOfertasComponent implements OnInit {
     const result = await this.athletesService.rejectOffer(idOffer);
     console.log(result);
     if(result.affectedRows) {
-      this.router.navigate(['/offers']);
+      window.location.reload()
     }
   }
 

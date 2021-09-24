@@ -60,18 +60,18 @@
                   />
                 </div>
               </div>
-              <!-- <div class="col-md-4 pl-1">
+              <div class="col-md-4 pl-1">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email</label>
                   <input
                     type="email"
                     class="form-control"
-                    placeholder="Email"
-                    value="naikitaaa@gmail.com"
-                    ngModel name="email"
+                    name="email"
+                    id="email"
+                    [(ngModel)]="email.email"
                   />
                 </div>
-              </div> -->
+              </div>
             </div>
             <div class="row">
               <div class="col-md-12">
@@ -154,7 +154,10 @@
               </div>
             </div>
           </form>
-          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" (click)="onDelete()" (click)="deleteConfirm()">
+          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" [routerLink]="['/email-pass']">
+            Editar contraseña
+          </button>
+          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" (click)="deleteConfirm()">
             Eliminar cuenta
           </button>
         </div>

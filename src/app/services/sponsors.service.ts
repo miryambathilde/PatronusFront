@@ -9,20 +9,43 @@ export class SponsorsService {
 
   constructor(private httpClient: HttpClient) {
     this.baseUrl = 'http://localhost:3000/api/sponsors/';
-  }
+   }
 
-  getSponsor(): Promise<any> {
+   getSponsor(): Promise<any> {
+     const httpOptions = {
+       headers: new HttpHeaders({
+         'Content-type': 'application/json',
+         'Authorization': localStorage.getItem('token')!
+       })
+     };
+     const idSponsor = localStorage.getItem('id');
+     return this.httpClient.get<any>(this.baseUrl + idSponsor, httpOptions).toPromise();
+   };
+
+   getEmailSponsor(): Promise<any>{
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
-        Authorization: localStorage.getItem('token')!
+        'Authorization': localStorage.getItem('token')!
       })
     };
     const idSponsor = localStorage.getItem('id');
-    return this.httpClient
-      .get<any>(this.baseUrl + idSponsor, httpOptions)
-      .toPromise();
-  }
+    return this.httpClient.get<any>(this.baseUrl + 'email/' + idSponsor, httpOptions).toPromise();
+   }
+
+   
+  //  getAllAthletes(): Promise<any> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-type': 'application/json',
+  //       Authorization: localStorage.getItem('token')!
+  //     })
+  //   };
+  //   const idSponsor = localStorage.getItem('id');
+  //   return this.httpClient
+  //     .get<any>(this.baseUrl + idSponsor, httpOptions)
+  //     .toPromise();
+  // }
 
   getAllAthletes(): Promise<any> {
     const httpOptions = {

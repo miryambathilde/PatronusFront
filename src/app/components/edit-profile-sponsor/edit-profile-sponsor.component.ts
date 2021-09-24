@@ -16,7 +16,8 @@ export class EditProfileSponsorComponent implements OnInit {
   sponsor: any = {};
   files: any;
   urlBack: string = "http://localhost:3000/";
-
+  emailSponsor: any = []; 
+  email: any = {};
 
   dropdownList = [] as any;
   selectedItems = [] as any;
@@ -32,6 +33,9 @@ export class EditProfileSponsorComponent implements OnInit {
 
   async ngOnInit() {
     this.sponsor = await this.sponsorsService.getSponsor();
+    this.emailSponsor = await this.sponsorsService.getEmailSponsor();
+    this.email = this.emailSponsor[0];
+    console.log(this.email);
 
 
     this.selectedItems = await this.sponsorsService.getFavoritesSponsor();
@@ -56,7 +60,11 @@ export class EditProfileSponsorComponent implements OnInit {
   }
 
   onItemSelect(item: any) {​​​​​​
-    console.log(item);
+    const arrSelected = [];
+    for(let i = 0;i <= 6 ; i++) {
+      arrSelected.push(item);
+    }
+    console.log(arrSelected);
     // array + push
     // on submit
     // const result = this.sponsorsService.addFavoriteSport();
@@ -84,6 +92,7 @@ export class EditProfileSponsorComponent implements OnInit {
     formulario.append('address', pForm.value.address);
     formulario.append('postalcode', pForm.value.postalcode);
     formulario.append('aboutme', pForm.value.aboutme);
+    console.log('Esto es el email', pForm.value.email);
     const result = await this.sponsorsService.editSponsor(formulario);
     console.log(result);
   }
@@ -99,25 +108,22 @@ export class EditProfileSponsorComponent implements OnInit {
   }
 
 
-  async onDelete() {
-    const result = await this.sponsorsService.deleteAccount();
-    localStorage.removeItem('token');
-    setTimeout(() => {
-      if(result.affectedRows) {
-        this.router.navigate(['/home']);
-      }
-    }, 500);
-  }
 
   deleteConfirm() {
     Swal.fire({
       title: '¿Estás seguro de borrar tu cuenta?',
       showDenyButton: true,
       confirmButtonText: 'Borrar'
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         Swal.fire('Borrada correctamente', '', 'success')
-        // aquí borrar
+        const result = await this.sponsorsService.deleteAccount();
+        localStorage.removeItem('token');
+        setTimeout(() => {
+          if(result.affectedRows) {
+            this.router.navigate(['/home']);
+          }
+        }, 500);
       } else if (result.isDenied) {
         Swal.fire('Changes are not saved', '', 'info')
       }
