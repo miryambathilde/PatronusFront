@@ -1,7 +1,7 @@
 export interface New {
-    photo: string;
-    summary: string;
-    username: string;
-    fk_athletes: number;
-    date: string;
+  photo: string;
+  summary: string;
+  username: string;
+  date: Date;
+  fk_athletes: number;
 }

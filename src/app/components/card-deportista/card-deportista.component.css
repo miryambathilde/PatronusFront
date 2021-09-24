@@ -87,3 +87,6 @@ box-shadow: 3px 12px 31px 1px rgba(30,6,2,0.69);
   background-color: #e52026;
   border: 2px solid #8a1418;
 }
+.btn-primary:hover {
+  border: 2px solid #14308a;
+}
