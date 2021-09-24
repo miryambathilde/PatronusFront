@@ -17,6 +17,7 @@
 
 .filtros {
   display: flex;
+  flex-direction: row;
 }
 
 .filtros form {
@@ -158,4 +159,14 @@
   height: 250px;
   background-position: center;
   background-size: cover;
+}
+
+@media(max-width: 500px){
+  .filtros {
+    flex-direction: column;
+  }
+
+  .filtros form {
+  margin-left: 0;
+  }
 }
