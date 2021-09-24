@@ -219,23 +219,24 @@ img {
   font-weight: 600;
 }
 
+.btn-danger:hover {
+  color: #fff;
+  background-color: #d62828 !important;
+  font-weight: 600;
+  border-color: #be0606 !important;
+}
+
+.btn-primary:hover {
+  color: #fff !important;
+  background-color: #1c65a0 !important;
+  border-color: #164d7a !important;
+  font-weight: 600;
+}
+
 .btn-warning:hover {
   color: #fff !important;
   background-color: #b39307 !important;
   border-color: #d4af08 !important;
-  font-weight: 600;
-}
-
-.btn-danger:hover {
-	color: #fff;
-	background-color: #d62828 !important;
-  font-weight: 600;
-	border-color: #be0606 !important;
-}
-.btn-primary:hover {
-  color: #fff !important;
-  background-color: #585757 !important;
-  border-color: #3f3f3f !important;
   font-weight: 600;
 }
 
