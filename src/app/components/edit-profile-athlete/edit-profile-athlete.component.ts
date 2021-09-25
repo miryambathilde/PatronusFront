@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 export class EditProfileAthleteComponent implements OnInit {
   files: any;
   deportista: any = {};
+  sponsors: any = [];
   urlBack: string = 'http://localhost:3000/';
 
   constructor(
@@ -23,6 +24,8 @@ export class EditProfileAthleteComponent implements OnInit {
   async ngOnInit() {
     this.deportista = await this.athletesService.getAthleteById();
     console.log(this.deportista);
+    this.sponsors = await this.athletesService.getMySponsors();
+    console.log(this.sponsors);
   }
 
   recogerImagen($event: any) {

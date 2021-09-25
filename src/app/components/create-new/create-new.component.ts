@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Deportista } from 'src/app/interfaces/deportista.interface';
 import { AthletesService } from 'src/app/services/athletes.service';
 import Swal from 'sweetalert2';
 
@@ -10,6 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class CreateNewComponent implements OnInit {
 
+  athlete: Deportista | undefined;
+  athleteName: any = "";
   files: any;
   
 
@@ -17,7 +20,9 @@ export class CreateNewComponent implements OnInit {
     private athletesService: AthletesService,
     private router: Router) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.athlete = await this.athletesService.getAthleteById();
+    this.athleteName = this.athlete?.name;
   }
 
   recogerImagen($event: any) {

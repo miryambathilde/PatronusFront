@@ -50,8 +50,22 @@ export class CardDeportistaComponent implements OnInit {
     this.activatedRoute.params.subscribe(async params => {
       const id = parseInt(params.idDeportista);
       const result = await this.sponsorsService.addAthleteFavorite(id);
-      console.log(result);
-      this.router.navigate(['/dashboard']);
+      console.log('add athlete favorite', result);
+      setTimeout(() => {
+        this.router.navigate(['/dashboard']);
+      }, 1000);
+    });
+  }
+
+
+  removeFavorite() {
+    this.activatedRoute.params.subscribe(async params => {
+      const id = parseInt(params.idDeportista);
+      const result = await this.sponsorsService.removeAthleteFavorite(id);
+      console.log('remove athlete favorite', result);
+      setTimeout(() => {
+        this.router.navigate(['/dashboard']);
+      }, 1000);
     });
   }
 

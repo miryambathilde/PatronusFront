@@ -185,6 +185,7 @@
                   Añadir a mis favoritos
                 </button>
                 <button
+                  (click)="removeFavorite()"
                   (click)="confirmFavorite()"
                   class="btn btn-secondary btn-fluid"
                   *ngIf="isFavorite"

@@ -212,7 +212,7 @@ export class SponsorsService {
     const fk_sponsors = localStorage.getItem('id');
     return this.httpClient
       .post<any>(
-        this.baseUrl + 'addAthleteFavorite/' + pfk_athletes + fk_sponsors,
+        this.baseUrl + 'addAthleteFavorite/' + pfk_athletes + '/' + fk_sponsors, null,
         httpOptions
       )
       .toPromise();
@@ -225,12 +225,10 @@ export class SponsorsService {
         Authorization: localStorage.getItem('token')!
       })
     };
-    const fk_sponsor = localStorage.getItem('id');
+    const idSponsor = localStorage.getItem('id');
     return this.httpClient
       .put<any>(
-        this.baseUrl + 'removeAthleteFavorite/' + pId,
-        fk_sponsor,
-        httpOptions
+        this.baseUrl + 'revertAthleteFavorite/' + pId + '/' + idSponsor, null, httpOptions
       )
       .toPromise();
   }
