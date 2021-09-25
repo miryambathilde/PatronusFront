@@ -9,9 +9,11 @@
         <option *ngFor="let sport of sports" [value]="sport?.sport">{{sport?.sport}}</option>
       </select>
       <label class="mb-2 me-2">Filtro por Invertible:</label>
-      <select class="me-2">
-        <option value="todos">Invertibles</option>
-        <option value="todos">Ya no disponibles</option>
+
+      <select class="me-2" (change)="recogerInvertible($event)">
+        <option value="todos">Todos</option>
+        <option value="invertibles">Invertibles</option>
+        <option value="noinvertibles">Ya no disponibles</option>
       </select>
   
 

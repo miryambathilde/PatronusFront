@@ -282,6 +282,17 @@ export class SponsorsService {
       .toPromise();
   }
 
+
+  athleteIsFavorite(pId: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: localStorage.getItem('token')!
+      })
+    };
+    const idSponsor = localStorage.getItem('id');
+    return this.httpClient.get<any>(this.baseUrl + 'athleteIsFavorite/' + idSponsor + '/' + pId, httpOptions).toPromise();
+  }
+
   // addFavoriteSport(pSport: any): Promise<any> {
   //   const httpOptions = {
   //     headers: new HttpHeaders({
@@ -301,6 +312,20 @@ export class SponsorsService {
   //   const idSponsor = localStorage.getItem('id');
   //   return this.httpClient.post<any>(this.baseUrl + '/' + idSponsor, pSports, httpOptions).toPromise();
   // }
+
+
+  // Recomendaciones -----------------------------------
+
+  getRecomByToken(pToken: any, pId: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: localStorage.getItem('token')!
+      })
+    };
+    const pTokenString = pToken.toString();
+    return this.httpClient.get<any>(this.baseUrl + 'recommendsByTokens/' + pId + '/' + pTokenString, httpOptions).toPromise();
+  }
+
 
   sendEmailPass(pForm: any): Promise<any> {
     const httpOptions = {

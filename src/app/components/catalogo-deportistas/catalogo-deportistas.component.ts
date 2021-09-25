@@ -52,6 +52,9 @@ export class CatalogoDeportistasComponent implements OnInit {
 
 
   async recogerInvertible($event: any) {
+    if ($event === 'todos') {
+      this.deportistas = await this.sponsorsService.getAllAthletes();
+    }
     if ($event === 'invertibles') {
       this.deportistas = await this.sponsorsService.getAthletesInvertibles();
       console.log(this.deportistas);
@@ -67,7 +70,7 @@ export class CatalogoDeportistasComponent implements OnInit {
       console.log('Estos son los deportistas', this.deportistas);
     } else if ($event.target.value === 'percentage') {
       this.deportistas = await this.sponsorsService.getAthletesByPercentage();
-      console.log('Estos sib kis de portcetae', this.deportistas);
+      console.log('Estos son los de porcentaje', this.deportistas);
       console.log(this.deportistas);
     } else if ($event.target.value === 'limitdate') {
       this.deportistas = await this.sponsorsService.getAthletesByLimitDate();

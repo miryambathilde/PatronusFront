@@ -180,8 +180,16 @@
                   (click)="confirmFavorite()"
                   (click)="addFavorite()"
                   class="btn btn-primary btn-fluid"
+                  *ngIf="!isFavorite"
                 >
                   Añadir a mis favoritos
+                </button>
+                <button
+                  (click)="confirmFavorite()"
+                  class="btn btn-secondary btn-fluid"
+                  *ngIf="isFavorite"
+                >
+                  Eliminar de favoritos
                 </button>
                 <button
                   class="btn btn-danger btn-fluid"

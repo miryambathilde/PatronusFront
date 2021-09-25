@@ -9,16 +9,18 @@
               (filtroInvertible)="recogerInvertible($event)"
               ></app-filtros>
               <form class="form-inline d-flex">
-                  <label class="me-2 aling">Ordenar por :</label>
+                  <label class="me-2 aling">Ordenar por: </label>
                   <div class="short-by">
                     <select
                     class="form-select basic-select select2-hidden-accessible"
                     data-select2-id="1"
                     tabindex="-1"
                     aria-hidden="true"
+                    (change)="ordenar($event)"
                     >
-                    <option data-select2-id="3">% invertido</option>
-                    <option>Fecha límite</option>
+                    <option data-select2-id="3" value="todos">Todos</option>
+                    <option data-select2-id="3" value="percentage">% Invertido</option>
+                    <option value="limitdate">Fecha límite</option>
                   </select>
                 </div>
             </form>

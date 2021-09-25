@@ -12,6 +12,13 @@ import Swal from 'sweetalert2';
 })
 export class CardDeportistaComponent implements OnInit {
   miDeportista: Deportista | undefined;
+  athleteByToken: Deportista | undefined;
+  athleteByResults: Deportista | undefined;
+  athleteByCountry: Deportista | undefined;
+
+  isFavorite: boolean = false;
+
+
   urlBack: string = 'http://localhost:3000/';
 
   constructor(
@@ -21,13 +28,23 @@ export class CardDeportistaComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
       const id = parseInt(params.idDeportista);
       this.miDeportista = await this.sponsorsService.getAthleteById(id);
       console.log(this.miDeportista);
+      this.athleteByToken = await this.sponsorsService.getRecomByToken(this.miDeportista?.quantitydemand, this.miDeportista?.id);
+      console.log('Athlete by Token', this.athleteByToken);
+      // this.athleteByResults = await this.sponsorsService.getRecomByResults();
+      this.athleteByCountry = await this.sponsorsService.getAthleteByCountry(this.miDeportista?.country);
+      console.log('Athlete by Country', this.athleteByCountry);
+      const favorite = await this.sponsorsService.athleteIsFavorite(id);
+      console.log('favorite', favorite[0])
+      this.isFavorite = (favorite[0] !== undefined) ? true : false;
     });
+
   }
+
 
   addFavorite() {
     this.activatedRoute.params.subscribe(async params => {
@@ -38,6 +55,7 @@ export class CardDeportistaComponent implements OnInit {
     });
   }
 
+  
   confirmFavorite() {
     Swal.fire({
       position: 'top-end',
@@ -48,3 +66,4 @@ export class CardDeportistaComponent implements OnInit {
     });
   }
 }
+
