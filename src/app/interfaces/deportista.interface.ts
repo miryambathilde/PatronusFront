@@ -5,6 +5,7 @@ export interface Deportista {
   age: number;
   photo: string;
   sport: string;
+  sponsors: string;
   quantitydemand: number;
   percentage: number;
   limitdate: string;

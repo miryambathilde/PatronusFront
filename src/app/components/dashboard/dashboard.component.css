@@ -127,7 +127,7 @@ td button {
 
 
 
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
 
  .arriba {
    margin-bottom: 0;
@@ -147,7 +147,7 @@ td button {
 }
 
 }
-@media (min-width: 760px) and (max-width: 900px) { 
+@media (min-width: 760px) and (max-width: 900px) {
 
  .arriba {
    margin-bottom: 0;
@@ -181,7 +181,7 @@ td button {
 
 
 }
- @media (min-width: 1399.98px) { 
+ @media (min-width: 1399.98px) {
     .arriba {
     margin-bottom: 1rem;
   }
