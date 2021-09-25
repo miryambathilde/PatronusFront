@@ -43,13 +43,13 @@
               <th>Deporte</th>
               <th class="ocultar-contenido">Edad</th>
               <th class="ocultar-contenido">País</th>
-              <th class="text-right ocultar-contenido ocultar-tablet">Precio por token</th>
+              <!-- <th class="text-right ocultar-contenido ocultar-tablet">Precio por token</th> -->
               <th class="text-right ocultar-contenido ocultar-tablet">Tokens en venta</th>
               <th class="text-right"></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr *ngFor="let favorite of favorites" >
               <td>
                 <img
                   class="iconowatch"
@@ -57,22 +57,22 @@
                   alt=""
                 />
               </td>
-              <td class="nom-perfil exp"><p>Michael Phelps</p></td>
+              <td class="nom-perfil exp"><p>{{favorite?.name}} {{favorite?.surname}}</p></td>
 
               <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica1.png" alt="" />
               </td>
-              <td>Natación</td>
-              <td class="ocultar-contenido">36</td>
-              <td class="ocultar-contenido">Estados Unidos</td>
-              <td class="text-right ocultar-contenido ocultar-tablet">1.250€</td>
-              <td class="text-right ocultar-contenido ocultar-tablet">600</td>
-              <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
+              <td>{{favorite?.sport}}</td>
+              <td class="ocultar-contenido">{{favorite?.age}}</td>
+              <td class="ocultar-contenido">{{favorite?.country}}</td>
+              <!-- <td class="text-right ocultar-contenido ocultar-tablet">1.250€</td> -->
+              <td class="text-right ocultar-contenido ocultar-tablet">{{favorite?.quantitydemand}}</td>
+              <td class="text-right"><button type="submit" class="btn btn-danger btn-round" [routerLink]="['/deportista', favorite.id]">
               Ver Ficha
                 </button></td>
             </tr>
 
-            <tr>
+            <!-- <tr>
               <td>
                 <img
                   class="iconowatch"
@@ -246,7 +246,7 @@
               <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
               Ver Ficha
                 </button></td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>

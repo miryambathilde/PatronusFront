@@ -11,12 +11,19 @@ export class NewsComponent implements OnInit {
 
   news: New[] = [];
   urlBack: string = "http://localhost:3000/";
+  islooged: boolean = false;
 
   constructor(private usersService: UsersServicesService) { }
 
   async ngOnInit() {
     this.news = await this.usersService.getNews();
     console.log(this.news);
+
+  }
+
+  ngDoCheck() {
+    const token = localStorage.getItem('token');
+    this.islooged = (token !== null) ? true : false;
   }
 
 }

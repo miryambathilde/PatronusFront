@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { myAthlete } from "src/app/interfaces/myAthlete.interface";
+import { Deportista } from 'src/app/interfaces/deportista.interface';
 import { SponsorsService } from "src/app/services/sponsors.service";
 
 @Component({
@@ -8,7 +8,8 @@ import { SponsorsService } from "src/app/services/sponsors.service";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  favorites: myAthlete[] | undefined;
+  
+  favorites: Deportista[] | undefined;
 
   constructor(private sponsorsService: SponsorsService) {}
 

@@ -14,7 +14,7 @@
                         <h5 class="card-title">{{new?.username}}</h5>
                         <p class="card-text">{{new?.summary}}</p>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button [routerLink]="['/deportista/', new.fk_athletes]" routerLinkActive="router-link-active"  class="btn btn-danger" type="button">Ver deportista</button>
+                            <button *ngIf="islooged" [routerLink]="['/deportista/', new.fk_athletes]" routerLinkActive="router-link-active"  class="btn btn-danger" type="button">Ver deportista</button>
                           </div>
                     </div>
                 </div>
