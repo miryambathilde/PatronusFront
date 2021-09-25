@@ -154,7 +154,7 @@
                 <h6 class="mb-0">Seguidores en redes sociales</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                100k
+                {{miDeportista?.followers}}
               </div>
             </div>
             <hr />
@@ -163,7 +163,7 @@
                 <h6 class="mb-0">Patrocinadores</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <!-- {{ miDeportista?.patrocinadores }} -->
+                {{ miDeportista?.sponsors }}
               </div>
             </div>
             <hr />
@@ -203,7 +203,7 @@
           </div>
         </div>
         <div *ngIf="!miDeportista">
-          <h1>El deportista seleccionado ya no está disponible</h1>
+          <h5 class="text-muted mt-4">El deportista seleccionado ya no está disponible</h5>
         </div>
       </div>
     </div>
