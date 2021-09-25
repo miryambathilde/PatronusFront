@@ -6,7 +6,6 @@
       <h1 class="mb-4">Publica tus logros y progresos</h1>
       <div class="card card-user">
         <div class="card-header pb-2 pt-3">
-          <!-- <h5 class="card-title">¡Enhorabuena!</h5> -->
           <h4>¡Anímate a compartir tus logros!</h4>
         </div>
         <div class="card-body">
@@ -28,18 +27,18 @@
                 </div>
             </div>
             <div class="input-group mb-2">
-                <span class="input-group-text">Resume tu triunfo:</span>
+                <span class="input-group-text">Cuéntanos tu triunfo</span>
                 <textarea class="form-control" aria-label="With textarea"
                 ngModel name="summary"
                 >
                 </textarea>
             </div>
-            <span>Fecha de creación:</span><br>
+            <span>Fecha de creación</span><br>
             <div class="input-group">
               <input class="form-control mt-2" type="date" ngModel name="date" id="date">
             </div>
-            <div class="update ml-auto mr-auto mt-2">
-                <button type="submit" class="btn btn-danger btn-round" (click)="alertConfirm()">
+            <div class="update ml-auto mr-auto mt-3">
+                <button type="submit" class="btn btn-primary btn-round" (click)="alertConfirm()">
                     Publicar noticia
                 </button>
             </div>

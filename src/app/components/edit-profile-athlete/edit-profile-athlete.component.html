@@ -16,16 +16,16 @@
         </div>
         <div class="card-body">
           <div class="author">
-            <!-- <a href="#">
+            <a href="#">
               <img
                 class="avatar border-gray"
-                [src]="urlBack + deportista?.photo"
+                src="assets/img/pesas.jpeg"
                 [alt]="deportista?.name"
               />
-            </a> -->
-            <h5 class="title pb-1">Jesus Ignacio Denis Ulbeira</h5>
+            </a>
+            <h5 class="title pb-1">{{deportista?.name}} {{deportista?.surname}}</h5>
             <p class="description pb-2">@williams97</p>
-            <h6 class="description text-center">"Analista Deportivo"</h6>
+            <h6 class="description text-center">{{deportista?.sport}}</h6>
 
             <br>
             <ul class="redes">
@@ -178,10 +178,10 @@
               </div>
             </div>
           </form>
-          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" [routerLink]="['/email-pass']">
+          <button type="button" class="btn btn-primary btn-round border-primary bg-primary text-white mt-3" [routerLink]="['/email-pass']">
             Editar contraseña
           </button>
-          <button type="button" class="btn btn-primary btn-round border-secondary bg-secondary text-white mt-3" (click)="deleteConfirm()">
+          <button type="button" class="btn btn-warning btn-round border-warning bg-warning mt-3" (click)="deleteConfirm()">
             Eliminar cuenta
           </button>
         </div>
