@@ -36,6 +36,7 @@
               class="nav-link active"
               aria-current="page"
               [routerLink]="['/home']"
+              routerLinkActive="active"
               >Inicio</a
             >
           </li>
@@ -44,6 +45,7 @@
               class="nav-link active"
               aria-current="page"
               [routerLink]="['/about']"
+              routerLinkActive="active"
               >Quiénes somos</a
             >
           </li>
@@ -52,6 +54,7 @@
               class="nav-link active"
               aria-current="page"
               [routerLink]="['/login']"
+              routerLinkActive="active"
               >Iniciar sesión</a
             >
           </li>
@@ -60,24 +63,91 @@
               class="nav-link active"
               aria-current="page"
               [routerLink]="['/register']"
+              routerLinkActive="active"
               >Crear cuenta</a
             >
           </li>
-          <li class="nav-item" *ngIf="islooged">
+          <!-- <li class="nav-item" *ngIf="islooged">
             <a
               class="nav-link active"
               aria-current="page"
               [routerLink]="['/dashboard']"
               >Mi perfil</a
             >
+          </li> -->
+          <li class="nav-item" *ngIf="islooged && !isAthlete">
+            <a
+              class="nav-link active"
+              [routerLink]="['/dashboard']"
+              routerLinkActive="active"
+            >
+              <span data-feather="home"></span>
+              Mis favoritos
+            </a>
+          </li>
+          <!-- <li class="nav-item" *ngIf="islooged && !isAthlete">
+            <a
+              class="nav-link active"
+              [routerLink]="['/editprofile/sponsor']"
+              routerLinkActive="active"
+            >
+              <span data-feather="file"></span>
+              Editar perfil
+            </a>
+          </li> -->
+          <li class="nav-item" *ngIf="islooged && !isAthlete">
+            <a
+              class="nav-link active"
+              [routerLink]="['/portfolio']"
+              routerLinkActive="active"
+            >
+              <span data-feather="shopping-cart"></span>
+              Portfolio
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="islooged && !isAthlete">
+            <a [routerLink]="['/catalogo-deportistas']" routerLinkActive="active" class="nav-link active" href="#">
+              <span data-feather="users"></span>
+              Catálogo
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="islooged && !isAthlete">
+            <a [routerLink]="['/offers-made']" class="nav-link active" routerLinkActive="active" href="#">
+              <span data-feather="users"></span>
+              Ofertas realizadas
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="islooged && !isSponsor">
+            <a [routerLink]="['/offers']" routerLinkActive="active" class="nav-link active" href="#">
+              <span data-feather="users"></span>
+              Mis ofertas
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="islooged && !isSponsor">
+            <a [routerLink]="['/create-new']" routerLinkActive="active" class="nav-link active" href="#">
+              <span data-feather="users"></span>
+              Publicar noticia
+            </a>
           </li>
           <li class="nav-item">
             <a
-              class="nav-link active"
-              aria-current="page"
-              [routerLink]="['/news']"
-              >Noticias</a
+            class="nav-link active"
+            aria-current="page"
+            [routerLink]="['/news']"
+            >Noticias</a
             >
+          </li>
+          <li class="nav-item" *ngIf="islooged && !isSponsor">
+            <a [routerLink]="['/editprofile/athlete']" routerLinkActive="active" class="nav-link active" href="#">
+              <span data-feather="users"></span>
+              Editar perfil
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="islooged && !isAthlete">
+            <a [routerLink]="['/editprofile/sponsor']" routerLinkActive="active" class="nav-link active" href="#">
+              <span data-feather="users"></span>
+              Editar perfil
+            </a>
           </li>
           <li class="nav-item" *ngIf="islooged">
             <a
