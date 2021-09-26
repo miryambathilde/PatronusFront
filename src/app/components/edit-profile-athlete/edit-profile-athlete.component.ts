@@ -13,7 +13,8 @@ import Swal from 'sweetalert2';
 export class EditProfileAthleteComponent implements OnInit {
   files: any;
   deportista: any = {};
-  sponsors: any = [];
+  emailAthlete: any = [];
+  email: any = {};
   urlBack: string = 'http://localhost:3000/';
 
   constructor(
@@ -24,8 +25,9 @@ export class EditProfileAthleteComponent implements OnInit {
   async ngOnInit() {
     this.deportista = await this.athletesService.getAthleteById();
     console.log(this.deportista);
-    this.sponsors = await this.athletesService.getMySponsors();
-    console.log(this.sponsors);
+    this.emailAthlete = await this.athletesService.getEmail();
+    this.email = this.emailAthlete[0];
+    console.log(this.email);
   }
 
   recogerImagen($event: any) {
@@ -46,6 +48,7 @@ export class EditProfileAthleteComponent implements OnInit {
     formulario.append('country', pForm.value.country);
     formulario.append('email', pForm.value.email);
     formulario.append('sport', pForm.value.sport);
+    formulario.append('limitdate', pForm.value.limitdate);
     const result = await this.athletesService.editAthlete(formulario);
     console.log(result);
   }

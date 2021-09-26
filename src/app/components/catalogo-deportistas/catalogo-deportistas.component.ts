@@ -12,11 +12,13 @@ import { SponsorsService } from 'src/app/services/sponsors.service';
 export class CatalogoDeportistasComponent implements OnInit {
 
   deportistas: Deportista[] | undefined;
+  deportistasTimeOut: Deportista[] | undefined;
 
   urlBack: string = "http://localhost:3000/";
 
   countries: any[] = [];
   sports: any[] = [];
+
 
   constructor(
     private athletesService: AthletesService,
@@ -25,8 +27,10 @@ export class CatalogoDeportistasComponent implements OnInit {
   async ngOnInit() {
     // this.countries = await this.sponsorsService.getCountries();
     // this.sports = await this.sponsorsService.getSports();
-    this.deportistas = await this.sponsorsService.getAllAthletes();
+    this.deportistas = await this.sponsorsService.getAthletesByLimitDate();
     // console.log(this.deportistas);
+    this.deportistasTimeOut = await this.sponsorsService.getAllTimeOutAthletes();
+    console.log('deportistas timeout', this.deportistasTimeOut);
   }
 
 

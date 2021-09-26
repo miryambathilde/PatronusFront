@@ -36,6 +36,7 @@
               <th class="text-center">Edad</th>
               <th class="text-center">País</th>
               <th class="text-center">Tokens adquiridos</th>
+              <th class="text-center">Fecha expiración</th>
               <th></th>
             </tr>
           </thead>
@@ -53,6 +54,7 @@
               <td class="text-center">{{ myOffer?.age }}</td>
               <td class="text-center">{{ myOffer?.country }}</td>
               <td class="text-center">{{ myOffer?.participations }}</td>
+              <td class="text-center">{{ myOffer?.limitdate | date: 'dd/MM/yy' }}</td>
               <td class="text-right">
                 <button
                   routerLinkActive="active"

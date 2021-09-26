@@ -82,14 +82,14 @@ export class AthletesService {
     return this.httpClient.get<any>(this.baseUrl + idAthlete, httpOptions).toPromise();
   }
 
-  getMySponsors(): Promise<any> {
+  getEmail(): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Authorization': localStorage.getItem('token')!
       })
-    }
+    };
     const idAthlete = localStorage.getItem('id');
-    return this.httpClient.get<any>(this.baseUrl + 'mysponsors/' + idAthlete, httpOptions).toPromise();
+    return this.httpClient.get<any>(this.baseUrl + 'email/' + idAthlete, httpOptions).toPromise();
   }
 
   offers(): Promise<any> {

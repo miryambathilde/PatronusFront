@@ -105,6 +105,7 @@
                   <input
                     type="text"
                     class="form-control"
+                    [(ngModel)]="email.email"
                     name="email"
                     id="email"
                   />
@@ -160,6 +161,20 @@
                     name="sport"
                     id="sport"
                     [(ngModel)]="deportista.sport"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>Fecha de expiración tokens:</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    name="limitdate"
+                    id="limitdate"
+                    [(ngModel)]="deportista.limitdate"
                   />
                 </div>
               </div>

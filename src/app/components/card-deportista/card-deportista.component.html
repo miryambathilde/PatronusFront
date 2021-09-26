@@ -160,20 +160,20 @@
             <hr />
             <div class="row">
               <div class="col-sm-3">
-                <h6 class="mb-0">Patrocinadores</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                {{ miDeportista?.sponsors }}
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
                 <h6 class="mb-0">Rendimiento deportivo</h6>
                 <app-chart-rendimiento></app-chart-rendimiento>
               </div>
             </div>
             <br />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Patrocinadores:</h6>
+              </div>
+              <div class="d-flex justify-content-around">
+                <span *ngFor="let sponsor of sponsors">{{sponsor?.company}}</span>
+              </div>
+            </div>
+            <hr />
             <div class="row">
               <div class="d-grid gap-2">
                 <button
@@ -202,10 +202,58 @@
             </div>
           </div>
         </div>
-        <div *ngIf="!miDeportista">
+        <!-- <div *ngIf="!miDeportista">
           <h5 class="text-muted mt-4">El deportista seleccionado ya no está disponible</h5>
+        </div> -->
+      </div>
+    </div>
+    <h5 class="mt-5">Deportistas similares por rendimiento: </h5>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+      <div *ngFor="let athleteByResults of athletesByResults" class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{athleteByResults?.name}} {{athleteByResults?.surname}}</h5>
+            <p class="card-text">Sport: {{athleteByResults?.sport}}</p>
+            <p class="card-text">Country: {{athleteByResults?.country}}</p>
+            <p class="card-text">Tokens: {{athleteByResults?.quantitydemand}}</p>
+            <p class="card-text">Fecha expiración: {{athleteByResults?.limitdate | date: 'dd/MM/yy'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h5>Deportistas similares por nº tokens disponibles: </h5>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+      <div *ngFor="let athleteByToken of athletesByToken" class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{athleteByToken?.name}} {{athleteByToken?.surname}}</h5>
+            <p class="card-text">Sport: {{athleteByToken?.sport}}</p>
+            <p class="card-text">Country: {{athleteByToken?.country}}</p>
+            <p class="card-text">Tokens: {{athleteByToken?.quantitydemand}}</p>
+            <p class="card-text">Fecha expiración: {{athleteByToken?.limitdate | date: 'dd/MM/yy'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h5>Deportistas similares por país: </h5>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+      <div *ngFor="let athleteByCountry of athletesByCountry" class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{athleteByCountry?.name}} {{athleteByCountry?.surname}}</h5>
+            <p class="card-text">Sport: {{athleteByCountry?.sport}}</p>
+            <p class="card-text">Country: {{athleteByCountry?.country}}</p>
+            <p class="card-text">Tokens: {{athleteByCountry?.quantitydemand}}</p>
+            <p class="card-text">Fecha expiración: {{athleteByCountry?.limitdate | date: 'dd/MM/yy'}}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+

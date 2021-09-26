@@ -8,4 +8,5 @@ export interface myAthlete {
     logo: string;
     participations: number;
     status: number;
+    limitdate: Date;
 }

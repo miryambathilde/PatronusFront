@@ -161,6 +161,11 @@
   background-size: cover;
 }
 
+.cardTimeOut{
+  opacity: 0.6;
+}
+
+
 @media(max-width: 500px){
   .filtros {
     flex-direction: column;

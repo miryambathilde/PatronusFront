@@ -12,17 +12,18 @@ import Swal from 'sweetalert2';
 })
 export class CardDeportistaComponent implements OnInit {
   miDeportista: Deportista | undefined;
-  athleteByToken: Deportista | undefined;
-  athleteByResults: Deportista | undefined;
-  athleteByCountry: Deportista | undefined;
+  athletesByToken: Deportista[] | undefined;
+  athletesByResults: Deportista[] | undefined;
+  athletesByCountry: Deportista[] | undefined;
+
+  sponsors: any = [];
 
   isFavorite: boolean = false;
-
 
   urlBack: string = 'http://localhost:3000/';
 
   constructor(
-    private AthletesService: AthletesService,
+    private athletesService: AthletesService,
     private sponsorsService: SponsorsService,
     private activatedRoute: ActivatedRoute,
     private router: Router
@@ -33,14 +34,17 @@ export class CardDeportistaComponent implements OnInit {
       const id = parseInt(params.idDeportista);
       this.miDeportista = await this.sponsorsService.getAthleteById(id);
       console.log(this.miDeportista);
-      this.athleteByToken = await this.sponsorsService.getRecomByToken(this.miDeportista?.quantitydemand, this.miDeportista?.id);
-      console.log('Athlete by Token', this.athleteByToken);
-      // this.athleteByResults = await this.sponsorsService.getRecomByResults();
-      this.athleteByCountry = await this.sponsorsService.getAthleteByCountry(this.miDeportista?.country);
-      console.log('Athlete by Country', this.athleteByCountry);
+      this.athletesByToken = await this.sponsorsService.getRecomByToken(this.miDeportista?.quantitydemand, this.miDeportista?.id);
+      console.log('Athlete by Token', this.athletesByToken);
+      this.athletesByResults = await this.sponsorsService.getRecomByResults(this.miDeportista?.results, this.miDeportista?.id);
+      console.log('Athlete by results', this.athletesByResults);
       const favorite = await this.sponsorsService.athleteIsFavorite(id);
       console.log('favorite', favorite[0])
       this.isFavorite = (favorite[0] !== undefined) ? true : false;
+      this.sponsors = await this.sponsorsService.getSponsorsByAthlete(id);
+      console.log(this.sponsors);
+      this.athletesByCountry = await this.sponsorsService.getRecomByCountry(this.miDeportista?.country, this.miDeportista?.id);
+      console.log('Athlete by Country', this.athletesByCountry);
     });
 
   }

@@ -71,6 +71,25 @@ export class SponsorsService {
       .toPromise();
   }
 
+  getAllTimeOutAthletes(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        Authorization: localStorage.getItem('token')!
+      })
+    };
+    return this.httpClient.get<any>(this.baseUrl + 'athletesTimeOut', httpOptions).toPromise();
+  }
+
+  getSponsorsByAthlete(pIdAthlete: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    return this.httpClient.get<any>(this.baseUrl + 'sponsors/' + pIdAthlete, httpOptions).toPromise();
+  }
+
   getCountries(): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -322,6 +341,24 @@ export class SponsorsService {
     };
     const pTokenString = pToken.toString();
     return this.httpClient.get<any>(this.baseUrl + 'recommendsByTokens/' + pId + '/' + pTokenString, httpOptions).toPromise();
+  }
+
+  getRecomByCountry(pCountry: any, pId: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: localStorage.getItem('token')!
+      })
+    };
+    return this.httpClient.get<any>(this.baseUrl + 'recommendsByCountry/' + pId + '/' + pCountry, httpOptions).toPromise();
+  }
+
+  getRecomByResults(pResults: any, pId: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: localStorage.getItem('token')!
+      })
+    };
+    return this.httpClient.get<any>(this.baseUrl + 'recommendsByResults/' + pId + '/' + pResults, httpOptions).toPromise();
   }
 
 
