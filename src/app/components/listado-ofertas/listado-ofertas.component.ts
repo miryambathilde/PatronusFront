@@ -23,48 +23,56 @@ export class ListadoOfertasComponent implements OnInit {
     console.log(this.offers);
   }
 
-  async onAccept(idOffer: any) {
-    const result = await this.athletesService.acceptOffer(idOffer);
-    console.log(result);
-    if (result.affectedRows) {
-      window.location.reload();
-    }
-  }
+  // async onAccept(idOffer: any) {
+  //   const result = await this.athletesService.acceptOffer(idOffer);
+  //   console.log(result);
+  //   if (result.affectedRows) {
+  //     window.location.reload();
+  //   }
+  // }
 
-  async onReject(idOffer: any) {
-    const result = await this.athletesService.rejectOffer(idOffer);
-    console.log(result);
-    if (result.affectedRows) {
-      window.location.reload();
-    }
-  }
+  // async onReject(idOffer: any) {
+  //   const result = await this.athletesService.rejectOffer(idOffer);
+  //   console.log(result);
+  //   if (result.affectedRows) {
+  //     window.location.reload();
+  //   }
+  // }
 
-  confirmAccept() {
+  confirmAccept(idOffer: any) {
     Swal.fire({
       title: '¿Estás seguro de aceptar la oferta?',
       showDenyButton: true,
       confirmButtonText: 'Aceptar',
       denyButtonText: 'Cancelar'
-    }).then(result => {
+    }).then(async result => {
       if (result.isConfirmed) {
         Swal.fire('¡Oferta aceptada!', '', 'success');
-        // aquí borrar
+        const result = await this.athletesService.acceptOffer(idOffer);
+        console.log(result);
+        if (result.affectedRows) {
+          window.location.reload();
+        }
       } else if (result.isDenied) {
         Swal.fire('Oferta no enviada', '', 'info');
       }
     });
   }
 
-  confirmReject() {
+  confirmReject(idOffer: any) {
     Swal.fire({
       title: '¿Estás seguro de rechazar la oferta?',
       showDenyButton: true,
       confirmButtonText: 'Rechazar',
       denyButtonText: 'Cancelar'
-    }).then(result => {
+    }).then(async result => {
       if (result.isConfirmed) {
         Swal.fire('Rechazada', '', 'success');
-        // aquí borrar
+        const result = await this.athletesService.rejectOffer(idOffer);
+        console.log(result);
+        if (result.affectedRows) {
+          window.location.reload();
+        }
       } else if (result.isDenied) {
         Swal.fire('Cancelado', '', 'info');
       }

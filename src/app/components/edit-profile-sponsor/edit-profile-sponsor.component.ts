@@ -82,7 +82,8 @@ export class EditProfileSponsorComponent implements OnInit {
     formulario.append('aboutme', pForm.value.aboutme);
     console.log('Esto es el email', pForm.value.email);
     const result = await this.sponsorsService.editSponsor(formulario);
-    console.log(result);
+    console.log('sponsor editado', result);
+    window.location.reload();
   }
 
   confirmUpdate() {

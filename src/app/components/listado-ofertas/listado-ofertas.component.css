@@ -16,3 +16,15 @@ img {
 .btn-warning:hover {
   font-weight: 600;
 }
+
+.waiting{
+  color: #e9b200;
+}
+
+.accepted{
+  color: rgb(2, 114, 2);
+}
+
+
+
+

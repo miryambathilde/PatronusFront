@@ -370,12 +370,13 @@ export class SponsorsService {
       })
     };
     const idSponsor = localStorage.getItem('id');
+    const token = localStorage.getItem('token');
     return this.httpClient
-      .post<any>(this.baseUrl + 'send-email/' + idSponsor, pForm, httpOptions)
+      .post<any>(this.baseUrl + 'send-email/' + token + '/' + idSponsor, pForm, httpOptions)
       .toPromise();
   }
 
-  resetPass(pForm: any): Promise<any> {
+  resetPass(id: any, pForm: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -383,7 +384,7 @@ export class SponsorsService {
       })
     };
     return this.httpClient
-      .post<any>(this.baseUrl + 'resetPassword', httpOptions)
+      .post<any>(this.baseUrl + 'resetPassword/' + id, httpOptions)
       .toPromise();
   }
 

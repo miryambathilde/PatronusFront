@@ -51,6 +51,7 @@ export class EditProfileAthleteComponent implements OnInit {
     formulario.append('limitdate', pForm.value.limitdate);
     const result = await this.athletesService.editAthlete(formulario);
     console.log(result);
+    window.location.reload();
   }
 
   deleteConfirm() {

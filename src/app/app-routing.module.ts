@@ -45,7 +45,7 @@ const routes: Routes = [
   {path: "news", component: NewsComponent},
   {path: "create-new", component: CreateNewComponent, canActivate: [LoginGuard]},
   {path: "email-pass", component: EmailPassComponent},
-  {path: "reset-pass", component: ResetPassComponent},
+  {path: "reset-pass/:token/:idSponsor", component: ResetPassComponent},
   {path: "dashboard", component: DashboardComponent, canActivate: [LoginGuard]},
   {path: "**", redirectTo: "/home"},
 ];
