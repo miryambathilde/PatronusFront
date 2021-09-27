@@ -169,7 +169,6 @@ button {
   transform: skewX(173deg);
 }
 
-
 @media(max-width: 500px){
   .filtros {
     flex-direction: column;
