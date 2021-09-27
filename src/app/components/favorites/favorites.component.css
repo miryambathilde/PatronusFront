@@ -8,6 +8,12 @@ body {
   vertical-align: text-bottom;
 }
 
+button {
+  transform: skewX(173deg);
+  margin-left: 4px;
+  display: flex;
+}
+
 .btn-danger {
   background-color: rgb(238, 0, 0);
   border: 1.5px solid #c41a20;
