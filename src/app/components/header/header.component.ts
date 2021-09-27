@@ -8,42 +8,43 @@ import { NavigationEnd } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   islooged: boolean = false;
   ruta: boolean = false;
   ruta2: boolean = false;
+  isSponsor: boolean = false;
+  isAthlete: boolean = false;
 
-  constructor(
-    private router: Router
-  ) {
+  constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        console.log(event.url)
-        this.ruta = (event.url === '/home') ? true : false;
+        console.log(event.url);
+        this.ruta = event.url === '/home' ? true : false;
       }
     });
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        console.log(event.url)
-        this.ruta2 = (event.url === '/register') ? true : false;
+        console.log(event.url);
+        this.ruta2 = event.url === '/register' ? true : false;
       }
     });
-
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ngDoCheck() {
     const token = localStorage.getItem('token');
-    this.islooged = (token !== null) ? true : false;
+    this.islooged = token !== null ? true : false;
+    if (localStorage.getItem('role') === 'S') {
+      this.isSponsor = true;
+    }
+    if (localStorage.getItem('role') === 'A') {
+      this.isAthlete = true;
+    }
   }
 
-  logout(){
+  logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('role');
     this.router.navigate(['/login']);
   }
-
-
 }
