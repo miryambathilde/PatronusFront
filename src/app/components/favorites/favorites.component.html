@@ -16,7 +16,11 @@
       >
         <h1 class="h2">Mis favoritos</h1>
       </div>
-      <div class="col-12 d-flex watchlist table-responsive">
+      <h5 *ngIf="favorites.length === 0">Todavía no tienen ningún favorito en tu lista</h5>
+      <button type="submit" class="btn btn-danger btn-round mt-3" *ngIf="favorites.length === 0" [routerLink]="['/catalogo-deportistas']">
+          Añade tus primeros favoritos
+      </button>
+      <div class="col-12 d-flex watchlist table-responsive" *ngIf="favorites.length !== 0">
         <table class="table">
           <thead>
             <tr>

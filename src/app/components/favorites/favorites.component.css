@@ -8,6 +8,17 @@ body {
   vertical-align: text-bottom;
 }
 
+.btn-danger {
+  background-color: rgb(238, 0, 0);
+  border: 1.5px solid #c41a20;
+}
+
+.btn-danger:hover {
+  background-color: #e52026;
+  border: 2px solid #8a1418;
+  font-weight: 600;
+}
+
 /*
  * Sidebar
  */
