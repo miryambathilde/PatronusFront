@@ -9,7 +9,7 @@ import { SponsorsService } from 'src/app/services/sponsors.service';
 })
 export class FavoritesComponent implements OnInit {
 
-  favorites: myAthlete[] | undefined;
+  favorites: myAthlete[] = [];
 
   constructor(private sponsorsService: SponsorsService) { }
 

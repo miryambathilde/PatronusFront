@@ -1,1 +1,78 @@
-<p>favorites works!</p>
+<div class="container-fluid pt-2">
+  <div class="row">
+    <app-sidebar></app-sidebar>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div
+        class="
+          d-flex
+          justify-content-between
+          flex-wrap flex-md-nowrap
+          align-items-center
+          pt-3
+          pb-2
+          border-bottom
+          arriba
+        "
+      >
+        <h1 class="h2">Mis favoritos</h1>
+      </div>
+      <h5 *ngIf="favorites.length === 0">Todavía no tienen ningún favorito en tu lista</h5>
+      <button type="submit" class="btn btn-danger btn-round mt-3" *ngIf="favorites.length === 0" [routerLink]="['/catalogo-deportistas']">
+          Añade tus primeros favoritos
+      </button>
+      <div class="col-12 d-flex watchlist table-responsive" *ngIf="favorites.length !== 0">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th class="exp">Nombre</th>
+              <th class="ocultar-contenido ocultar-tablet">Rendimiento</th>
+              <th>Deporte</th>
+              <th class="ocultar-contenido">Edad</th>
+              <th class="ocultar-contenido">País</th>
+              <!-- <th class="text-right ocultar-contenido ocultar-tablet">Precio por token</th> -->
+              <th class="text-right ocultar-contenido ocultar-tablet">
+                Tokens en venta
+              </th>
+              <th class="text-right"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let favorite of favorites">
+              <td>
+                <img
+                  class="iconowatch"
+                  src="assets/img/deportistas-watchlist/duo.jpg"
+                  alt=""
+                />
+              </td>
+              <td class="nom-perfil exp">
+                <p>{{ favorite?.name }} {{ favorite?.surname }}</p>
+              </td>
+
+              <td class="ocultar-contenido ocultar-tablet">
+                <img src="../../../assets/img/graficas/grafica1.png" alt="" />
+              </td>
+              <td>{{ favorite?.sport }}</td>
+              <td class="ocultar-contenido">{{ favorite?.age }}</td>
+              <td class="ocultar-contenido">{{ favorite?.country }}</td>
+              <!-- <td class="text-right ocultar-contenido ocultar-tablet">1.250€</td> -->
+              <td class="text-right ocultar-contenido ocultar-tablet">
+                {{ favorite?.quantitydemand }}
+              </td>
+              <td class="text-right">
+                <button
+                  type="submit"
+                  class="btn btn-danger btn-round"
+                  [routerLink]="['/deportista', favorite.id]"
+                >
+                  Ver Ficha
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>

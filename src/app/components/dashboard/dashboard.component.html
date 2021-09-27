@@ -14,7 +14,7 @@
           arriba
         "
       >
-        <h1 class="h2">Mis favoritos</h1>
+        <h1 class="h2">Watchlist</h1>
         <!-- <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">
@@ -43,13 +43,15 @@
               <th>Deporte</th>
               <th class="ocultar-contenido">Edad</th>
               <th class="ocultar-contenido">País</th>
-              <!-- <th class="text-right ocultar-contenido ocultar-tablet">Precio por token</th> -->
-              <th class="text-right ocultar-contenido ocultar-tablet">Tokens en venta</th>
+              <th class="text-right ocultar-contenido ocultar-tablet">Precio por token</th>
+              <th class="text-right ocultar-contenido ocultar-tablet">
+                Tokens en venta
+              </th>
               <th class="text-right"></th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let favorite of favorites" >
+            <!-- <tr *ngFor="let favorite of favorites">
               <td>
                 <img
                   class="iconowatch"
@@ -57,22 +59,32 @@
                   alt=""
                 />
               </td>
-              <td class="nom-perfil exp"><p>{{favorite?.name}} {{favorite?.surname}}</p></td>
+              <td class="nom-perfil exp">
+                <p>{{ favorite?.name }} {{ favorite?.surname }}</p>
+              </td>
 
               <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica1.png" alt="" />
               </td>
-              <td>{{favorite?.sport}}</td>
-              <td class="ocultar-contenido">{{favorite?.age}}</td>
-              <td class="ocultar-contenido">{{favorite?.country}}</td>
+              <td>{{ favorite?.sport }}</td>
+              <td class="ocultar-contenido">{{ favorite?.age }}</td>
+              <td class="ocultar-contenido">{{ favorite?.country }}</td> -->
               <!-- <td class="text-right ocultar-contenido ocultar-tablet">1.250€</td> -->
-              <td class="text-right ocultar-contenido ocultar-tablet">{{favorite?.quantitydemand}}</td>
-              <td class="text-right"><button type="submit" class="btn btn-danger btn-round" [routerLink]="['/deportista', favorite.id]">
-              Ver Ficha
-                </button></td>
-            </tr>
+              <!-- <td class="text-right ocultar-contenido ocultar-tablet">
+                {{ favorite?.quantitydemand }}
+              </td>
+              <td class="text-right">
+                <button
+                  type="submit"
+                  class="btn btn-danger btn-round"
+                  [routerLink]="['/deportista', favorite.id]"
+                >
+                  Ver Ficha
+                </button>
+              </td>
+            </tr> -->
 
-            <!-- <tr>
+            <tr>
               <td>
                 <img
                   class="iconowatch"
@@ -84,14 +96,18 @@
               <td class="ocultar-contenido ocultar-tablet ">
                 <img src="../../../assets/img/graficas/grafica3.png" alt="" />
               </td>
-              <td >Tenis</td>
+              <td>Tenis</td>
               <td class="ocultar-contenido">35</td>
               <td class="ocultar-contenido">España</td>
-              <td class="text-right ocultar-contenido ocultar-tablet">1.400€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">
+                1.400€
+              </td>
               <td class="text-right ocultar-contenido ocultar-tablet">400</td>
-              <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
-              Ver Ficha
-                </button></td>
+              <td class="text-right">
+                <button type="submit" class="btn btn-danger btn-round">
+                  Ver Ficha
+                </button>
+              </td>
             </tr>
 
             <tr>
@@ -106,14 +122,16 @@
               <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica2.png" alt="" />
               </td>
-              <td >Atletismo</td>
+              <td>Atletismo</td>
               <td class="ocultar-contenido">33</td>
               <td class="ocultar-contenido">Jamaica</td>
               <td class="text-right ocultar-contenido ocultar-tablet">750€</td>
               <td class="text-right ocultar-contenido ocultar-tablet">250</td>
-              <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
-              Ver Ficha
-                </button></td>
+              <td class="text-right">
+                <button type="submit" class="btn btn-danger btn-round">
+                  Ver Ficha
+                </button>
+              </td>
             </tr>
 
             <tr>
@@ -131,11 +149,15 @@
               <td>Tenis</td>
               <td class="ocultar-contenido">38</td>
               <td class="ocultar-contenido">Suiza</td>
-              <td class="text-right ocultar-contenido ocultar-tablet">1.700€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">
+                1.700€
+              </td>
               <td class="text-right ocultar-contenido ocultar-tablet">120</td>
-              <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
-              Ver Ficha
-                </button></td>
+              <td class="text-right">
+                <button type="submit" class="btn btn-danger btn-round">
+                  Ver Ficha
+                </button>
+              </td>
             </tr>
 
             <tr>
@@ -150,14 +172,18 @@
               <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica4.png" alt="" />
               </td>
-              <td >Golf</td>
+              <td>Golf</td>
               <td class="ocultar-contenido">44</td>
               <td class="ocultar-contenido">Estados Unidos</td>
-              <td class="text-right ocultar-contenido ocultar-tablet">1.750€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">
+                1.750€
+              </td>
               <td class="text-right ocultar-contenido ocultar-tablet">50</td>
-              <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
-              Ver Ficha
-                </button></td>
+              <td class="text-right">
+                <button type="submit" class="btn btn-danger btn-round">
+                  Ver Ficha
+                </button>
+              </td>
             </tr>
 
             <tr>
@@ -172,14 +198,18 @@
               <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica3.png" alt="" />
               </td>
-              <td >Fútbol</td>
+              <td>Fútbol</td>
               <td class="ocultar-contenido">32</td>
               <td class="ocultar-contenido">Argentina</td>
-              <td class="text-right ocultar-contenido ocultar-tablet">2.250€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">
+                2.250€
+              </td>
               <td class="text-right ocultar-contenido ocultar-tablet">10</td>
-              <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
-              Ver Ficha
-                </button></td>
+              <td class="text-right">
+                <button type="submit" class="btn btn-danger btn-round">
+                  Ver Ficha
+                </button>
+              </td>
             </tr>
 
             <tr>
@@ -197,11 +227,15 @@
               <td>Fútbol</td>
               <td class="ocultar-contenido">35</td>
               <td class="ocultar-contenido">Portugal</td>
-              <td class="text-right ocultar-contenido ocultar-tablet">3.000€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">
+                3.000€
+              </td>
               <td class="text-right ocultar-contenido ocultar-tablet">15</td>
-              <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
-              Ver Ficha
-                </button></td>
+              <td class="text-right">
+                <button type="submit" class="btn btn-danger btn-round">
+                  Ver Ficha
+                </button>
+              </td>
             </tr>
 
             <tr>
@@ -216,14 +250,16 @@
               <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica5.png" alt="" />
               </td>
-              <td >Motociclismo</td>
+              <td>Motociclismo</td>
               <td class="ocultar-contenido">27</td>
               <td class="ocultar-contenido">España</td>
               <td class="text-right ocultar-contenido ocultar-tablet">750€</td>
               <td class="text-right ocultar-contenido ocultar-tablet">300</td>
-              <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
-              Ver Ficha
-                </button></td>
+              <td class="text-right">
+                <button type="submit" class="btn btn-danger btn-round">
+                  Ver Ficha
+                </button>
+              </td>
             </tr>
 
             <tr>
@@ -241,12 +277,16 @@
               <td>Baloncesto</td>
               <td class="ocultar-contenido">35</td>
               <td class="ocultar-contenido">Estados Unidos</td>
-              <td class="text-right ocultar-contenido ocultar-tablet">1.750€</td>
+              <td class="text-right ocultar-contenido ocultar-tablet">
+                1.750€
+              </td>
               <td class="text-right ocultar-contenido ocultar-tablet">65</td>
-              <td class="text-right"><button type="submit" class="btn btn-danger btn-round">
-              Ver Ficha
-                </button></td>
-            </tr> -->
+              <td class="text-right">
+                <button type="submit" class="btn btn-danger btn-round">
+                  Ver Ficha
+                </button>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
