@@ -50,17 +50,14 @@ export class EditProfileSponsorComponent implements OnInit {
   }
 
   onItemSelect(item: any) {
-    const arrSelected = [];
-    for (let i = 0; i <= 6; i++) {
-      arrSelected.push(item);
-    }
-    console.log(arrSelected);
-    // array + push
-    // on submit
-    // const result = this.sponsorsService.addFavoriteSport();
+    const itemId = item.item_id;
+    console.log(itemId);
+    const result = this.sponsorsService.addFavoriteSport(itemId);
+    console.log(result);
   }
   onSelectAll(items: any) {
-    const result = this.sponsorsService.addFavoriteSport();
+    // const result = this.sponsorsService.addFavoriteSport(itemId);
+    console.log(items);
   }
   recogerImagen($event: any) {
     this.files = $event.target.files;

@@ -48,7 +48,14 @@ export class EditProfileAthleteComponent implements OnInit {
     formulario.append('country', pForm.value.country);
     formulario.append('email', pForm.value.email);
     formulario.append('sport', pForm.value.sport);
-    formulario.append('limitdate', pForm.value.limitdate);
+    if(pForm.value.limitdate !== null) {
+      const date = pForm.value.limitdate.substring(0, 10);
+      console.log('esto es date', date);
+      formulario.append('limitdate', date);
+    } else {
+      const date = this.deportista.limitdate.substring(0, 10);
+      formulario.append('limitdate', date);
+    }
     const result = await this.athletesService.editAthlete(formulario);
     console.log(result);
     window.location.reload();

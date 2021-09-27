@@ -263,7 +263,7 @@ export class SponsorsService {
       .toPromise();
   }
 
-  addFavoriteSport(): Promise<any> {
+  addFavoriteSport(itemId: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization: localStorage.getItem('token')!
@@ -271,7 +271,7 @@ export class SponsorsService {
     };
     const idSponsor = localStorage.getItem('id');
     return this.httpClient
-      .post<any>(this.baseUrl + idSponsor, httpOptions)
+      .post<any>(this.baseUrl + 'addSportFavorite/' + idSponsor + '/' + itemId, null, httpOptions)
       .toPromise();
   }
 
@@ -384,7 +384,7 @@ export class SponsorsService {
       })
     };
     return this.httpClient
-      .post<any>(this.baseUrl + 'resetPassword/' + id, httpOptions)
+      .put<any>(this.baseUrl + 'resetPassword/' + id, pForm, httpOptions)
       .toPromise();
   }
 
