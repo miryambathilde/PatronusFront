@@ -67,14 +67,6 @@
               >Crear cuenta</a
             >
           </li>
-          <!-- <li class="nav-item" *ngIf="islooged">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              [routerLink]="['/dashboard']"
-              >Mi perfil</a
-            >
-          </li> -->
           <li class="nav-item" *ngIf="islooged && !isAthlete">
             <a
               class="nav-link active"
@@ -82,19 +74,19 @@
               routerLinkActive="active"
             >
               <span data-feather="home"></span>
+              Watchlist
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="islooged && !isAthlete">
+            <a
+              class="nav-link active"
+              [routerLink]="['/favorites']"
+              routerLinkActive="active"
+            >
+              <span data-feather="home"></span>
               Mis favoritos
             </a>
           </li>
-          <!-- <li class="nav-item" *ngIf="islooged && !isAthlete">
-            <a
-              class="nav-link active"
-              [routerLink]="['/editprofile/sponsor']"
-              routerLinkActive="active"
-            >
-              <span data-feather="file"></span>
-              Editar perfil
-            </a>
-          </li> -->
           <li class="nav-item" *ngIf="islooged && !isAthlete">
             <a
               class="nav-link active"
