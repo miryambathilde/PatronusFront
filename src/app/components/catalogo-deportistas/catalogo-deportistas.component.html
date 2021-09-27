@@ -1,37 +1,35 @@
+<app-sidebar></app-sidebar>
 <section class="container mt-5">
   <div class="row">
-    <app-sidebar></app-sidebar>
-    <div class="col-9 offset-3 col-lg-11 offset-lg-1 p-3 filtros">
+    <div class="col-9 offset-6 col-lg-11 offset-lg-1 p-3 filtros">
       <!-- OUTPUTS FILTROS-->
-              <app-filtros
-              (filtroPais)="recogerPais($event)"
-              (filtroDeporte)="recogerDeporte($event)"
-              (filtroInvertible)="recogerInvertible($event)"
-              ></app-filtros>
-              <form class="form-inline d-flex">
-                  <label class="me-2 aling">Ordenar por: </label>
-                  <div class="short-by">
-                    <select
-                    class="form-select basic-select select2-hidden-accessible"
-                    data-select2-id="1"
-                    tabindex="-1"
-                    aria-hidden="true"
-                    (change)="ordenar($event)"
-                    >
-                    <option data-select2-id="3" value="todos">Todos</option>
-                    <option data-select2-id="3" value="percentage">% Invertido</option>
-                    <option value="limitdate">Fecha límite</option>
-                  </select>
-                </div>
-            </form>
-          </div>
+      <app-filtros
+        (filtroPais)="recogerPais($event)"
+        (filtroDeporte)="recogerDeporte($event)"
+        (filtroInvertible)="recogerInvertible($event)"
+      ></app-filtros>
+      <form class="form-inline d-flex">
+        <label class="me-2 aling">Ordenar por: </label>
+        <div class="short-by">
+          <select
+            class="form-select basic-select select2-hidden-accessible"
+            data-select2-id="1"
+            tabindex="-1"
+            aria-hidden="true"
+            (change)="ordenar($event)"
+          >
+            <option data-select2-id="3" value="todos">Todos</option>
+            <option data-select2-id="3" value="percentage">% Invertido</option>
+            <option value="limitdate">Fecha límite</option>
+          </select>
+        </div>
+      </form>
+    </div>
   </div>
   <div class="container">
-    <div class="col-lg-9">
-      <div class="shortby ml-sm-auto d-flex align-items-left">
-      </div>
+    <div class="col-xl-6">
+      <div class="shortby ml-sm-auto d-flex align-items-left"></div>
     </div>
-
 
     <div class="blog-home2 py-5">
       <div class="container">
@@ -49,18 +47,27 @@
         </div>
         <div class="row mt-4 ms-1">
           <!-- Column -->
-          <div class="col-md-4 on-hover" *ngFor="let deportista of deportistas" >
+          <div class="col-md-4 on-hover" *ngFor="let deportista of deportistas">
             <div class="card border-0 mb-4">
-
-              <div class="imagen-deportista" [ngStyle]="{'background-image': 'url('+ urlBack + deportista?.photo +')'}" ></div>
+              <div
+                class="imagen-deportista"
+                [ngStyle]="{
+                  'background-image': 'url(' + urlBack + deportista?.photo + ')'
+                }"
+              ></div>
               <!-- fecha limite -->
               <div
                 class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded text-white position-absolute"
               >
-              <span class="d-block">{{ deportista?.limitdate | date: "dd-MM-yy" }}</span>
+                <span class="d-block">{{
+                  deportista?.limitdate | date: "dd-MM-yy"
+                }}</span>
               </div>
               <h2 class="font-weight-medium mt-3 text-center">
-                <a [routerLink]="['/deportista', deportista.id]" href="#" class="text-decoration-none link"
+                <a
+                  [routerLink]="['/deportista', deportista.id]"
+                  href="#"
+                  class="text-decoration-none link"
                   >{{ deportista?.name }} {{ deportista?.surname }}</a
                 >
               </h2>
@@ -75,25 +82,46 @@
                 <!-- porcentaje conseguido -->
                 <h6 class="mt-3">% conseguido:</h6>
                 <p>{{ deportista?.percentage }} %</p>
-                  <div class="d-grid gap-2 col-6 mx-auto">
-                    <button [routerLink]="['/deportista/', deportista.id]" routerLinkActive="router-link-active"  class="btn btn-danger" type="button">Ver ficha</button>
-                  </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button
+                    [routerLink]="['/deportista/', deportista.id]"
+                    routerLinkActive="router-link-active"
+                    class="btn btn-danger"
+                    type="button"
+                  >
+                    Ver ficha
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 on-hover cardTimeOut" *ngFor="let deportistaTimeOut of deportistasTimeOut" >
+          <div
+            class="col-md-4 on-hover cardTimeOut"
+            *ngFor="let deportistaTimeOut of deportistasTimeOut"
+          >
             <div class="card border-0 mb-4">
-
-              <div class="imagen-deportista" [ngStyle]="{'background-image': 'url('+ urlBack + deportistaTimeOut?.photo +')'}" ></div>
+              <div
+                class="imagen-deportista"
+                [ngStyle]="{
+                  'background-image':
+                    'url(' + urlBack + deportistaTimeOut?.photo + ')'
+                }"
+              ></div>
               <!-- fecha limite -->
               <div
                 class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded text-white position-absolute"
               >
-              <span class="d-block">{{ deportistaTimeOut?.limitdate | date: "dd-MM-yy" }}</span>
+                <span class="d-block">{{
+                  deportistaTimeOut?.limitdate | date: "dd-MM-yy"
+                }}</span>
               </div>
               <h2 class="font-weight-medium mt-3 text-center">
-                <a [routerLink]="['/deportista', deportistaTimeOut.id]" href="#" class="text-decoration-none link"
-                  >{{ deportistaTimeOut?.name }} {{ deportistaTimeOut?.surname }}</a
+                <a
+                  [routerLink]="['/deportista', deportistaTimeOut.id]"
+                  href="#"
+                  class="text-decoration-none link"
+                  >{{ deportistaTimeOut?.name }}
+                  {{ deportistaTimeOut?.surname }}</a
                 >
               </h2>
               <div class="info text-center">
@@ -107,12 +135,22 @@
                 <!-- porcentaje conseguido -->
                 <h6 class="mt-3">% conseguido:</h6>
                 <p>{{ deportistaTimeOut?.percentage }} %</p>
-                  <div class="d-grid gap-2 col-6 mx-auto">
-                    <button [routerLink]="['/deportista/', deportistaTimeOut.id]" routerLinkActive="router-link-active"  class="btn btn-danger" type="button" disabled>Ver ficha</button>
-                  </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button
+                    [routerLink]="['/deportista/', deportistaTimeOut.id]"
+                    routerLinkActive="router-link-active"
+                    class="btn btn-danger"
+                    type="button"
+                    disabled
+                  >
+                    Ver ficha
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
