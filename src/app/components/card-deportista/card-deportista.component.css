@@ -93,3 +93,16 @@ box-shadow: 3px 12px 31px 1px rgba(30,6,2,0.69);
   border: 2px solid #1a3fb8;
   font-weight: 600;
 }
+
+.recommend h5{
+  color: #e52026;
+}
+
+.recommend:hover {
+  cursor: pointer;
+}
+
+.recommend:hover h5{
+  color: #8a1418;
+}
+

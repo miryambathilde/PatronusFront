@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Sponsor } from 'src/app/interfaces/sponsor.interface';
 import { SponsorsService } from 'src/app/services/sponsors.service';
 import Swal from 'sweetalert2';
 
@@ -10,10 +11,19 @@ import Swal from 'sweetalert2';
 })
 export class EnvioPropuestaComponent implements OnInit {
 
-  constructor(private sponsorsService: SponsorsService,
-    private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  sponsor: Sponsor | undefined;
+  sponsorName: any;
+
+  constructor(
+    private sponsorsService: SponsorsService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+    ) { }
+
+  async ngOnInit() {
+    this.sponsor = await this.sponsorsService.getSponsor();
+    this.sponsorName = this.sponsor?.company;
   }
 
   async onSubmit(pForm: any) {
@@ -26,6 +36,9 @@ export class EnvioPropuestaComponent implements OnInit {
       }
       const result = await this.sponsorsService.newOffer(pFormItems);
       console.log(result);
+      setTimeout(() => {
+        this.router.navigate(['/offers-made']);
+      }, 1200);
     });
   }
 

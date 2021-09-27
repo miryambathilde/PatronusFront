@@ -209,9 +209,9 @@
     </div>
     <h5 class="mt-5">Deportistas similares por rendimiento: </h5>
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-      <div *ngFor="let athleteByResults of athletesByResults" class="col">
+      <div *ngFor="let athleteByResults of athletesByResults" class="col recommend" [routerLink]="['/deportista/', athleteByResults?.id]">
         <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
+          <img [src]="urlBack + athleteByResults?.photo" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{athleteByResults?.name}} {{athleteByResults?.surname}}</h5>
             <p class="card-text">Sport: {{athleteByResults?.sport}}</p>
@@ -224,9 +224,9 @@
     </div>
     <h5>Deportistas similares por nº tokens disponibles: </h5>
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-      <div *ngFor="let athleteByToken of athletesByToken" class="col">
+      <div *ngFor="let athleteByToken of athletesByToken" class="col recommend" [routerLink]="['/deportista/', athleteByToken?.id]">
         <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
+          <img [src]="urlBack + athleteByToken?.photo" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{athleteByToken?.name}} {{athleteByToken?.surname}}</h5>
             <p class="card-text">Sport: {{athleteByToken?.sport}}</p>
@@ -240,9 +240,9 @@
 
     <h5>Deportistas similares por país: </h5>
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-      <div *ngFor="let athleteByCountry of athletesByCountry" class="col">
+      <div *ngFor="let athleteByCountry of athletesByCountry" class="col recommend" [routerLink]="['/deportista/', athleteByCountry?.id]"s>
         <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
+          <img [src]="urlBack + athleteByCountry?.photo" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{athleteByCountry?.name}} {{athleteByCountry?.surname}}</h5>
             <p class="card-text">Sport: {{athleteByCountry?.sport}}</p>

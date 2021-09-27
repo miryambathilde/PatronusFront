@@ -3,7 +3,7 @@
     <h2>Quiero patrocinar a este atleta</h2>
     <div id="formContent">
       <form #offerForm="ngForm" (ngSubmit)="onSubmit(offerForm)">
-        <input type="text" id="company" ngModel name="company" placeholder="Nombre de la empresa">
+        <input type="text" id="company" [(ngModel)]="sponsorName" name="company">
         <input type="text" id="participations" ngModel name="participations" placeholder="Número de tokens">
         <input (click)="confirmOffer()" type="submit"value="Enviar propuesta">
       </form>
