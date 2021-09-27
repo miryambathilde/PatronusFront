@@ -10,6 +10,10 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.13);
 }
 
+button {
+  transform: skewX(173deg);
+}
+
 .btn-primary:hover {
   color: #fff !important;
   background-color: #1c65a0 !important;
