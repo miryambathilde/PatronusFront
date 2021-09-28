@@ -125,6 +125,9 @@ input[type="text"]:placeholder {
   color: #cccccc;
 }
 
+button {
+  transform: skewX(173deg);
+}
 
 
 /* OTHERS */

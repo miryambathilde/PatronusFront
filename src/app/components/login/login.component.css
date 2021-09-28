@@ -259,6 +259,10 @@ input[type="text"]:placeholder {
   width: 100%;
 }
 
+button {
+  transform: skewX(173deg);
+}
+
 /* OTHERS */
 
 *:focus {

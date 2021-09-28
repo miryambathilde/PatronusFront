@@ -165,6 +165,9 @@
   opacity: 0.6;
 }
 
+button {
+  transform: skewX(173deg);
+}
 
 @media(max-width: 500px){
   .filtros {
