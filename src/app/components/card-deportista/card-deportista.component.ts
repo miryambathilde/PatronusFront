@@ -56,7 +56,7 @@ export class CardDeportistaComponent implements OnInit {
       const result = await this.sponsorsService.addAthleteFavorite(id);
       console.log('add athlete favorite', result);
       setTimeout(() => {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/favorites']);
       }, 1000);
     });
   }
@@ -68,7 +68,7 @@ export class CardDeportistaComponent implements OnInit {
       const result = await this.sponsorsService.removeAthleteFavorite(id);
       console.log('remove athlete favorite', result);
       setTimeout(() => {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/favorites']);
       }, 1000);
     });
   }

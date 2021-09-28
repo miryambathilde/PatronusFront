@@ -59,6 +59,18 @@ export class SponsorsService {
       .toPromise();
   }
 
+  getTrendsAthletes(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        Authorization: localStorage.getItem('token')!
+      })
+    };
+    return this.httpClient
+    .get<any>(this.baseUrl + 'trendsAthletes', httpOptions)
+    .toPromise();
+  }
+
   getAthleteById(pId: number): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({

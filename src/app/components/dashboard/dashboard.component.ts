@@ -9,12 +9,22 @@ import { SponsorsService } from "src/app/services/sponsors.service";
 })
 export class DashboardComponent implements OnInit {
   
-  favorites: Deportista[] | undefined;
+  trends: Deportista[] | undefined;
+  urlBack: string = 'http://localhost:3000/';
+  unicTrends: any[] | undefined;
 
   constructor(private sponsorsService: SponsorsService) {}
 
   async ngOnInit() {
-    this.favorites = await this.sponsorsService.getMyAthletesFavorites();
-    console.log(this.favorites);
+    this.trends = await this.sponsorsService.getTrendsAthletes();
+    const eliminaAthletesDuplicados = (arr: any) => {
+    const athletesUnic = arr.map((athlete: any) => {
+      return [athlete.id, athlete]
+    });
+    return [...new Map(athletesUnic).values()];
+  }
+    this.unicTrends = eliminaAthletesDuplicados(this.trends);
+    console.log(this.unicTrends);
   }
 }
+

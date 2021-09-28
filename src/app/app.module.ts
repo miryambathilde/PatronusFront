@@ -35,6 +35,7 @@ import { CreateNewComponent } from './components/create-new/create-new.component
 import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
 import { EmailPassComponent } from './components/email-pass/email-pass.component';
 import { ChartRendimientoComponent } from './components/charts/chart-rendimiento/chart-rendimiento.component';
+import { TokensRegisterComponent } from './components/tokens-register/tokens-register.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ChartRendimientoComponent } from './components/charts/chart-rendimiento
     CreateNewComponent,
     ResetPassComponent,
     EmailPassComponent,
-    ChartRendimientoComponent
+    ChartRendimientoComponent,
+    TokensRegisterComponent
   ],
   imports: [
     BrowserModule,

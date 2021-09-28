@@ -43,9 +43,12 @@
               <th>Deporte</th>
               <th class="ocultar-contenido">Edad</th>
               <th class="ocultar-contenido">País</th>
-              <th class="text-right ocultar-contenido ocultar-tablet">Precio por token</th>
+              <th class="text-right ocultar-contenido ocultar-tablet">Tokens en venta</th>
               <th class="text-right ocultar-contenido ocultar-tablet">
-                Tokens en venta
+                % conseguido
+              </th>
+              <th class="text-right ocultar-contenido ocultar-tablet">
+                Fecha de expiración
               </th>
               <th class="text-right"></th>
             </tr>
@@ -84,33 +87,36 @@
               </td>
             </tr> -->
 
-            <tr>
+            <tr *ngFor="let trend of unicTrends">
               <td>
                 <img
                   class="iconowatch"
-                  src="../../../assets/img/deportistas-watchlist/rafa.jpg"
-                  alt=""
+                  [src]="urlBack + trend?.photo"
+                  [alt]="trend?.surname"
                 />
               </td>
-              <td>Rafael Nadal</td>
-              <td class="ocultar-contenido ocultar-tablet ">
+              <td>{{trend?.name}} {{trend?.surname}}</td>
+              <td class="ocultar-contenido ocultar-tablet">
                 <img src="../../../assets/img/graficas/grafica3.png" alt="" />
               </td>
-              <td>Tenis</td>
-              <td class="ocultar-contenido">35</td>
-              <td class="ocultar-contenido">España</td>
-              <td class="text-right ocultar-contenido ocultar-tablet">
-                1.400€
+              <td>{{trend?.sport}}</td>
+              <td class="ocultar-contenido">{{trend?.age}}</td>
+              <td class="ocultar-contenido">{{trend?.country}}</td>
+              <td class="text-center ocultar-contenido ocultar-tablet">
+                {{trend?.quantitydemand}}
               </td>
-              <td class="text-right ocultar-contenido ocultar-tablet">400</td>
+              <td class="text-center ocultar-contenido ocultar-tablet">
+                {{trend?.percentage}}
+              </td>
+              <td class="text-center ocultar-contenido ocultar-tablet">{{trend?.limitdate | date: "dd/MM/yy"}}</td>
               <td class="text-right">
-                <button type="submit" class="btn btn-danger btn-round">
+                <button [routerLink]="['/deportista/', trend?.id]" type="submit" class="btn btn-danger btn-round">
                   Ver Ficha
                 </button>
               </td>
             </tr>
 
-            <tr>
+            <!-- <tr>
               <td>
                 <img
                   class="iconowatch"
@@ -286,7 +292,7 @@
                   Ver Ficha
                 </button>
               </td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
