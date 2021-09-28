@@ -8,6 +8,10 @@
 /* 	margin-top: 1.5rem !important; */
 }
 
+/* .form-inline {
+  margin-right: -20px;
+} */
+
 @media(min-width: 768px) {
   .filtros {
     border-bottom: 0px;
@@ -151,9 +155,10 @@
   position: center;
 }
 .btn-danger:hover {
-  background-color: #e52026;
+  background-color: #a11419;
   border: 2px solid #8a1418;
 }
+
 
 .imagen-deportista {
   height: 250px;
@@ -168,6 +173,7 @@
 button {
   transform: skewX(173deg);
 }
+
 
 @media(max-width: 500px){
   .filtros {

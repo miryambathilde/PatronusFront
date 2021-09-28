@@ -38,7 +38,11 @@ h2 {
 
 .hero button:hover {
   background-color: #a8151a;
-  
+
+}
+
+button {
+  transform: skewX(173deg);
 }
 
 a {

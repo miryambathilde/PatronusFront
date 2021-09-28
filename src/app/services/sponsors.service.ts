@@ -8,7 +8,7 @@ export class SponsorsService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://66c9-79-157-110-6.ngrok.io/api/sponsors/';
+    this.baseUrl = 'http://03ae-79-157-110-6.ngrok.io/api/sponsors/';
   }
 
   getSponsor(): Promise<any> {

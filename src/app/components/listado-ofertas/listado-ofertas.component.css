@@ -9,6 +9,10 @@ img {
   width: 120px;
 }
 
+button {
+  transform: skewX(173deg);
+}
+
 .btn-primary:hover {
   font-weight: 600;
 }
