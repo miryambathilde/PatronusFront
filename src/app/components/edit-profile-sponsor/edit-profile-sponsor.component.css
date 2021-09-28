@@ -204,6 +204,7 @@ button {
   transform: skewX(173deg);
   margin-left: 4px;
   display: flex;
+  font-weight: 600;
 }
 
 a {
@@ -215,6 +216,7 @@ a {
 .izq {
   max-height: 522px;
 }
+
 
 .btn-danger:hover {
   color: #fff;
