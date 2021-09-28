@@ -1,14 +1,14 @@
 <app-sidebar></app-sidebar>
 <section class="container mt-5">
   <div class="row">
-    <div class="col-9 offset-6 col-lg-11 offset-lg-1 p-3 filtros">
+    <div class="col-10 offset-2 col-sm-10 offset-sm-2 col-md-8 offset-md-4 col-lg-8 offset-lg-3 col-xl-9 offset-xl-2 col-xxl-9 offset-xxl-2 p-3 filtros">
       <!-- OUTPUTS FILTROS-->
-      <app-filtros
+      <app-filtros class="mb-3"
         (filtroPais)="recogerPais($event)"
         (filtroDeporte)="recogerDeporte($event)"
         (filtroInvertible)="recogerInvertible($event)"
       ></app-filtros>
-      <form class="form-inline d-flex">
+      <form class="form-inline d-flex col-10 offset-2 col-sm-10 offset-sm-2 col-md-8 offset-md-4 col-lg-4 col-xl-2 col-xxl-3">
         <label class="me-2 aling">Ordenar por: </label>
         <div class="short-by">
           <select
@@ -36,7 +36,7 @@
         <!-- Row  -->
         <div class="row justify-content-center">
           <!-- Column -->
-          <div class="col-md-8 text-center">
+          <div class="col-md-9 offset-md-3 col-lg-9 offset-lg-3 text-center">
             <h3 class="my-3">Nuestros deportistas</h3>
             <h5 class="subtitle font-weight-normal">
               Aquí puedes acceder a toda la información de nuestros deportistas
@@ -47,7 +47,7 @@
         </div>
         <div class="row mt-4 ms-1">
           <!-- Column -->
-          <div class="col-md-4 on-hover" *ngFor="let deportista of deportistas">
+          <div class="col-md-4 on-hover col-md-9 offset-md-3 col-lg-4 offset-lg-2" *ngFor="let deportista of deportistas">
             <div class="card border-0 mb-4">
               <div
                 class="imagen-deportista"
@@ -96,7 +96,7 @@
             </div>
           </div>
           <div
-            class="col-md-4 on-hover cardTimeOut"
+            class="col-md-4 on-hover col-md-9 offset-md-3 col-lg-4 offset-lg-2 cardTimeOut"
             *ngFor="let deportistaTimeOut of deportistasTimeOut"
           >
             <div class="card border-0 mb-4">
