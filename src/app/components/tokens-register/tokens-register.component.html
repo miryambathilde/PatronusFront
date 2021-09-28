@@ -1,0 +1,15 @@
+<app-sidebar></app-sidebar>
+<div class="wrapper login ">
+    <h2>Quiero patrocinar a este atleta</h2>
+    <div id="formContent">
+      <form #tokensForm="ngForm" (ngSubmit)="onSubmit(tokensForm)">
+        <label for="tokens">Número de tokens</label>
+        <input type="number" id="tokens" ngModel name="tokens" placeholder="1000 tokens">
+        <input type="submit"value="Enviar">
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Acuérdate checkbox con texto.
+estoy de acuerdo...  -->

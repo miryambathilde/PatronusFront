@@ -110,7 +110,7 @@
               </td>
               <td class="text-center ocultar-contenido ocultar-tablet">{{trend?.limitdate | date: "dd/MM/yy"}}</td>
               <td class="text-right">
-                <button type="submit" class="btn btn-danger btn-round">
+                <button [routerLink]="['/deportista/', trend?.id]" type="submit" class="btn btn-danger btn-round">
                   Ver Ficha
                 </button>
               </td>

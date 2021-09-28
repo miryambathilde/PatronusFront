@@ -22,6 +22,7 @@ import { RegisterDeportistaComponent } from './components/register/register-depo
 import { RegisterSponsorsComponent } from './components/register/register-sponsors/register-sponsors.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
+import { TokensRegisterComponent } from './components/tokens-register/tokens-register.component';
 import { LoginGuard } from './guards/login.guard';
 import { RoleAthleteGuard } from './guards/role-athlete.guard';
 import { RoleSponsorGuard } from './guards/role-sponsor.guard';
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: "about", component: AboutComponent},
   {path: "register", component: RegisterComponent},
   {path: "register/deportistas", component: RegisterDeportistaComponent},
+  {path: "formtokens", component: TokensRegisterComponent},
   {path: "register/sponsors", component: RegisterSponsorsComponent },
   {path: "portfolio", component: PortfolioComponent, canActivate: [LoginGuard, RoleSponsorGuard] },
   {path: "editprofile/sponsor", component: EditProfileSponsorComponent, canActivate: [LoginGuard, RoleSponsorGuard] },
