@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   Chart,
   ArcElement,
@@ -26,6 +26,7 @@ import {
   Tooltip,
   SubTitle
 } from 'chart.js'
+import { myAthlete } from 'src/app/interfaces/myAthlete.interface';
 
 @Component({
   selector: 'app-chart-pie',
@@ -36,6 +37,18 @@ export class ChartPieComponent implements OnInit {
 
   chart: any = null
   chart2: any = null
+  @Input() athletes: myAthlete[] = []
+  colors: string[] = [
+    'rgb(255, 30, 0)',
+    'rgb(54, 162, 235)',
+    'rgb(255, 205, 86)',
+    'rgb(0, 128, 0)'
+  ]
+
+  names: string[] = []
+  participations: number[] = []
+  colores: string[] = []
+
 
 
   constructor() {
@@ -67,26 +80,32 @@ export class ChartPieComponent implements OnInit {
     );
 
   }
+
+  ngOnChanges(): void {
+
+    this.names = this.athletes.map((athlete) => athlete.name + " " + athlete.surname)
+    this.participations = this.athletes.map((athlete) => athlete.participations)
+    for (let i = 0; i < this.names.length; i++) {
+      this.colores.push(this.colors[i])
+    }
+    this.chart.update()
+
+
+
+
+
+  }
+
   ngOnInit(): void {
+
     this.chart = new Chart("realtime", {
       type: 'pie',
       data: {
-        labels: [
-          'Michael Phelps',
-          'Rafael Nadal',
-          'Roger Federer',
-          'Cristiano Ronaldo'
-
-        ],
+        labels: this.names,
         datasets: [{
           label: 'My First Dataset',
-          data: [35, 15, 20, 30],
-          backgroundColor: [
-            'rgb(255, 30, 0)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)',
-            'rgb(0, 128, 0)'
-          ],
+          data: this.participations,
+          backgroundColor: this.colores,
           hoverOffset: 4
         }]
       },
@@ -99,22 +118,16 @@ export class ChartPieComponent implements OnInit {
       }
 
     });
+
+
     this.chart2 = new Chart("realtime2", {
       type: 'pie',
       data: {
-        labels: [
-          'Natación',
-          'Tenis',
-          'Fútbol'
-        ],
+        labels: ["Balonmano", "Golf", "Tenis"],
         datasets: [{
           label: 'My First Dataset',
-          data: [35, 35, 30],
-          backgroundColor: [
-            'rgb(255, 30, 0)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
-          ],
+          data: this.participations,
+          backgroundColor: this.colores,
           hoverOffset: 4
         }]
       },
