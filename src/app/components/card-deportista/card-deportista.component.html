@@ -194,7 +194,7 @@
                 </button>
                 <button
                   class="btn btn-danger btn-fluid"
-                  [routerLink]="['/envio-propuesta', miDeportista?.id]"
+                  [routerLink]="['/envio-propuesta', miDeportista?.id, miDeportista?.quantitydemand]"
                 >
                   Enviar propuesta
                 </button>
@@ -208,6 +208,7 @@
       </div>
     </div>
     <h5 class="mt-5">Deportistas similares por rendimiento: </h5>
+    <span *ngIf="areThereReccomendsResults">No hay deportistas similares por rendimiento.</span>
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
       <div *ngFor="let athleteByResults of athletesByResults" class="col recommend" [routerLink]="['/deportista/', athleteByResults?.id]">
         <div class="card h-100">
@@ -224,6 +225,7 @@
     </div>
     <h5>Deportistas similares por nº tokens disponibles: </h5>
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+      <span *ngIf="areThereReccomendsToken">No hay deportistas similares por tokens.</span>
       <div *ngFor="let athleteByToken of athletesByToken" class="col recommend" [routerLink]="['/deportista/', athleteByToken?.id]">
         <div class="card h-100">
           <img [src]="urlBack + athleteByToken?.photo" class="card-img-top" alt="...">
@@ -240,6 +242,7 @@
 
     <h5>Deportistas similares por país: </h5>
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+      <span *ngIf="areThereReccomendsCountry">No hay deportistas similares por país.</span>
       <div *ngFor="let athleteByCountry of athletesByCountry" class="col recommend" [routerLink]="['/deportista/', athleteByCountry?.id]"s>
         <div class="card h-100">
           <img [src]="urlBack + athleteByCountry?.photo" class="card-img-top" alt="...">

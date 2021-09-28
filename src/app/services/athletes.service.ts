@@ -121,7 +121,8 @@ export class AthletesService {
         'Authorization': localStorage.getItem('token')!
       })
     };
-    return this.httpClient.put<any>(this.baseUrl + 'rejectOffer/' + pIdOffer, null, httpOptions).toPromise();
+    const id = localStorage.getItem('id');
+    return this.httpClient.put<any>(this.baseUrl + 'rejectOffer/' + pIdOffer + '/' + id, null, httpOptions).toPromise();
   }
 
   createNew(pForm: FormData): Promise<any> {
@@ -154,9 +155,22 @@ export class AthletesService {
       })
     }
     const idAthlete = localStorage.getItem('id');
-    return this.httpClient.post<any>(this.baseUrl + 'send-email/' + idAthlete, pForm, httpOptions).toPromise();
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('role');
+    return this.httpClient.post<any>(this.baseUrl + 'send-email/' + token + '/' + role + '/' + idAthlete, pForm, httpOptions).toPromise();
   }
 
+  resetPass(id: any, pForm: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        Authorization: localStorage.getItem('token')!
+      })
+    };
+    return this.httpClient
+      .put<any>(this.baseUrl + 'resetPassword/' + id, pForm, httpOptions)
+      .toPromise();
+  }
 
 
   deleteAccount(): Promise<any> {

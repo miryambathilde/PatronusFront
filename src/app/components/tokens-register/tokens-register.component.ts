@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersServicesService } from 'src/app/services/users-services.service';
 
 @Component({
   selector: 'app-tokens-register',
@@ -7,14 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TokensRegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private usersService: UsersServicesService) { }
 
   ngOnInit(): void {
   }
 
 
-  onSubmit(pForm: any) {
-
+  async onSubmit(pForm: any) {
+    const result = await this.usersService.initTokens(pForm.value);
+    console.log(result);
   }
 
 }

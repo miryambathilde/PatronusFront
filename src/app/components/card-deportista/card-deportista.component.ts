@@ -20,6 +20,11 @@ export class CardDeportistaComponent implements OnInit {
 
   isFavorite: boolean = false;
 
+  areThereReccomendsToken: boolean = false;
+  areThereReccomendsResults: boolean = false;
+  areThereReccomendsCountry: boolean = false;
+
+
   urlBack: string = 'http://localhost:3000/';
 
   constructor(
@@ -45,6 +50,9 @@ export class CardDeportistaComponent implements OnInit {
       console.log(this.sponsors);
       this.athletesByCountry = await this.sponsorsService.getRecomByCountry(this.miDeportista?.country, this.miDeportista?.id);
       console.log('Athlete by Country', this.athletesByCountry);
+      this.areThereReccomendsToken = (this.athletesByToken?.length === 0) ? true : false;
+      this.areThereReccomendsResults = (this.athletesByResults?.length === 0) ? true : false;
+      this.areThereReccomendsCountry = (this.athletesByCountry?.length === 0) ? true : false;
     });
 
   }

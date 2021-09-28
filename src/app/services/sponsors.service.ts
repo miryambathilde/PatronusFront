@@ -383,8 +383,9 @@ export class SponsorsService {
     };
     const idSponsor = localStorage.getItem('id');
     const token = localStorage.getItem('token');
+    const role = localStorage.getItem('role');
     return this.httpClient
-      .post<any>(this.baseUrl + 'send-email/' + token + '/' + idSponsor, pForm, httpOptions)
+      .post<any>(this.baseUrl + 'send-email/' + token + '/' + role + '/' + idSponsor, pForm, httpOptions)
       .toPromise();
   }
 

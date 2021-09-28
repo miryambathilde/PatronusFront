@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AthletesService } from 'src/app/services/athletes.service';
 import { SponsorsService } from 'src/app/services/sponsors.service';
 import { UsersServicesService } from 'src/app/services/users-services.service';
+import Swal from 'sweetalert2';
+
+
 
 @Component({
   selector: 'app-reset-pass',
@@ -15,6 +19,7 @@ export class ResetPassComponent implements OnInit {
 
   constructor(
     private sponsorsService: SponsorsService,
+    private athletesService: AthletesService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) { 
@@ -62,13 +67,29 @@ export class ResetPassComponent implements OnInit {
       localStorage.setItem('id', id);
       const token = params.token;
       localStorage.setItem('token', token);
-      const mensaje = await this.sponsorsService.resetPass(id, this.resetPassword.value);
-      console.log(mensaje);
-      if(mensaje.affectedRows) {
-        this.router.navigate(['/login']);
+      const role = params.role;
+      localStorage.setItem('role', role);
+      if(role === 'S') {
+        const mensaje = await this.sponsorsService.resetPass(id, this.resetPassword.value);
+        console.log(mensaje);
+        if(mensaje.affectedRows) {
+          this.router.navigate(['/login']);
+        }
+      } else if (role === 'A') {
+        const mensaje = await this.athletesService.resetPass(id, this.resetPassword.value);
+        if(mensaje.affectedRows) {
+          this.router.navigate(['/login']);
+        }
       }
+      Swal.fire({
+        title: 'Contraseña modificada. Por favor, inicia sesión',
+        confirmButtonText: 'Ok',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigate(['/login']);        
+        } 
+      })
     })
   }
-
 
 }

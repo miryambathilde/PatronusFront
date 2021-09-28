@@ -65,6 +65,17 @@ export class UsersServicesService {
       .toPromise();
   }
 
+  initTokens(pForm: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      })
+    };
+    return this.httpClient
+      .post<any>(this.baseUrl + 'registertokens', pForm, httpOptions)
+      .toPromise();
+  }
+
   getNews(): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -75,6 +86,15 @@ export class UsersServicesService {
       .get<any>(this.baseUrl + 'news', httpOptions)
       .toPromise();
   }
+
+  // deleteAccount(pForm: any): Promise<any> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-type': 'application/json'
+  //     })
+  //   };
+  //   return this.httpClient.put<any>(this.baseUrl + 'deleteAccount', pForm, httpOptions).toPromise()
+  // }
 
   // register(pFormValue: any): string {
   //   pFormValue.rol = "deportistas";

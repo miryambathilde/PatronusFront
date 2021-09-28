@@ -15,6 +15,8 @@ export class EditProfileAthleteComponent implements OnInit {
   deportista: any = {};
   emailAthlete: any = [];
   email: any = {};
+  followerstiktok: string = "";
+  followersinstagram: string = "";
   urlBack: string = 'http://localhost:3000/';
 
   constructor(
@@ -25,6 +27,8 @@ export class EditProfileAthleteComponent implements OnInit {
   async ngOnInit() {
     this.deportista = await this.athletesService.getAthleteById();
     console.log(this.deportista);
+    const followersSeparateK = this.deportista.followerstiktok.split('K');
+    this.followerstiktok = followersSeparateK[0];
     this.emailAthlete = await this.athletesService.getEmail();
     this.email = this.emailAthlete[0];
     console.log(this.email);
