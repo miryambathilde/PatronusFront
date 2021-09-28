@@ -11,3 +11,7 @@ button {
   background-color: #e52026;
   border: 2px solid #8a1418;
 }
+
+button {
+  transform: skewX(173deg);
+}

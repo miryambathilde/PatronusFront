@@ -81,7 +81,7 @@ export class CardDeportistaComponent implements OnInit {
     });
   }
 
-  
+
   confirmFavorite() {
     Swal.fire({
       position: 'top-end',
