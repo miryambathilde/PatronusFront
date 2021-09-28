@@ -8,7 +8,11 @@ export class SponsorsService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
+<<<<<<< HEAD
     this.baseUrl = 'http://c702-79-157-110-6.ngrok.io/api/sponsors/';
+=======
+    this.baseUrl = 'http://03ae-79-157-110-6.ngrok.io/api/sponsors/';
+>>>>>>> 2968a02c44368d9d393f67bd794f8238a63dd41c
   }
 
   getSponsor(): Promise<any> {
@@ -26,7 +30,7 @@ export class SponsorsService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
-        'Authorization': localStorage.getItem('token')!
+        Authorization: localStorage.getItem('token')!
       })
     };
     const idSponsor = localStorage.getItem('id');
@@ -90,16 +94,20 @@ export class SponsorsService {
         Authorization: localStorage.getItem('token')!
       })
     };
-    return this.httpClient.get<any>(this.baseUrl + 'athletesTimeOut', httpOptions).toPromise();
+    return this.httpClient
+      .get<any>(this.baseUrl + 'athletesTimeOut', httpOptions)
+      .toPromise();
   }
 
   getSponsorsByAthlete(pIdAthlete: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        Authorization: localStorage.getItem('token')!
       })
-    }
-    return this.httpClient.get<any>(this.baseUrl + 'sponsors/' + pIdAthlete, httpOptions).toPromise();
+    };
+    return this.httpClient
+      .get<any>(this.baseUrl + 'sponsors/' + pIdAthlete, httpOptions)
+      .toPromise();
   }
 
   getCountries(): Promise<any> {
@@ -243,7 +251,8 @@ export class SponsorsService {
     const fk_sponsors = localStorage.getItem('id');
     return this.httpClient
       .post<any>(
-        this.baseUrl + 'addAthleteFavorite/' + pfk_athletes + '/' + fk_sponsors, null,
+        this.baseUrl + 'addAthleteFavorite/' + pfk_athletes + '/' + fk_sponsors,
+        null,
         httpOptions
       )
       .toPromise();
@@ -259,7 +268,9 @@ export class SponsorsService {
     const idSponsor = localStorage.getItem('id');
     return this.httpClient
       .put<any>(
-        this.baseUrl + 'revertAthleteFavorite/' + pId + '/' + idSponsor, null, httpOptions
+        this.baseUrl + 'revertAthleteFavorite/' + pId + '/' + idSponsor,
+        null,
+        httpOptions
       )
       .toPromise();
   }
@@ -283,7 +294,11 @@ export class SponsorsService {
     };
     const idSponsor = localStorage.getItem('id');
     return this.httpClient
-      .post<any>(this.baseUrl + 'addSportFavorite/' + idSponsor + '/' + itemId, null, httpOptions)
+      .post<any>(
+        this.baseUrl + 'addSportFavorite/' + idSponsor + '/' + itemId,
+        null,
+        httpOptions
+      )
       .toPromise();
   }
 
@@ -311,7 +326,6 @@ export class SponsorsService {
       .toPromise();
   }
 
-
   athleteIsFavorite(pId: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -319,7 +333,12 @@ export class SponsorsService {
       })
     };
     const idSponsor = localStorage.getItem('id');
-    return this.httpClient.get<any>(this.baseUrl + 'athleteIsFavorite/' + idSponsor + '/' + pId, httpOptions).toPromise();
+    return this.httpClient
+      .get<any>(
+        this.baseUrl + 'athleteIsFavorite/' + idSponsor + '/' + pId,
+        httpOptions
+      )
+      .toPromise();
   }
 
   // addFavoriteSport(pSport: any): Promise<any> {
@@ -342,7 +361,6 @@ export class SponsorsService {
   //   return this.httpClient.post<any>(this.baseUrl + '/' + idSponsor, pSports, httpOptions).toPromise();
   // }
 
-
   // Recomendaciones -----------------------------------
 
   getRecomByToken(pToken: any, pId: any): Promise<any> {
@@ -352,7 +370,12 @@ export class SponsorsService {
       })
     };
     const pTokenString = pToken.toString();
-    return this.httpClient.get<any>(this.baseUrl + 'recommendsByTokens/' + pId + '/' + pTokenString, httpOptions).toPromise();
+    return this.httpClient
+      .get<any>(
+        this.baseUrl + 'recommendsByTokens/' + pId + '/' + pTokenString,
+        httpOptions
+      )
+      .toPromise();
   }
 
   getRecomByCountry(pCountry: any, pId: any): Promise<any> {
@@ -361,7 +384,12 @@ export class SponsorsService {
         Authorization: localStorage.getItem('token')!
       })
     };
-    return this.httpClient.get<any>(this.baseUrl + 'recommendsByCountry/' + pId + '/' + pCountry, httpOptions).toPromise();
+    return this.httpClient
+      .get<any>(
+        this.baseUrl + 'recommendsByCountry/' + pId + '/' + pCountry,
+        httpOptions
+      )
+      .toPromise();
   }
 
   getRecomByResults(pResults: any, pId: any): Promise<any> {
@@ -370,9 +398,13 @@ export class SponsorsService {
         Authorization: localStorage.getItem('token')!
       })
     };
-    return this.httpClient.get<any>(this.baseUrl + 'recommendsByResults/' + pId + '/' + pResults, httpOptions).toPromise();
+    return this.httpClient
+      .get<any>(
+        this.baseUrl + 'recommendsByResults/' + pId + '/' + pResults,
+        httpOptions
+      )
+      .toPromise();
   }
-
 
   sendEmailPass(pForm: any): Promise<any> {
     const httpOptions = {
@@ -384,7 +416,11 @@ export class SponsorsService {
     const idSponsor = localStorage.getItem('id');
     const token = localStorage.getItem('token');
     return this.httpClient
-      .post<any>(this.baseUrl + 'send-email/' + token + '/' + idSponsor, pForm, httpOptions)
+      .post<any>(
+        this.baseUrl + 'send-email/' + token + '/' + idSponsor,
+        pForm,
+        httpOptions
+      )
       .toPromise();
   }
 

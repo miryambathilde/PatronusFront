@@ -1,8 +1,8 @@
+<app-sidebar></app-sidebar>
 <div class="background">
   <div class="container profile pt-5">
-    <div class="row gutters-sm">
-      <app-sidebar></app-sidebar>
-      <div class="col-md-4 mb-3">
+    <div class="row g-5">
+      <div class="col-12 offset-0 col-sm-12 offset-sm-0 col-md-4 offset-md-3 col-lg-4 offset-lg-2 col-xl-4 offset-xl-2 col-xxl-4 offset-xxl-2 mb-3">
         <div class="card">
           <div class="card-body">
             <!-- PONER IMAGEN: recordar la ruta: urlBack + miDeportista?.photo   -->
@@ -128,7 +128,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-12 offset-0 col-sm-12 offset-sm-0 col-md-5 offset-md-0 col-lg-6 offset-lg-0 col-xl-6 offset-xl-0 col-xxl-6 offset-xxl-0">
         <div class="card mb-3">
           <div class="card-body">
             <div class="row">
@@ -142,7 +142,7 @@
             <hr />
             <div class="row">
               <div class="col-sm-3">
-                <h6 class="mb-0">Objetivo conseguido</h6>
+                <h6 class="mb-0">Alcanzado</h6>
               </div>
               <div class="col-sm-9 text-secondary">
                 {{ miDeportista?.percentage }} %
@@ -151,7 +151,7 @@
             <hr />
             <div class="row">
               <div class="col-sm-3">
-                <h6 class="mb-0">Seguidores en redes sociales</h6>
+                <h6 class="mb-0">Seguidores RRSS</h6>
               </div>
               <div class="col-sm-9 text-secondary">
                 {{miDeportista?.followers}}
@@ -167,7 +167,7 @@
             <br />
             <div class="row">
               <div class="col-sm-3">
-                <h6 class="mb-0">Patrocinadores:</h6>
+                <h6 class="mb-3">Sponsors</h6>
               </div>
               <div class="d-flex justify-content-around">
                 <span *ngFor="let sponsor of sponsors">{{sponsor?.company}}</span>
@@ -207,11 +207,14 @@
         </div> -->
       </div>
     </div>
-    <h5 class="mt-5">Deportistas similares por rendimiento: </h5>
-    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-      <div *ngFor="let athleteByResults of athletesByResults" class="col recommend" [routerLink]="['/deportista/', athleteByResults?.id]">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5 mt-5">
+      <div class="col-md-9 offset-md-3 col-lg-10 offset-lg-2">
+        <h5 class="mt-3 mb-3">Deportistas similares por rendimiento: </h5>
+        <!-- <p *ngIf="athletesByResults === undefined">No hay deportistas similares con estas características</p> -->
+      </div>
+      <div *ngFor="let athleteByResults of athletesByResults" class="col recommend col-md-9 offset-md-3 col-lg-4 offset-lg-2" [routerLink]="['/deportista/', athleteByResults?.id]">
         <div class="card h-100">
-          <img [src]="urlBack + athleteByResults?.photo" class="card-img-top" alt="...">
+          <img [src]="urlBack + athleteByResults?.photo" class="card-img-top" [alt]="athleteByResults?.name">
           <div class="card-body">
             <h5 class="card-title">{{athleteByResults?.name}} {{athleteByResults?.surname}}</h5>
             <p class="card-text">Sport: {{athleteByResults?.sport}}</p>
@@ -222,11 +225,14 @@
         </div>
       </div>
     </div>
-    <h5>Deportistas similares por nº tokens disponibles: </h5>
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-      <div *ngFor="let athleteByToken of athletesByToken" class="col recommend" [routerLink]="['/deportista/', athleteByToken?.id]">
+      <div class="col-md-9 offset-md-3 col-lg-10 offset-lg-2">
+        <h5 class="mt-3 mb-3">Deportistas similares por nº tokens disponibles: </h5>
+        <!-- <p *ngIf="athletesByResults === undefined">No hay deportistas similares con estas características</p> -->
+      </div>
+      <div *ngFor="let athleteByToken of athletesByToken" class="col recommend col-md-9 offset-md-3 col-lg-4 offset-lg-2" [routerLink]="['/deportista/', athleteByToken?.id]">
         <div class="card h-100">
-          <img [src]="urlBack + athleteByToken?.photo" class="card-img-top" alt="...">
+          <img [src]="urlBack + athleteByToken?.photo" class="card-img-top" [alt]="athleteByToken?.name">
           <div class="card-body">
             <h5 class="card-title">{{athleteByToken?.name}} {{athleteByToken?.surname}}</h5>
             <p class="card-text">Sport: {{athleteByToken?.sport}}</p>
@@ -238,11 +244,14 @@
       </div>
     </div>
 
-    <h5>Deportistas similares por país: </h5>
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-      <div *ngFor="let athleteByCountry of athletesByCountry" class="col recommend" [routerLink]="['/deportista/', athleteByCountry?.id]"s>
+      <div class="col-md-9 offset-md-3 col-lg-10 offset-lg-2">
+        <h5 class="mt-3 mb-3">Deportistas similares por país: </h5>
+        <!-- <p *ngIf="athletesByResults === undefined">No hay deportistas similares con estas características</p> -->
+      </div>
+      <div *ngFor="let athleteByCountry of athletesByCountry" class="col recommend col-md-9 offset-md-3 col-lg-4 offset-lg-2" [routerLink]="['/deportista/', athleteByCountry?.id]">
         <div class="card h-100">
-          <img [src]="urlBack + athleteByCountry?.photo" class="card-img-top" alt="...">
+          <img [src]="urlBack + athleteByCountry?.photo" class="card-img-top" [alt]="athleteByCountry?.name">
           <div class="card-body">
             <h5 class="card-title">{{athleteByCountry?.name}} {{athleteByCountry?.surname}}</h5>
             <p class="card-text">Sport: {{athleteByCountry?.sport}}</p>

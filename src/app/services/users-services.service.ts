@@ -9,7 +9,11 @@ export class UsersServicesService {
 
   // arrUsers: User[];
   constructor(private httpClient: HttpClient) {
+<<<<<<< HEAD
     this.baseUrl = 'http://c702-79-157-110-6.ngrok.io/api/users/';
+=======
+    this.baseUrl = 'http://03ae-79-157-110-6.ngrok.io/api/users/';
+>>>>>>> 2968a02c44368d9d393f67bd794f8238a63dd41c
     //   this.arrUsers = [
     //     {
     //       id: 1,

@@ -1,7 +1,7 @@
-.background {
+/* .background {
   background-color: #f1eeee;
   height: 100vh;
-}
+} */
 
 .container {
   background-position: absolute;
@@ -95,7 +95,7 @@ box-shadow: 3px 12px 31px 1px rgba(30,6,2,0.69);
 }
 
 .recommend h5{
-  color: #e52026;
+  color: #f80109;
 }
 
 .recommend:hover {
@@ -103,6 +103,16 @@ box-shadow: 3px 12px 31px 1px rgba(30,6,2,0.69);
 }
 
 .recommend:hover h5{
-  color: #8a1418;
+  color: #bb171c;
 }
 
+button {
+  transform: skewX(173deg);
+}
+
+/* @media (max-width: 980px) {
+  .card .h-100 {
+    width: 50vw;
+  }
+}
+ */
