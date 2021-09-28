@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
     return [...new Map(athletesUnic).values()];
   }
     this.unicTrends = eliminaAthletesDuplicados(this.trends);
+    console.log(this.unicTrends);
   }
 }
 
