@@ -210,10 +210,11 @@
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5 mt-5">
       <div class="col-md-9 offset-md-3 col-lg-10 offset-lg-2">
         <h5 class="mt-3 mb-3">Deportistas similares por rendimiento: </h5>
+        <!-- <p *ngIf="athletesByResults === undefined">No hay deportistas similares con estas características</p> -->
       </div>
       <div *ngFor="let athleteByResults of athletesByResults" class="col recommend col-md-9 offset-md-3 col-lg-4 offset-lg-2" [routerLink]="['/deportista/', athleteByResults?.id]">
         <div class="card h-100">
-          <img [src]="urlBack + athleteByResults?.photo" class="card-img-top" alt="...">
+          <img [src]="urlBack + athleteByResults?.photo" class="card-img-top" [alt]="athleteByResults?.name">
           <div class="card-body">
             <h5 class="card-title">{{athleteByResults?.name}} {{athleteByResults?.surname}}</h5>
             <p class="card-text">Sport: {{athleteByResults?.sport}}</p>
@@ -227,6 +228,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
       <div class="col-md-9 offset-md-3 col-lg-10 offset-lg-2">
         <h5 class="mt-3 mb-3">Deportistas similares por nº tokens disponibles: </h5>
+        <!-- <p *ngIf="athletesByResults === undefined">No hay deportistas similares con estas características</p> -->
       </div>
       <div *ngFor="let athleteByToken of athletesByToken" class="col recommend col-md-9 offset-md-3 col-lg-4 offset-lg-2" [routerLink]="['/deportista/', athleteByToken?.id]">
         <div class="card h-100">
@@ -245,10 +247,11 @@
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
       <div class="col-md-9 offset-md-3 col-lg-10 offset-lg-2">
         <h5 class="mt-3 mb-3">Deportistas similares por país: </h5>
+        <!-- <p *ngIf="athletesByResults === undefined">No hay deportistas similares con estas características</p> -->
       </div>
       <div *ngFor="let athleteByCountry of athletesByCountry" class="col recommend col-md-9 offset-md-3 col-lg-4 offset-lg-2" [routerLink]="['/deportista/', athleteByCountry?.id]">
         <div class="card h-100">
-          <img [src]="urlBack + athleteByCountry?.photo" class="card-img-top" alt="...">
+          <img [src]="urlBack + athleteByCountry?.photo" class="card-img-top" [alt]="athleteByCountry?.name">
           <div class="card-body">
             <h5 class="card-title">{{athleteByCountry?.name}} {{athleteByCountry?.surname}}</h5>
             <p class="card-text">Sport: {{athleteByCountry?.sport}}</p>
