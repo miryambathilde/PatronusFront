@@ -8,21 +8,21 @@ export class SponsorsService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/sponsors/';
-   }
+    this.baseUrl = 'http://e67a-79-157-110-6.ngrok.io/api/sponsors/';
+  }
 
-   getSponsor(): Promise<any> {
-     const httpOptions = {
-       headers: new HttpHeaders({
-         'Content-type': 'application/json',
-         'Authorization': localStorage.getItem('token')!
-       })
-     };
-     const idSponsor = localStorage.getItem('id');
-     return this.httpClient.get<any>(this.baseUrl + idSponsor, httpOptions).toPromise();
-   };
+  getSponsor(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': localStorage.getItem('token')!
+      })
+    };
+    const idSponsor = localStorage.getItem('id');
+    return this.httpClient.get<any>(this.baseUrl + idSponsor, httpOptions).toPromise();
+  };
 
-   getEmailSponsor(): Promise<any>{
+  getEmailSponsor(): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -31,9 +31,9 @@ export class SponsorsService {
     };
     const idSponsor = localStorage.getItem('id');
     return this.httpClient.get<any>(this.baseUrl + 'email/' + idSponsor, httpOptions).toPromise();
-   }
+  }
 
-   
+
   //  getAllAthletes(): Promise<any> {
   //   const httpOptions = {
   //     headers: new HttpHeaders({
