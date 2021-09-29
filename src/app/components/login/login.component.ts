@@ -31,18 +31,7 @@ export class LoginComponent implements OnInit {
     } else {
       alert('Usuario o contraseña incorrectos. Por favor, revise los datos');
     }
-    // const user = this.usersServices.login(pForm.value);
-    // console.log(user);
-    // if(user !== undefined)
-    // {
-    //   //token en el localstorage
-    //   localStorage.setItem('token', user!.email);
-    //   alert('usuario existe tienes acceso')
-    //   this.router.navigate(['/dashboard']);
-    // }
-    // else{
-    //   alert('usuario no existe')
-    // }
+
   }
 
 }

@@ -11,7 +11,10 @@ export interface Deportista {
   limitdate: string;
   country: string;
   graphic: string;
-  followers: string;
+  userinstagram: string;
+  followersinstagram: string;
+  usertiktok: string;
+  followerstiktok: string;
   status: number;
   results: number;
 }

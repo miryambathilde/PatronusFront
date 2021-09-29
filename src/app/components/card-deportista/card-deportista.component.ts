@@ -11,7 +11,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./card-deportista.component.css']
 })
 export class CardDeportistaComponent implements OnInit {
-  miDeportista: Deportista | undefined;
+  miDeportista: any = {};
+  followerstiktok: string = "";
   athletesByToken: Deportista[] | undefined;
   athletesByResults: Deportista[] | undefined;
   athletesByCountry: Deportista[] | undefined;
@@ -39,6 +40,8 @@ export class CardDeportistaComponent implements OnInit {
       const id = parseInt(params.idDeportista);
       this.miDeportista = await this.sponsorsService.getAthleteById(id);
       console.log(this.miDeportista);
+      const followersSeparateK = this.miDeportista.followerstiktok.split('K');
+      this.followerstiktok = followersSeparateK[0];
       this.athletesByToken = await this.sponsorsService.getRecomByToken(this.miDeportista?.quantitydemand, this.miDeportista?.id);
       console.log('Athlete by Token', this.athletesByToken);
       this.athletesByResults = await this.sponsorsService.getRecomByResults(this.miDeportista?.results, this.miDeportista?.id);

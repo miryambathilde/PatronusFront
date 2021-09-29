@@ -55,10 +55,12 @@ export class EditProfileSponsorComponent implements OnInit {
     const result = this.sponsorsService.addFavoriteSport(itemId);
     console.log(result);
   }
+
   onSelectAll(items: any) {
     // const result = this.sponsorsService.addFavoriteSport(itemId);
     console.log(items);
   }
+  
   recogerImagen($event: any) {
     this.files = $event.target.files;
   }

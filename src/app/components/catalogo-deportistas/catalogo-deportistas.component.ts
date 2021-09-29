@@ -25,12 +25,8 @@ export class CatalogoDeportistasComponent implements OnInit {
     private sponsorsService: SponsorsService) { }
 
   async ngOnInit() {
-    // this.countries = await this.sponsorsService.getCountries();
-    // this.sports = await this.sponsorsService.getSports();
-    this.deportistas = await this.sponsorsService.getAthletesByLimitDate();
-    // console.log(this.deportistas);
-    this.deportistasTimeOut = await this.sponsorsService.getAllTimeOutAthletes();
-    console.log('deportistas timeout', this.deportistasTimeOut);
+    this.deportistas = await this.sponsorsService.getAllAthletes();
+    console.log('esto es this.deportistas', this.deportistas);
   }
 
 
