@@ -10,7 +10,7 @@ import * as dayjs from 'dayjs';
 export class LoginGuard implements CanActivate {
   constructor(private router: Router){}
   canActivate(): boolean{
-    const token:any= localStorage.getItem('token');
+    const token:any = localStorage.getItem('token');
     if(token)
     {
       const helper = new JwtHelperService();

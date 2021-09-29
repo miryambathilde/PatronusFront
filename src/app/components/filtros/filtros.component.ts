@@ -26,17 +26,6 @@ export class FiltrosComponent implements OnInit {
     console.log(this.sports);
   }
 
-  // async recogerPais($event: any) {
-  //   this.athletesByCountry = await this.sponsorsService.getAthleteByCountry($event.target.value);
-  //   console.log(this.athletesByCountry);
-  // }
-
-  // async recogerDeporte($event: any) {
-  //   this.athletesBySports = await this.sponsorsService.getAthleteBySport($event.target.value);
-  //   console.log($event.target.value)
-  //   console.log(this.athletesBySports);
-  // }
-
 
 
   //EMITIMOS LOS EVENTOS DE LOS OUTPUTS //
