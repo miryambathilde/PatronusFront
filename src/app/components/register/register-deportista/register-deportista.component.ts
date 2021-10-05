@@ -60,10 +60,9 @@ export class RegisterDeportistaComponent implements OnInit {
   }
 
   async onSubmit() {
-    const mensaje = await this.usersServices.registerAthlete(this.registerDeportistas.value);
-    console.log(mensaje);
-    if(mensaje.affectedRows) {
-      this.router.navigate(['/login']);
-    }
+    const athlete = await this.usersServices.registerAthlete(this.registerDeportistas.value);
+    console.log(athlete);
+    this.router.navigate(['/tokens-register', athlete]);
+  
   }
 }

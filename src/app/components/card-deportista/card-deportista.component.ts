@@ -39,9 +39,6 @@ export class CardDeportistaComponent implements OnInit {
     this.activatedRoute.params.subscribe(async params => {
       const id = parseInt(params.idDeportista);
       this.miDeportista = await this.sponsorsService.getAthleteById(id);
-      console.log(this.miDeportista);
-      const followersSeparateK = this.miDeportista.followerstiktok.split('K');
-      this.followerstiktok = followersSeparateK[0];
       this.athletesByToken = await this.sponsorsService.getRecomByToken(this.miDeportista?.quantitydemand, this.miDeportista?.id);
       console.log('Athlete by Token', this.athletesByToken);
       this.athletesByResults = await this.sponsorsService.getRecomByResults(this.miDeportista?.results, this.miDeportista?.id);

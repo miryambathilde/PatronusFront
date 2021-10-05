@@ -1,21 +1,42 @@
 <div class="wrapper login">
-    <h2>Introduce el número de tokens que deseas poner a la venta</h2>
+    <h2>Introduce la cantidad de tokens que deseas poner a la venta</h2>
     <div id="formContent">
-      <form #tokensForm="ngForm" (ngSubmit)="onSubmit(tokensForm)">
-        <label for="tokens">Número de tokens</label>
-        <input type="number" id="tokens" ngModel name="tokens" placeholder="1000 tokens">
-        <label>Fecha de expiración tokens:</label>
+      <form class="p-3 d-flex flex-column align-items-center" [formGroup]="registerTokens" (ngSubmit)="onSubmit()">
+        <span>Tus derechos de imagen representan un total de 1000 tokens.</span>
+        <label for="tokens">¿Cuántos tokens deseas poner a la venta?</label>
+        <input class="form-control" type="number" id="tokens" formControlName="tokens"
+        >
+        <label class="mt-3">Fecha de expiración de la oferta:</label>
         <input
           type="date"
           class="form-control"
-          name="limitdate"
           id="limitdate"
+          formControlName="limitdate"
         />
-        <input type="submit"value="Enviar">
+        <div class="form-group mb-3">
+          <input
+            type="checkbox"
+            name="condiciones"
+            id="condiciones"
+            formControlName="condiciones"
+          />
+          <label class="mt-3" for="condiciones"
+            >Acepto las condiciones.</label
+          >
+          <p
+            class="text-danger"
+            *ngIf="checkControl('condiciones', 'required')"
+          >
+            Debes aceptar las condiciones de uso para poder continuar
+          </p>
+        </div>
+        <input
+        type="submit"
+        class="btn btn-danger"
+        value="Registrar tokens"
+        [disabled]="!registerTokens.valid"
+      />
       </form>
     </div>
   </div>
 
-
-  <!-- Acuérdate checkbox con texto.
-estoy de acuerdo...  -->

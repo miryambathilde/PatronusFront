@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Deportista } from 'src/app/interfaces/deportista.interface';
 import { AthletesService } from 'src/app/services/athletes.service';
 import { SponsorsService } from 'src/app/services/sponsors.service';
+import { UsersServicesService } from 'src/app/services/users-services.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,31 +13,33 @@ import Swal from 'sweetalert2';
 })
 export class EditProfileAthleteComponent implements OnInit {
   files: any;
+  sport: any;
   deportista: any = {};
   emailAthlete: any = [];
   email: any = {};
-  followerstiktok: string = "";
-  followersinstagram: string = "";
   urlBack: string = 'http://localhost:3000/';
 
   constructor(
     private athletesService: AthletesService,
+    private usersService: UsersServicesService,
     private router: Router
   ) {}
 
   async ngOnInit() {
     this.deportista = await this.athletesService.getAthleteById();
     console.log(this.deportista);
-    const followersSeparateK = this.deportista.followerstiktok.split('K');
-    this.followerstiktok = followersSeparateK[0];
     this.emailAthlete = await this.athletesService.getEmail();
     this.email = this.emailAthlete[0];
-    console.log(this.email);
+    console.log('esto es el mail', this.email);
   }
 
   recogerImagen($event: any) {
     this.files = $event.target.files;
     console.log(this.files);
+  }
+
+  elegirDeporte($event: any) {
+    this.sport = $event.target.value;
   }
 
   async onSubmit(pForm: any) {
@@ -46,20 +49,18 @@ export class EditProfileAthleteComponent implements OnInit {
     } else {
       formulario.append('photo', this.deportista.photo);
     }
+    if (this.sport !== undefined) {
+      formulario.append('sport', this.sport);
+    } else {
+      formulario.append('sport', this.deportista.sport);
+    }
     formulario.append('name', pForm.value.name);
     formulario.append('surname', pForm.value.surname);
     formulario.append('age', pForm.value.age);
     formulario.append('country', pForm.value.country);
+    formulario.append('userinstagram', pForm.value.userinstagram);
+    formulario.append('usertiktok', pForm.value.usertiktok);
     formulario.append('email', pForm.value.email);
-    formulario.append('sport', pForm.value.sport);
-    if(pForm.value.limitdate !== null) {
-      const date = pForm.value.limitdate.substring(0, 10);
-      console.log('esto es date', date);
-      formulario.append('limitdate', date);
-    } else {
-      const date = this.deportista.limitdate.substring(0, 10);
-      formulario.append('limitdate', date);
-    }
     const result = await this.athletesService.editAthlete(formulario);
     console.log(result);
     window.location.reload();
@@ -74,7 +75,7 @@ export class EditProfileAthleteComponent implements OnInit {
     }).then(async result => {
       if (result.isConfirmed) {
         Swal.fire('Cuenta eliminada', '', 'success');
-        const result = await this.athletesService.deleteAccount();
+        const result = await this.usersService.deleteAccount();
         localStorage.removeItem('token');
         setTimeout(() => {
           if (result.affectedRows) {
@@ -82,7 +83,7 @@ export class EditProfileAthleteComponent implements OnInit {
           }
         }, 500);
       } else if (result.isDenied) {
-        Swal.fire('No se ha podido eliminar la cuenta', '', 'info');
+        Swal.fire('Cuenta no eliminada', '', 'info');
       }
     });
   }

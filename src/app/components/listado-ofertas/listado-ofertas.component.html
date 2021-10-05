@@ -12,7 +12,8 @@
               <!-- <small class="text-muted">Hace 3 días</small> -->
             </div>
             <p class="mb-1 mt-4">Tokens: {{offer?.participations}}</p>
-            <p class="mb-1">Status: {{offer?.status}}</p>
+            <p class="mb-1" *ngIf="offer.status === 0">Status: Esperando respuesta</p>
+            <p class="mb-1" *ngIf="offer.status === 1">Status: Propuesta aceptada</p>
             <div class="container mt-1 d-flex justify-content-between">
               <!-- <button class="btn btn-sm btn-danger justify-content-start">SPONSOR</button> -->
               <div class="container d-flex justify-content-end">
