@@ -11,7 +11,7 @@ export class AthletesService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/api/athletes/';
+    this.baseUrl = 'http://2530-79-157-110-6.ngrok.io/api/athletes/';
 
     // this.arrDeportistas = [
     //   {

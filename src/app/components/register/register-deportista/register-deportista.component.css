@@ -11,3 +11,8 @@
 .btn  {
   transform: skewX(173deg);
 }
+
+.leyenda {
+  font-size: 12px;
+  color: #646464;
+}
