@@ -40,9 +40,11 @@ export class ChartPieComponent implements OnInit {
   @Input() athletes: myAthlete[] = []
   colors: string[] = [
     'rgb(255, 30, 0)',
-    'rgb(54, 162, 235)',
     'rgb(255, 205, 86)',
-    'rgb(0, 128, 0)'
+    'rgb(0, 255, 255)',
+    'rgb(0, 128, 0)',
+    'rgb(54, 162, 235)',
+
   ]
 
   names: string[] = []
@@ -123,10 +125,10 @@ export class ChartPieComponent implements OnInit {
     this.chart2 = new Chart("realtime2", {
       type: 'pie',
       data: {
-        labels: ["Balonmano", "Golf", "Tenis"],
+        labels: ["Balonmano", "Golf", "Tenis", "Baloncesto"],
         datasets: [{
           label: 'My First Dataset',
-          data: this.participations,
+          data: [100, 600, 170, 130],
           backgroundColor: this.colores,
           hoverOffset: 4
         }]

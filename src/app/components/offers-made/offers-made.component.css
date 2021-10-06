@@ -20,6 +20,6 @@ button {
 }
 
 .btn-danger:hover {
-  background-color: #e52026;
-  border: 2px solid #8a1418;
+  background-color: #c92328;
+  border: 1.5px solid #8a1418;
 }
