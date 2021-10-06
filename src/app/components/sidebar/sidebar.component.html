@@ -29,12 +29,13 @@
           </li>
           <li class="nav-item" *ngIf="!isAthlete">
             <a
-              class="nav-link"
-              [routerLink]="['/editprofile/sponsor']"
+              [routerLink]="['/catalogo-deportistas']"
               routerLinkActive="active"
+              class="nav-link"
+              href="#"
             >
-              <span data-feather="file"></span>
-              Editar perfil
+              <span data-feather="users"></span>
+              Catálogo
             </a>
           </li>
           <li class="nav-item" *ngIf="!isAthlete">
@@ -49,17 +50,6 @@
           </li>
           <li class="nav-item" *ngIf="!isAthlete">
             <a
-              [routerLink]="['/catalogo-deportistas']"
-              routerLinkActive="active"
-              class="nav-link"
-              href="#"
-            >
-              <span data-feather="users"></span>
-              Catálogo
-            </a>
-          </li>
-          <li class="nav-item" *ngIf="!isAthlete">
-            <a
               [routerLink]="['/offers-made']"
               class="nav-link"
               routerLinkActive="active"
@@ -67,28 +57,6 @@
             >
               <span data-feather="users"></span>
               Ofertas realizadas
-            </a>
-          </li>
-          <li class="nav-item" *ngIf="!isAthlete">
-            <a
-              [routerLink]="['/news']"
-              class="nav-link"
-              routerLinkActive="active"
-              href="#"
-            >
-              <span data-feather="users"></span>
-              Noticias
-            </a>
-          </li>
-          <li class="nav-item" *ngIf="!isSponsor">
-            <a
-              [routerLink]="['/editprofile/athlete']"
-              routerLinkActive="active"
-              class="nav-link"
-              href="#"
-            >
-              <span data-feather="users"></span>
-              Editar perfil
             </a>
           </li>
           <li class="nav-item" *ngIf="!isSponsor">
@@ -102,6 +70,17 @@
               Mis ofertas
             </a>
           </li>
+          <!-- <li class="nav-item" *ngIf="!isSponsor">
+            <a
+              [routerLink]="['/editprofile/athlete']"
+              routerLinkActive="active"
+              class="nav-link"
+              href="#"
+            >
+              <span data-feather="users"></span>
+              Editar perfil
+            </a>
+          </li> -->
           <li class="nav-item" *ngIf="!isSponsor">
             <a
               [routerLink]="['/create-new']"
