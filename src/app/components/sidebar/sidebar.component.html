@@ -29,12 +29,13 @@
           </li>
           <li class="nav-item" *ngIf="!isAthlete">
             <a
-              class="nav-link"
-              [routerLink]="['/editprofile/sponsor']"
+              [routerLink]="['/catalogo-deportistas']"
               routerLinkActive="active"
+              class="nav-link"
+              href="#"
             >
-              <span data-feather="file"></span>
-              Editar perfil
+              <span data-feather="users"></span>
+              Catálogo
             </a>
           </li>
           <li class="nav-item" *ngIf="!isAthlete">
@@ -45,17 +46,6 @@
             >
               <span data-feather="shopping-cart"></span>
               Portfolio
-            </a>
-          </li>
-          <li class="nav-item" *ngIf="!isAthlete">
-            <a
-              [routerLink]="['/catalogo-deportistas']"
-              routerLinkActive="active"
-              class="nav-link"
-              href="#"
-            >
-              <span data-feather="users"></span>
-              Catálogo
             </a>
           </li>
           <li class="nav-item" *ngIf="!isAthlete">
@@ -71,17 +61,6 @@
           </li>
           <li class="nav-item" *ngIf="!isSponsor">
             <a
-              [routerLink]="['/editprofile/athlete']"
-              routerLinkActive="active"
-              class="nav-link"
-              href="#"
-            >
-              <span data-feather="users"></span>
-              Editar perfil
-            </a>
-          </li>
-          <li class="nav-item" *ngIf="!isSponsor">
-            <a
               [routerLink]="['/offers']"
               routerLinkActive="active"
               class="nav-link"
@@ -91,6 +70,17 @@
               Mis ofertas
             </a>
           </li>
+          <!-- <li class="nav-item" *ngIf="!isSponsor">
+            <a
+              [routerLink]="['/editprofile/athlete']"
+              routerLinkActive="active"
+              class="nav-link"
+              href="#"
+            >
+              <span data-feather="users"></span>
+              Editar perfil
+            </a>
+          </li> -->
           <li class="nav-item" *ngIf="!isSponsor">
             <a
               [routerLink]="['/create-new']"

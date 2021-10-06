@@ -4,6 +4,7 @@ import { Sponsor } from 'src/app/interfaces/sponsor.interface';
 import { SponsorsService } from 'src/app/services/sponsors.service';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import Swal from 'sweetalert2';
+import { UsersServicesService } from 'src/app/services/users-services.service';
 
 @Component({
   selector: 'app-edit-profile-sponsor',
@@ -23,6 +24,7 @@ export class EditProfileSponsorComponent implements OnInit {
 
   constructor(
     private sponsorsService: SponsorsService,
+    private usersService: UsersServicesService,
     private router: Router
   ) {}
 
@@ -104,7 +106,7 @@ export class EditProfileSponsorComponent implements OnInit {
     }).then(async result => {
       if (result.isConfirmed) {
         Swal.fire('Cuenta eliminada', '', 'success');
-        const result = await this.sponsorsService.deleteAccount();
+        const result = await this.usersService.deleteAccount();
         localStorage.removeItem('token');
         setTimeout(() => {
           if (result.affectedRows) {

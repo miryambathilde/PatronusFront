@@ -49,6 +49,72 @@
         <div class="card-body">
           <form #perfilForm="ngForm" (ngSubmit)="onSubmit(perfilForm)" enctype="multipart/form-data">
             <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <span>Deporte: {{deportista?.sport}}</span><br>
+                  <select (change)="elegirDeporte($event)" class="form-select basic-select select2-hidden-accessible" name="" id="">
+                    <option value="Cambiar deporte">Elegir deporte</option>
+                    <option value="Acuatlón">Acuatlón</option>
+                    <option value="Aeróbic">Aeróbic</option>
+                    <option value="Ajedrez">Ajedrez</option>
+                    <option value="Alpinismo">Alpinismo</option>
+                    <option value="Arquería">Arquería</option>
+                    <option value="Artes Marciales">Artes Marciales</option>
+                    <option value="Atletismo">Atletismo</option>
+                    <option value="Automovilismo">Automovilismo</option>
+                    <option value="Bádminton">Bádminton</option>
+                    <option value="Baloncesto">Baloncesto</option>
+                    <option value="Balonmano">Balonmano</option>
+                    <option value="Béisbol">Béisbol</option>
+                    <option value="Billar">Billar</option>
+                    <option value="Boxeo">Boxeo</option>
+                    <option value="Ciclismo">Ciclismo</option>
+                    <option value="Escalada">Escalada</option>
+                    <option value="Esgrima">Esgrima</option>
+                    <option value="Equitación">Equitación</option>
+                    <option value="Esquí">Esquí</option>
+                    <option value="Fútbol">Fútbol</option>
+                    <option value="Fútbol sala">Fútbol sala</option>
+                    <option value="Golf">Golf</option>
+                    <option value="Gimnasia">Gimnasia</option>
+                    <option value="Hípica">Hípica</option>
+                    <option value="Hockey sobre hielo">Hockey sobre hielo</option>
+                    <option value="Hockey sobre hierba">Hockey sobre hierba</option>
+                    <option value="Judo">Judo</option>
+                    <option value="Karate">Karate</option>
+                    <option value="Kayak">Kayak</option>
+                    <option value="Motociclismo">Motociclismo</option>
+                    <option value="Natación">Natación</option>
+                    <option value="Pádel">Pádel</option>
+                    <option value="Paracaidismo">Paracaidismo</option>
+                    <option value="Parapente">Parapente</option>
+                    <option value="Pelota valenciana">Pelota valenciana</option>
+                    <option value="Pelota vasca">Pelota vasca</option>
+                    <option value="Pesca deportiva">Pesca deportiva</option>
+                    <option value="Petanca">Petanca</option>
+                    <option value="Piragüismo">Piragüismo</option>
+                    <option value="Polo">Polo</option>
+                    <option value="Pelota vasca">Pelota vasca</option>
+                    <option value="Remo">Remo</option>
+                    <option value="Rugby">Rugby</option>
+                    <option value="Senderismo">Senderismo</option>
+                    <option value="Skateboard">Skateboard</option>
+                    <option value="Snowboard">Snowboard</option>
+                    <option value="Squash">Squash</option>
+                    <option value="Surf">Surf</option>
+                    <option value="Tenis">Tenis</option>
+                    <option value="Tenis de mesa">Tenis de mesa</option>
+                    <option value="Tiro con arco">Tiro con arco</option>
+                    <option value="Triatlón">Triatlón</option>
+                    <option value="Vela">Vela</option>
+                    <option value="Voleibol">Voleibol</option>
+                    <option value="Waterpolo">Waterpolo</option>
+                    <option value="Windsurf">Windsurf</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md-5 pr-1">
                 <div class="form-group">
                   <label>Nombre</label>
@@ -127,28 +193,6 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 pr-1">
-                <div class="form-group">
-                  <label>Instagram</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    value={{deportista.followersinstagram}}
-                  />
-                </div>
-              </div>
-              <div class="col-md-6 pl-1">
-                <div class="form-group">
-                  <label>TikTok</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    [value]="followerstiktok + 'k'"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Foto</label>
@@ -161,36 +205,28 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4 pr-1">
+              <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  <label>Deporte</label>
+                  <label>Instagram</label>
                   <input
                     type="text"
                     class="form-control"
-                    name="sport"
-                    id="sport"
-                    [(ngModel)]="deportista.sport"
+                    name="userinstagram"
+                    id="userinstagram"
+                    [(ngModel)]="deportista.userinstagram"
                   />
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 pr-1">
+              <div class="col-md-6 pl-1">
                 <div class="form-group">
-                  <label>Fecha de expiración tokens:</label>
+                  <label>TikTok</label>
                   <input
-                    type="date"
+                    type="text"
                     class="form-control"
-                    name="limitdate"
-                    id="limitdate"
-                    [(ngModel)]="deportista.limitdate"
+                    [(ngModel)]="deportista.usertiktok"
+                    name="usertiktok"
+                    id="usertiktok"
                   />
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
                 </div>
               </div>
             </div>

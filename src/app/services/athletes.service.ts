@@ -173,15 +173,5 @@ export class AthletesService {
   }
 
 
-  deleteAccount(): Promise<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
-      })
-    };
-    const id = localStorage.getItem('id');
-    return this.httpClient.put<any>(this.baseUrl + 'deleteAccount/' + id, null, httpOptions).toPromise();
-  }
-
 
 }

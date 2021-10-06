@@ -35,6 +35,7 @@ const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "register/deportistas", component: RegisterDeportistaComponent},
   {path: "register/sponsors", component: RegisterSponsorsComponent },
+  {path: "tokens-register/:idDeportista", component: TokensRegisterComponent },
   {path: "portfolio", component: PortfolioComponent, canActivate: [LoginGuard, RoleSponsorGuard] },
   {path: "editprofile/sponsor", component: EditProfileSponsorComponent, canActivate: [LoginGuard, RoleSponsorGuard] },
   {path: "editprofile/athlete", component: EditProfileAthleteComponent, canActivate: [LoginGuard, RoleAthleteGuard] },

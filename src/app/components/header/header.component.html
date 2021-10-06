@@ -1,11 +1,179 @@
-<nav
-  class="navbar navbar-light bg-transparent fixed-top"
->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" [routerLink]="['/home']"
       ><img class="logo" src="assets/img/logo.png" alt="logo patronus"
     /></a>
     <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            [routerLink]="['/home']"
+            routerLinkActive="active"
+            >Inicio</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!islooged">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            [routerLink]="['/about']"
+            routerLinkActive="active"
+            >Quiénes somos</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!islooged">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            [routerLink]="['/login']"
+            routerLinkActive="active"
+            >Iniciar sesión</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!islooged">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            [routerLink]="['/register']"
+            routerLinkActive="active"
+            >Crear cuenta</a
+          >
+        </li>
+        <!-- <li class="nav-item" *ngIf="islooged && !isAthlete">
+          <a
+            class="nav-link active"
+            [routerLink]="['/dashboard']"
+            routerLinkActive="active"
+          >
+            <span data-feather="home"></span>
+            Watchlist
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="islooged && !isAthlete">
+          <a
+            class="nav-link active"
+            [routerLink]="['/favorites']"
+            routerLinkActive="active"
+          >
+            <span data-feather="home"></span>
+            Mis favoritos
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="islooged && !isAthlete">
+          <a
+            class="nav-link active"
+            [routerLink]="['/portfolio']"
+            routerLinkActive="active"
+          >
+            <span data-feather="shopping-cart"></span>
+            Portfolio
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="islooged && !isAthlete">
+          <a
+            [routerLink]="['/catalogo-deportistas']"
+            routerLinkActive="active"
+            class="nav-link active"
+            href="#"
+          >
+            <span data-feather="users"></span>
+            Catálogo
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="islooged && !isAthlete">
+          <a
+            [routerLink]="['/offers-made']"
+            class="nav-link active"
+            routerLinkActive="active"
+            href="#"
+          >
+            <span data-feather="users"></span>
+            Ofertas realizadas
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="islooged && !isSponsor">
+          <a
+            [routerLink]="['/offers']"
+            routerLinkActive="active"
+            class="nav-link active"
+            href="#"
+          >
+            <span data-feather="users"></span>
+            Mis ofertas
+          </a>
+        </li> -->
+        <!-- <li class="nav-item" *ngIf="islooged && !isSponsor">
+          <a
+            [routerLink]="['/create-new']"
+            routerLinkActive="active"
+            class="nav-link active"
+            href="#"
+          >
+            <span data-feather="users"></span>
+            Publicar noticia
+          </a>
+        </li> -->
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            [routerLink]="['/news']"
+            >Noticias</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="islooged && !isSponsor">
+          <a
+            [routerLink]="['/editprofile/athlete']"
+            routerLinkActive="active"
+            class="nav-link active"
+            href="#"
+          >
+            <span data-feather="users"></span>
+            Editar perfil
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="islooged && !isAthlete">
+          <a
+            [routerLink]="['/editprofile/sponsor']"
+            routerLinkActive="active"
+            class="nav-link active"
+            href="#"
+          >
+            <span data-feather="users"></span>
+            Editar perfil
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="islooged">
+          <a
+            (click)="logout()"
+            class="nav-link active logout"
+            aria-current="page"
+            >Cerrar sesión</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']"
+      ><img class="logo" src="assets/img/logo.png" alt="logo patronus"
+    /></a>
+   <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="offcanvas"
@@ -152,4 +320,4 @@
       </div>
     </div>
   </div>
-</nav>
+</nav> -->
